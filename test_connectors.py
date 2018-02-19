@@ -9,5 +9,6 @@ class TestParser(unittest.TestCase):
         self.assertTrue(filecmp.cmp('C:\\test\Abu\output\Connectors.arxml', 'C:\\test\Abu\Connectors.arxml', shallow=False))
 
 
+
 suite = unittest.TestLoader().loadTestsFromTestCase(TestParser)
 unittest.TextTestRunner(verbosity=1).run(suite)
