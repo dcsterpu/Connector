@@ -15,6 +15,7 @@ def main():
     output_directory = args.output_path
     # setting input and output paths
     input_path = input_directory.replace("\\", "/")
+    input_path = input_path.split(';')
     output_path = output_directory.replace("\\", "/")
     # logger creation and setting
     logger = logging.getLogger('result')
@@ -36,38 +37,38 @@ def create_connectors(input_path, output_path, logger):
     connectors = []
     PPorts = []
     RPorts = []
-    for directory, directories, files in os.walk(input_path):
-        for file in files:
-            if file.endswith('.arxml'):
-                fullname = os.path.join(directory, file)
-                try:
-                    check_if_xml_is_wellformed(fullname)
-                    logger.info('The file: ' + fullname + ' is well-formed')
-                except Exception as e:
-                    logger.error('The file: ' + fullname + ' is not well-formed: ' + str(e))
-                    return
-                validate_xml_with_xsd(path, fullname, logger)
-                tree = etree.parse(fullname)
-                root = tree.getroot()
-                PPort = root.findall(".//{http://autosar.org/schema/r4.0}P-PORT-PROTOTYPE")
-                RPort = root.findall(".//{http://autosar.org/schema/r4.0}R-PORT-PROTOTYPE")
-                # build list of PPorts
-                for elemPP in PPort:
-                    aswc = elemPP.getparent().getprevious().text
-                    if aswc != "AswcDiagForDcm":
+    for each_path in input_path:
+        for directory, directories, files in os.walk(each_path):
+            for file in files:
+                if file.endswith('.arxml'):
+                    fullname = os.path.join(directory, file)
+                    try:
+                        check_if_xml_is_wellformed(fullname)
+                        logger.info('The file: ' + fullname + ' is well-formed')
+                    except Exception as e:
+                        logger.error('The file: ' + fullname + ' is not well-formed: ' + str(e))
+                        return
+                    validate_xml_with_xsd(path, fullname, logger)
+                    tree = etree.parse(fullname)
+                    root = tree.getroot()
+                    PPort = root.findall(".//{http://autosar.org/schema/r4.0}P-PORT-PROTOTYPE")
+                    RPort = root.findall(".//{http://autosar.org/schema/r4.0}R-PORT-PROTOTYPE")
+                    # build list of PPorts
+                    for elemPP in PPort:
+                        aswc = elemPP.getparent().getprevious().text
                         objPPort = {}
                         objPPort['SHORT-NAME'] = elemPP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
                         objPPort['PROVIDED-INTERFACE-TREF'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").text
                         objPPort['ASWC'] = aswc
                         PPorts.append(objPPort)
-                # build list of RPorts
-                for elemRP in RPort:
-                    aswc = elemRP.getparent().getprevious().text
-                    objRPort = {}
-                    objRPort['SHORT-NAME'] = elemRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                    objRPort['REQUIRED-INTERFACE-TREF'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").text
-                    objRPort['ASWC'] = aswc
-                    RPorts.append(objRPort)
+                    # build list of RPorts
+                    for elemRP in RPort:
+                        aswc = elemRP.getparent().getprevious().text
+                        objRPort = {}
+                        objRPort['SHORT-NAME'] = elemRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
+                        objRPort['REQUIRED-INTERFACE-TREF'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").text
+                        objRPort['ASWC'] = aswc
+                        RPorts.append(objRPort)
     # build list of connectors
     lengthR = len(RPorts)
     lengthP = len(PPorts)
@@ -92,16 +93,17 @@ def create_connectors(input_path, output_path, logger):
     for indexC1 in range(lengthC):
         for indexC2 in range(lengthC):
             if indexC1 != indexC2:
-                if (connectors[indexC1]['NAME'] == connectors[indexC2]['NAME']) and (
-                        connectors[indexC1]['INTERFACE'] == connectors[indexC2]['INTERFACE']):
-                    logger.error('multiple RP and PP for ' + connectors[indexC1]['NAME'] + ' for interface ' +
-                                 connectors[indexC1]['INTERFACE'])
-                    logger.error('Connectors file not generated!')
-                    try:
-                        os.remove(output_path + '/Connectors.arxml')
-                    except OSError:
-                        pass
-                    return
+                if connectors[indexC1]['NAME'] == connectors[indexC2]['NAME']:
+                    if connectors[indexC2]['ASWC-PPORT'] == "AswcDiagForDcm":
+                        connectors.remove(connectors[indexC2])
+                    elif connectors[indexC1]['INTERFACE'] == connectors[indexC2]['INTERFACE']:
+                        logger.error('multiple RP and PP for ' + connectors[indexC1]['NAME'] + ' for interface ' + connectors[indexC1]['INTERFACE'])
+                        logger.error('Connectors file not generated!')
+                        try:
+                            os.remove(output_path + '/Connectors.arxml')
+                        except OSError:
+                            pass
+                        return
 
     # create Connectors.arxml
     rootConnectors = ET.Element('AUTOSAR')
@@ -133,10 +135,10 @@ def create_connectors(input_path, output_path, logger):
 
 def arg_parse(parser):
     # adding command line options
-    parser.add_argument("input", help="specify the input parameters")
-    parser.add_argument("input_directory", help="location of input files")
-    parser.add_argument("output", help="specify the output parameters")
-    parser.add_argument("output_path", help="folder which will contain the output files")
+    parser.add_argument("-in", action="store_const", const='-in')
+    parser.add_argument("input_directory", help="location(s) of input files")
+    parser.add_argument("-out", action="store_const", const='-out')
+    parser.add_argument("output_path", help="folder which will contain the produced files")
 
 
 def prettify_xml(elem):
