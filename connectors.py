@@ -176,10 +176,12 @@ def create_connectors(input_path, output_path, logger):
             final_pports.remove(elem)
 
     # implement TRS.ABU.FUNC.0008(0)
-    # case 1: RP of type NVI with PP of type SRI
+    # case 1: RP of type NVI with PP of type SRI which has the same short-name
     for elemNV in nv_rports[:]:
         for elemSR in sr_pports[:]:
-            if elemNV['REQUIRED-INTERFACE-TREF'] == elemSR['PROVIDED-INTERFACE-TREF']:
+            short_name_SR = elemSR['PROVIDED-INTERFACE-TREF'].split('/')
+            short_name_NV = elemNV['REQUIRED-INTERFACE-TREF'].split('/')
+            if short_name_NV[2][3:]== short_name_SR[2][3:]:
                 objConnector = {}
                 objConnector['NAME'] = elemNV['SHORT-NAME'][3:]
                 objConnector['INTERFACE'] = elemNV['REQUIRED-INTERFACE-TREF']
@@ -198,10 +200,12 @@ def create_connectors(input_path, output_path, logger):
                 elemSR['SINGLE'] = False
                 nv_rports.remove(elemNV)
                 sr_pports.remove(elemSR)
-    # case 2: PP of type NVI with RP of type SRI
+    # case 2: PP of type NVI with RP of type SRI which has the same short-name
     for elemNV in nv_pports[:]:
         for elemSR in sr_rports[:]:
-            if elemSR['REQUIRED-INTERFACE-TREF'] == elemNV['PROVIDED-INTERFACE-TREF']:
+            short_name_SR = elemSR['REQUIRED-INTERFACE-TREF'].split('/')
+            short_name_NV = elemNV['PROVIDED-INTERFACE-TREF'].split('/')
+            if short_name_SR[2][3:] == short_name_NV[2][3:]:
                 objConnector = {}
                 objConnector['NAME'] = elemSR['SHORT-NAME'][3:]
                 objConnector['INTERFACE'] = elemSR['REQUIRED-INTERFACE-TREF']
