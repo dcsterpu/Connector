@@ -137,14 +137,6 @@ class FileCompare():
             return True
         else:
             return False
-        # for element in root.iter(tag=connector):
-        #     for child in element:
-        #         for grandchild in child:
-        #             if child.tag.split('}', 1)[1] in child:
-        #                 if grandchild.tag.split('}', 1)[1] in grandchild:
-        #                     return True
-        #                 else:
-        #                     return False
 
 
 
