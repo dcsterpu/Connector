@@ -55,10 +55,6 @@ class FileCompare():
         path = used for defining the file to be checked
         level = criticity level :INFO, WARNING, ERROR
         message = string to be matched
-        help: preia un fisier si verifica daca contine nivelul de criticitate selectat; daca acesta exista, ccmpara
-        daca este prezent si restul mesajului pe aceeasi linie si returneaza TRUE; daca parcurge toate liniile si nu
-        gaseste mesajul cercetat alaturi de nivelul de criticitate, atunci returneaza FALSE
-        exemplu apel: FileCompare.checkLog(<cale_fisier>, "WARNING", "<numele_portului>")
         """
         # datafile = open(path)
         # line_file = datafile.readline()
@@ -107,31 +103,31 @@ class FileCompare():
     def isConnector(path):
         """
         path = used for defining the file to be checked
-        child = Connector child list
-        grandchild = Connector grandchild list
-        connector = connector tag name
         """
         tree = etree.parse(path)
         root = tree.getroot()
         found_name = found_provider = found_requester = found_contextP = found_targetP = found_contextR =found_targetR = False
-        connectors =  root.findall(".//{http://autosar.org/schema/r4.0}ASSEMBLY-SW-CONNECTOR>")
+        connectors = root.findall(".//{http://autosar.org/schema/r4.0}ASSEMBLY-SW-CONNECTOR")
         for elem in connectors:
-            if elem.find(".//{http://autosar.org/schema/r4.0}SHORT-NAME>"):
-                found_name = True
-            if elem.find(".//{http://autosar.org/schema/r4.0}PROVIDER-IREF>"):
-                found_provider = True
-                for child in elem.find(".//{http://autosar.org/schema/r4.0}PROVIDER-IREF>"):
-                    if child.find(".//{http://autosar.org/schema/r4.0}CONTEXT-COMPONENT-REF>"):
-                        found_contextR = True
-                    if child.find(".//{http://autosar.org/schema/r4.0}TARGET-P-PORT-REF>"):
-                        found_targetP = True
-            if elem.find(".//{http://autosar.org/schema/r4.0}REQUESTER-IREF>"):
-                found_requester = True
-                for child in elem.find(".//{http://autosar.org/schema/r4.0}REQUESTER-IREF>"):
-                    if child.find(".//{http://autosar.org/schema/r4.0}CONTEXT-COMPONENT-REF>"):
-                        found_contextR = True
-                    if child.find(".//{http://autosar.org/schema/r4.0}TARGET-R-PORT-REF>"):
-                        found_targetR = True
+            for c in elem:
+                if c.tag == "{http://autosar.org/schema/r4.0}SHORT-NAME":
+                    found_name = True
+                if c.tag == "{http://autosar.org/schema/r4.0}PROVIDER-IREF":
+                    found_provider = True
+                    provider = elem.find(".//{http://autosar.org/schema/r4.0}PROVIDER-IREF")
+                    for child in provider:
+                        if child.tag == "{http://autosar.org/schema/r4.0}CONTEXT-COMPONENT-REF":
+                            found_contextP = True
+                        if child.tag == "{http://autosar.org/schema/r4.0}TARGET-P-PORT-REF":
+                            found_targetP = True
+                if c.tag == "{http://autosar.org/schema/r4.0}REQUESTER-IREF":
+                    found_requester = True
+                    requester = elem.find(".//{http://autosar.org/schema/r4.0}REQUESTER-IREF")
+                    for child in requester:
+                        if child.tag == "{http://autosar.org/schema/r4.0}CONTEXT-COMPONENT-REF":
+                            found_contextR = True
+                        if child.tag == "{http://autosar.org/schema/r4.0}TARGET-R-PORT-REF":
+                            found_targetR = True
 
         if found_name and found_provider and found_requester and found_contextP and found_targetP and found_contextR and found_targetR:
             return True
@@ -139,64 +135,14 @@ class FileCompare():
             return False
 
 
-
-################################################################# TESTE ################################################
-
-tree = ET.parse('C:\\test\Abu\TRS.ABU.GEN.002\output\Connectors.arxml')
-root = tree.getroot()
-ns = '{http://autosar.org/schema/r4.0}'
-childList = ["SHORT-NAME", "PROVIDER-IREF", "REQUESTER-IREF"]
-grandchildList = []
-connectorTag = '{http://autosar.org/schema/r4.0}ASSEMBLY-SW-CONNECTOR'
-for element in root.iter(tag = connectorTag):
-    for child in element:
-        # if child.tag.split('}', 1)[1] == "SHORT-NAAME" or "PROVIDER-IREF" or "REQUESTER-IREF":
-        if child.tag.split('}', 1)[1] in childList:
-            print("Yes")
+    def isOutput(path):
+        """
+        path = used for defining the folder to be checked
+        """
+        if os.path.isdir(path):
+            return True
         else:
-            print('No')
-        # print(child.tag.split('}', 1)[1]) #return SHORT-NAME, PROVIDER-IREF, REQUESTER-IREF
-        for grandchild in child:
-            print(grandchild.tag.split('}', 1)[1])
-
-tree = ET.parse('C:\\test\Abu\TRS.ABU.GEN.002\output\Connectors.arxml')
-root = tree.getroot()
-child = ["SHORT-NAME", "PROVIDER-IREF", "REQUESTER-IREF"]
-grandchild = ["CONTEXT-COMPONENT-REF", "TARGET-P-PORT-REF", "CONTEXT-COMPONENT-REF", "TARGET-R-PORT-REF"]
-connector = '{http://autosar.org/schema/r4.0}ASSEMBLY-SW-CONNECTOR'
-for element in root.iter(tag = connector):
-    for child in element:
-        for grandchild in child:
-            if child.tag.split('}', 1)[1] in child:
-                if grandchild.tag.split('}', 1)[1] in grandchild:
-                    print("yes")
-                else:
-                    print("No")
-
-
-# ################################################################# TESTE ################################################
-tree = ET.parse('C:\\test\Abu\TRS.ABU.GEN.002\output\Connectors.arxml')
-root = tree.getroot()
-ns = '{http://autosar.org/schema/r4.0}'
-for element in root.iter(tag = '{http://autosar.org/schema/r4.0}ASSEMBLY-SW-CONNECTOR'):
-    for child in element:
-        print(child.tag.split('}', 1)[1]) #return SHORT-NAME, PROVIDER-IREF, REQUESTER-IREF
-        for grandchild in child:
-            print(grandchild.tag.split('}', 1)[1])
-
-            tree = ET.parse(path)
-            root = tree.getroot()
-            for element in root.iter(tag=connector):
-                for child in element:
-                    for grandchild in child:
-                        if child.tag.split('}', 1)[1] in child:
-                            if grandchild.tag.split('}', 1)[1] in grandchild:
-                                return True
-                            else:
-                                return False
-
-################################################################# TESTE ################################################
-
+            return False
 
 
 class TestParser(unittest.TestCase):
@@ -204,139 +150,153 @@ class TestParser(unittest.TestCase):
     # def test_TRS_ABU_INOUT_001(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.INOUT.001\input -out C:\\test\Abu\TRS.ABU.INOUT.001\output")
     #     self.assertTrue(FileCompare.checkParsing('C:\\test\Abu\TRS.ABU.INOUT.001\input', 'C:\\test\Abu\TRS.ABU.INOUT.001\output\\result.log', 'is'))
-
-
-
-    # def test_TRS_ABU_GEN_0002_1(self):
+    #
+    #
+    #
+    # def test_TRS_ABU_FUNC_0001(self):
+    #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0001\input -out C:\\test\Abu\TRS.ABU.FUNC.0001\output")
+    #     self.assertTrue(FileCompare.isOutput('C:\\test\Abu\TRS.ABU.FUNC.0001\output'))
+    #
+    #
+    #
+    # def test_TRS_ABU_FUNC_0002_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0002_1\input -out C:\\test\Abu\TRS.ABU.FUNC.0002_1\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0002_1\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0002_1\Connectors.arxml'))
     #
-    # def test_TRS_ABU_GEN_0002_2(self):
+    # def test_TRS_ABU_FUNC_0002_2(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0002_2\input -out C:\\test\Abu\TRS.ABU.FUNC.0002_2\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0002_2\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0002_2\Connectors.arxml'))
     #
-
-
-
-    # def test_TRS_ABU_GEN_0003_1(self):
+    #
+    #
+    #
+    # def test_TRS_ABU_FUNC_0003_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0003_1\input -out C:\\test\Abu\TRS.ABU.FUNC.0003_1\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0003_1\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0003_1\Connectors.arxml'))
     #
-    # def test_TRS_ABU_GEN_0003_2(self):
+    # def test_TRS_ABU_FUNC_0003_2(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0003_2\input -out C:\\test\Abu\TRS.ABU.FUNC.0003_2\output")
     #     self.assertFalse(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0003_2\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0003_2\Connectors.arxml'))
     #
-
-
-
-
-    # def test_TRS_ABU_GEN_0004(self):
+    #
+    #
+    #
+    #
+    # def test_TRS_ABU_FUNC_0004(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0004\input -out C:\\test\Abu\TRS.ABU.FUNC.0004\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0004\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0004\Connectors.arxml'))
-
-    # def test_TRS_ABU_GEN_0005(self):
+    #
+    # def test_TRS_ABU_FUNC_0005(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0005\input -out C:\\test\Abu\TRS.ABU.FUNC.0005\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0005\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0005\Connectors.arxml'))
     #
-    # def test_TRS_ABU_GEN_0006(self):
+    # def test_TRS_ABU_FUNC_0006(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0006\input -out C:\\test\Abu\TRS.ABU.FUNC.0006\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0006\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0006\Connectors.arxml'))
-
-    # def test_TRS_ABU_GEN_0007(self):
+    #
+    # def test_TRS_ABU_FUNC_0007(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0007\input -out C:\\test\Abu\TRS.ABU.FUNC.0007\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0007\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0007\Connectors.arxml'))
-
-    # def test_TRS_ABU_GEN_0008(self):
+    #
+    #
+    #
+    #
+    # def test_TRS_ABU_FUNC_0008(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0008\input -out C:\\test\Abu\TRS.ABU.FUNC.0008\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0008\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0008\Connectors.arxml'))
-
-
-
-
-
-    # def test_TRS_ABU_GEN_0009_1(self):
+    #
+    # def test_TRS_ABU_FUNC_0008_1(self):
+    #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0008_1\input -out C:\\test\Abu\TRS.ABU.FUNC.0008_1\output")
+    #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0008_1\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0008_1\Connectors.arxml'))
+    #
+    #
+    #
+    #
+    #
+    # def test_TRS_ABU_FUNC_0009_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0009_1\input -out C:\\test\Abu\TRS.ABU.FUNC.0009_1\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0009_1\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0009_1\Connectors.arxml'))
-
-    # def test_TRS_ABU_GEN_0009_2(self):
+    #
+    # def test_TRS_ABU_FUNC_0009_2(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0009_2\input -out C:\\test\Abu\TRS.ABU.FUNC.0009_2\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0009_2\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0009_2\Connectors.arxml'))
-
-
-
-
-
+    #
+    #
+    #
+    #
+    #
     # def test_TRS_ABU_GEN_001(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.001\input -out C:\\test\Abu\TRS.ABU.GEN.001\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.GEN.001\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.GEN.001\Connectors.arxml'))
-
+    #
     # def test_TRS_ABU_GEN_001_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.001\input -out C:\\test\Abu\TRS.ABU.GEN.001\output")
     #     self.assertTrue(FileCompare.matchLine('C:\\test\Abu\TRS.ABU.GEN.001\output\Connectors.arxml', 1, "<?xml version='1.0' encoding='UTF-8'?>"))
     #     self.assertTrue(FileCompare.matchLine('C:\\test\Abu\TRS.ABU.GEN.001\output\Connectors.arxml', 2,
     #                                           '<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2_STRICT_COMPACT.xsd">'))
-
-
-
-
-
+    #
+    #
+    #
+    #
+    #
     # def test_TRS_ABU_GEN_002(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.002\input -out C:\\test\Abu\TRS.ABU.GEN.002\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.GEN.002\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.GEN.002\Connectors.arxml'))
 
     # def test_TRS_ABU_GEN_002_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.002\input -out C:\\test\Abu\TRS.ABU.GEN.002\output")
-    #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.GEN.002\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.GEN.002\Connectors.arxml'))
+    #     self.assertTrue(FileCompare.isConnector('C:\\test\Abu\TRS.ABU.GEN.002\output\Connectors.arxml'))
     #
-
-
-
-
+    #
+    #
+    #
+    #
     # def test_TRS_ABU_GEN_003_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.003_1\input -out C:\\test\Abu\TRS.ABU.GEN.003_1\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.GEN.003_1\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.GEN.003_1\Connectors.arxml'))
-
+    #
     # def test_TRS_ABU_GEN_003_1_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.003_1\input -out C:\\test\Abu\TRS.ABU.GEN.003_1\output")
     #     self.assertTrue(FileCompare.checkLog("C:\\test\Abu\TRS.ABU.GEN.003_1\output\\result.log", "WARNING", ["PRP_CS_VehicleSPeed", "ASWC_M740_MSI"]))
-
-
+    #
+    #
     # def test_TRS_ABU_GEN_003_2(self):       #Check that a warning is present - De intrebat Cristi!!!!
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.003_2\input -out C:\\test\Abu\TRS.ABU.GEN.003_2\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.GEN.003_2\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.GEN.003_2\Connectors.arxml'))
-
+    #
     # def test_TRS_ABU_GEN_003_2_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.003_2\input -out C:\\test\Abu\TRS.ABU.GEN.003_2\output")
     #     self.assertTrue(FileCompare.checkLog("C:\\test\Abu\TRS.ABU.GEN.003_2\output\\result.log", "WARNING", ["PRP_CS_VehicleSPeed"]))
-
-
-
-
+    #
+    #
+    #
+    #
     # def test_TRS_ABU_GEN_004_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.004_1\input -out C:\\test\Abu\TRS.ABU.GEN.004_1\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.GEN.004_1\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.GEN.004_1\Connectors.arxml'))
-
+    #
     # def test_TRS_ABU_GEN_004_1_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.004_1\input -out C:\\test\Abu\TRS.ABU.GEN.004_1\output")
     #     self.assertTrue(FileCompare.checkLog("C:\\test\Abu\TRS.ABU.GEN.004_1\output\\result.log", "ERROR", [""]))
-
-
+    #
+    #
     # def test_TRS_ABU_GEN_004_2(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.004_2\input -out C:\\test\Abu\TRS.ABU.GEN.004_2\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.GEN.004_2\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.GEN.004_2\Connectors.arxml'))
-
+    #
     # def test_TRS_ABU_GEN_004_2_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.004_2\input -out C:\\test\Abu\TRS.ABU.GEN.004_2\output")
     #     self.assertTrue(FileCompare.checkLog("C:\\test\Abu\TRS.ABU.GEN.004_2\output\\result.log", "ERROR", [""]))
-
+    #
+    #
     # def test_TRS_ABU_GEN_004_3(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.004_3\input -out C:\\test\Abu\TRS.ABU.GEN.004_3\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.GEN.004_3\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.GEN.004_3\Connectors.arxml'))
-
+    #
     # def test_TRS_ABU_GEN_004_3_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.GEN.004_3\input -out C:\\test\Abu\TRS.ABU.GEN.004_3\output")
     #     self.assertTrue(FileCompare.checkLog("C:\\test\Abu\TRS.ABU.GEN.004_3\output\\result.log", "ERROR", [""]))
-
+    #
 
 
 suite = unittest.TestLoader().loadTestsFromTestCase(TestParser)
