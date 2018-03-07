@@ -104,23 +104,47 @@ class FileCompare():
             line_file = datafile.readline()
         return False
 
-    def checkStructure(path, child, grandchild, connector):
+    def isConnector(path):
         """
         path = used for defining the file to be checked
         child = Connector child list
         grandchild = Connector grandchild list
         connector = connector tag name
         """
-        tree = ET.parse(path)
+        tree = etree.parse(path)
         root = tree.getroot()
-        for element in root.iter(tag = connector):
-            for child in element:
-                for grandchild in child:
-                    if child.tag.split('}', 1)[1] in child:
-                        if grandchild.tag.split('}', 1)[1] in grandchild:
-                            return True
-                        else:
-                            return False
+        found_name = found_provider = found_requester = found_contextP = found_targetP = found_contextR =found_targetR = False
+        connectors =  root.findall(".//{http://autosar.org/schema/r4.0}ASSEMBLY-SW-CONNECTOR>")
+        for elem in connectors:
+            if elem.find(".//{http://autosar.org/schema/r4.0}SHORT-NAME>"):
+                found_name = True
+            if elem.find(".//{http://autosar.org/schema/r4.0}PROVIDER-IREF>"):
+                found_provider = True
+                for child in elem.find(".//{http://autosar.org/schema/r4.0}PROVIDER-IREF>"):
+                    if child.find(".//{http://autosar.org/schema/r4.0}CONTEXT-COMPONENT-REF>"):
+                        found_contextR = True
+                    if child.find(".//{http://autosar.org/schema/r4.0}TARGET-P-PORT-REF>"):
+                        found_targetP = True
+            if elem.find(".//{http://autosar.org/schema/r4.0}REQUESTER-IREF>"):
+                found_requester = True
+                for child in elem.find(".//{http://autosar.org/schema/r4.0}REQUESTER-IREF>"):
+                    if child.find(".//{http://autosar.org/schema/r4.0}CONTEXT-COMPONENT-REF>"):
+                        found_contextR = True
+                    if child.find(".//{http://autosar.org/schema/r4.0}TARGET-R-PORT-REF>"):
+                        found_targetR = True
+
+        if found_name and found_provider and found_requester and found_contextP and found_targetP and found_contextR and found_targetR:
+            return True
+        else:
+            return False
+        # for element in root.iter(tag=connector):
+        #     for child in element:
+        #         for grandchild in child:
+        #             if child.tag.split('}', 1)[1] in child:
+        #                 if grandchild.tag.split('}', 1)[1] in grandchild:
+        #                     return True
+        #                 else:
+        #                     return False
 
 
 
@@ -166,7 +190,18 @@ for element in root.iter(tag = '{http://autosar.org/schema/r4.0}ASSEMBLY-SW-CONN
     for child in element:
         print(child.tag.split('}', 1)[1]) #return SHORT-NAME, PROVIDER-IREF, REQUESTER-IREF
         for grandchild in child:
-            # print(grandchild.tag.split('}', 1)[1])
+            print(grandchild.tag.split('}', 1)[1])
+
+            tree = ET.parse(path)
+            root = tree.getroot()
+            for element in root.iter(tag=connector):
+                for child in element:
+                    for grandchild in child:
+                        if child.tag.split('}', 1)[1] in child:
+                            if grandchild.tag.split('}', 1)[1] in grandchild:
+                                return True
+                            else:
+                                return False
 
 ################################################################# TESTE ################################################
 
