@@ -208,11 +208,7 @@ class TestParser(unittest.TestCase):
     # def test_TRS_ABU_FUNC_0008_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0008_1\input -out C:\\test\Abu\TRS.ABU.FUNC.0008_1\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0008_1\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0008_1\Connectors.arxml'))
-    #
-    #
-    #
-    #
-    #
+
     # def test_TRS_ABU_FUNC_0009_1(self):
     #     os.system("connectors.py -in C:\\test\Abu\TRS.ABU.FUNC.0009_1\input -out C:\\test\Abu\TRS.ABU.FUNC.0009_1\output")
     #     self.assertTrue(FileCompare.areSame('C:\\test\Abu\TRS.ABU.FUNC.0009_1\output\Connectors.arxml', 'C:\\test\Abu\TRS.ABU.FUNC.0009_1\Connectors.arxml'))
