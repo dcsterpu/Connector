@@ -28,7 +28,6 @@ def main():
 
     create_connectors(input_path, output_path, logger)
 
-
 def create_connectors(input_path, output_path, logger):
     current_path = os.path.realpath(__file__)
     head, tail = ntpath.split(current_path)
