@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ConnectorsAsembly.iml" filepath="$PROJECT_DIR$/.idea/ConnectorsAsembly.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../SystemDescriptionFile/.idea/SystemDescriptionFile.iml" filepath="$PROJECT_DIR$/../SystemDescriptionFile/.idea/SystemDescriptionFile.iml" />
     </modules>
   </component>
 </project>

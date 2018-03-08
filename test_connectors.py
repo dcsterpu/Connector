@@ -47,6 +47,7 @@ class FileCompare():
             line_file = datafile.readline()
             line_file = line_file.rstrip()
 
+
     def checkLog(path, level, message):
         """
         path = used for defining the file to be checked
