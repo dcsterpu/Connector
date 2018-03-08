@@ -1,0 +1,5 @@
+2018-03-07 14:39:28,245 INFO The file: C:/test/Abu/TRS.ABU.FUNC.0002_1/input\ASWC_M740.aswc.arxml is well-formed
+2018-03-07 14:39:28,791 INFO The file: C:/test/Abu/TRS.ABU.FUNC.0002_1/input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-03-07 14:39:28,837 INFO The file: C:/test/Abu/TRS.ABU.FUNC.0002_1/input\ASWC_M741.aswc.arxml is well-formed
+2018-03-07 14:39:29,383 INFO The file: C:/test/Abu/TRS.ABU.FUNC.0002_1/input\ASWC_M741.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-03-07 14:39:29,961 WARNING The file: C:/test/Abu/TRS.ABU.FUNC.0002_1/output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema

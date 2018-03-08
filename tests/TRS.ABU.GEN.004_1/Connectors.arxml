@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2_STRICT_COMPACT.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>RootP_Composition</SHORT-NAME>
+            <COMPOSITION-SW-COMPONENT-TYPE>
+                <SHORT-NAME>Compo_VSM</SHORT-NAME>
+                <CONNECTORS />
+            </COMPOSITION-SW-COMPONENT-TYPE>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>

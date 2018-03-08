@@ -1,0 +1,8 @@
+2018-03-07 14:40:17,666 INFO The file: C:/test/Abu/TRS.ABU.GEN.004_2/input\ASWC_M740.aswc.arxml is well-formed
+2018-03-07 14:40:18,212 INFO The file: C:/test/Abu/TRS.ABU.GEN.004_2/input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-03-07 14:40:18,243 INFO The file: C:/test/Abu/TRS.ABU.GEN.004_2/input\ASWC_M742.aswc.arxml is well-formed
+2018-03-07 14:40:18,789 WARNING The file: C:/test/Abu/TRS.ABU.GEN.004_2/input\ASWC_M742.aswc.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-03-07 14:40:18,820 ERROR multiple PPorts for interface CS_VehicleSPeed
+2018-03-07 14:40:18,820 ERROR multiple PPorts for interface CS_VehicleSPeed
+2018-03-07 14:40:18,820 WARNING RP_CS_VehicleSPeed is without connector
+2018-03-07 14:40:19,366 WARNING The file: C:/test/Abu/TRS.ABU.GEN.004_2/output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2_STRICT_COMPACT.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>RootP_Composition</SHORT-NAME>
+            <COMPOSITION-SW-COMPONENT-TYPE>
+                <SHORT-NAME>Compo_VSM</SHORT-NAME>
+                <CONNECTORS>
+                    <ASSEMBLY-SW-CONNECTOR>
+                        <SHORT-NAME>PRP_CS_VitesseVehicule_Aswc_IntDcm_to_ASWC_M740</SHORT-NAME>
+                        <PROVIDER-IREF>
+							<CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M741</CONTEXT-COMPONENT-REF>
+                            <TARGET-PR-PORT-REF DEST="PR-PORT-PROTOTYOPE">/RootP_IntDcm/Aswc_IntDcm/PRP_CS_VitesseVehicule</TARGET-PR-PORT-REF>
+                        </PROVIDER-IREF>
+                        <REQUESTER-IREF>
+                            <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M740</CONTEXT-COMPONENT-REF>
+                            <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYOPE">/RootP_ASWC_M740/ASWC_M740/RP_CS_EtatBDE</TARGET-R-PORT-REF>
+                        </REQUESTER-IREF>
+                    </ASSEMBLY-SW-CONNECTOR>
+					<ASSEMBLY-SW-CONNECTOR>
+                        <SHORT-NAME>PRP_CS_VitesseVehicule_Aswc_IntDcm_to_ASWC_M740</SHORT-NAME>
+						<PROVIDER-IREF>
+							<CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M741</CONTEXT-COMPONENT-REF>
+                            <TARGET-PR-PORT-REF DEST="PR-PORT-PROTOTYOPE">/RootP_IntDcm/Aswc_IntDcm/PRP_CS_VitesseVehicule</TARGET-PR-PORT-REF>
+                        </PROVIDER-IREF>
+                        <REQUESTER-IREF>
+                            <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M740</CONTEXT-COMPONENT-REF>
+                            <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYOPE">/RootP_ASWC_M740/ASWC_M740/RP_CS_EtatBDE</TARGET-R-PORT-REF>
+                        </REQUESTER-IREF>
+					</ASSEMBLY-SW-CONNECTOR>
+                </CONNECTORS>
+            </COMPOSITION-SW-COMPONENT-TYPE>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>
