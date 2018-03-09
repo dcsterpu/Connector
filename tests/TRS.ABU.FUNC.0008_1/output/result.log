@@ -1,5 +1,5 @@
-2018-03-09 11:05:57,850 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.FUNC.0008_1/input\ASWC_M740.aswc.arxml is well-formed
-2018-03-09 11:05:58,699 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.FUNC.0008_1/input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
-2018-03-09 11:05:58,758 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.FUNC.0008_1/input\ASWC_M741.aswc.arxml is well-formed
-2018-03-09 11:05:59,597 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.FUNC.0008_1/input\ASWC_M741.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
-2018-03-09 11:06:00,460 WARNING The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.FUNC.0008_1/output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-03-09 11:31:52,392 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.FUNC.0008_1/input\ASWC_M740.aswc.arxml is well-formed
+2018-03-09 11:31:53,128 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.FUNC.0008_1/input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-03-09 11:31:53,163 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.FUNC.0008_1/input\ASWC_M741.aswc.arxml is well-formed
+2018-03-09 11:31:53,898 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.FUNC.0008_1/input\ASWC_M741.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-03-09 11:31:54,699 WARNING The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.FUNC.0008_1/output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema

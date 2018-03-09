@@ -1,9 +1,10 @@
-import argparse, os, logging, ntpath
-from xml.sax.handler import ContentHandler
-from xml.sax import make_parser
-from xml.dom import minidom
-from lxml import etree
-import xml.etree.ElementTree as ET
+import argparse, os, logging, ntpath        # pragma: no cover
+from xml.sax.handler import ContentHandler  # pragma: no cover
+from xml.sax import make_parser             # pragma: no cover
+from xml.dom import minidom                 # pragma: no cover
+from lxml import etree                      # pragma: no cover
+from coverage import Coverage               # pragma: no cover
+import xml.etree.ElementTree as ET          # pragma: no cover
 
 
 def main():
@@ -451,5 +452,9 @@ def check_if_xml_is_wellformed(file):
     parser.parse(file)
 
 
-if __name__ == "__main__":
-        main()
+if __name__ == "__main__":                          # pragma: no cover
+    cov = Coverage()                                # pragma: no cover
+    cov.start()                                     # pragma: no cover
+    main()                                          # pragma: no cover
+    cov.stop()                                      # pragma: no cover
+    cov.html_report(directory='coverage-html')      # pragma: no cover
