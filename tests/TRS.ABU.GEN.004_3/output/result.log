@@ -1,8 +1,8 @@
-2018-03-07 14:40:21,597 INFO The file: C:/test/Abu/TRS.ABU.GEN.004_3/input\ASWC_M740.aswc.arxml is well-formed
-2018-03-07 14:40:22,143 INFO The file: C:/test/Abu/TRS.ABU.GEN.004_3/input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
-2018-03-07 14:40:22,174 INFO The file: C:/test/Abu/TRS.ABU.GEN.004_3/input\ASWC_M741.aswc.arxml is well-formed
-2018-03-07 14:40:22,720 WARNING The file: C:/test/Abu/TRS.ABU.GEN.004_3/input\ASWC_M741.aswc.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
-2018-03-07 14:40:22,767 ERROR multiple PPorts for interface CS_VehicleSPeed
-2018-03-07 14:40:22,767 ERROR multiple PPorts for interface CS_VehicleSPeed
-2018-03-07 14:40:22,767 WARNING RP_CS_VehicleSPeed is without connector
-2018-03-07 14:40:23,313 WARNING The file: C:/test/Abu/TRS.ABU.GEN.004_3/output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-03-09 11:06:27,262 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.004_3/input\ASWC_M740.aswc.arxml is well-formed
+2018-03-09 11:06:27,987 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.004_3/input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-03-09 11:06:28,023 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.004_3/input\ASWC_M741.aswc.arxml is well-formed
+2018-03-09 11:06:28,740 WARNING The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.004_3/input\ASWC_M741.aswc.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-03-09 11:06:28,777 ERROR multiple PPorts for interface CS_VehicleSPeed
+2018-03-09 11:06:28,777 ERROR multiple PPorts for interface CS_VehicleSPeed
+2018-03-09 11:06:28,777 WARNING RP_CS_VehicleSPeed is without connector
+2018-03-09 11:06:29,492 WARNING The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.004_3/output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema

@@ -48,7 +48,6 @@ class FileCompare():
             line_file = datafile.readline()
             line_file = line_file.rstrip()
 
-
     def checkLog(path, level, message):
         """
         path = used for defining the file to be checked
@@ -187,17 +186,17 @@ class TestParser(unittest.TestCase):
         os.system('connectors -in ' + head + '\\tests\TRS.ABU.FUNC.0007\input -out ' + head + '\\tests\TRS.ABU.FUNC.0007\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.ABU.FUNC.0007\output\Connectors.arxml', head + '\\tests\TRS.ABU.FUNC.0007\Connectors.arxml'))
 
-    def test_TRS_ABU_FUNC_0008(self):
-        current_path = os.path.realpath(__file__)
-        head, tail = ntpath.split(current_path)
-        os.system('connectors -in ' + head + '\\tests\TRS.ABU.FUNC.0008\input -out ' + head + '\\tests\TRS.ABU.FUNC.0008\output')
-        self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.ABU.FUNC.0008\output\Connectors.arxml', head + '\\tests\TRS.ABU.FUNC.0008\Connectors.arxml'))
-
     def test_TRS_ABU_FUNC_0008_1(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
         os.system('connectors -in ' + head + '\\tests\TRS.ABU.FUNC.0008_1\input -out ' + head + '\\tests\TRS.ABU.FUNC.0008_1\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.ABU.FUNC.0008_1\output\Connectors.arxml', head + '\\tests\TRS.ABU.FUNC.0008_1\Connectors.arxml'))
+
+    def test_TRS_ABU_FUNC_0008_2(self):
+        current_path = os.path.realpath(__file__)
+        head, tail = ntpath.split(current_path)
+        os.system('connectors -in ' + head + '\\tests\TRS.ABU.FUNC.0008_2\input -out ' + head + '\\tests\TRS.ABU.FUNC.0008_2\output')
+        self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.ABU.FUNC.0008_2\output\Connectors.arxml', head + '\\tests\TRS.ABU.FUNC.0008_2\Connectors.arxml'))
 
     def test_TRS_ABU_FUNC_0009_1(self):
         current_path = os.path.realpath(__file__)
@@ -215,22 +214,10 @@ class TestParser(unittest.TestCase):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
         os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.001\input -out ' + head + '\\tests\TRS.ABU.GEN.001\output')
-        self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.ABU.GEN.001\output\Connectors.arxml', head + '\\tests\TRS.ABU.GEN.001\Connectors.arxml'))
-
-    def test_TRS_ABU_GEN_001_1(self):
-        current_path = os.path.realpath(__file__)
-        head, tail = ntpath.split(current_path)
-        os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.001\input -out ' + head + '\\tests\TRS.ABU.GEN.001\output')
         self.assertTrue(FileCompare.matchLine(head + '\\tests\TRS.ABU.GEN.001\output\Connectors.arxml', 1, "<?xml version='1.0' encoding='UTF-8'?>"))
         self.assertTrue(FileCompare.matchLine(head + '\\tests\TRS.ABU.GEN.001\output\Connectors.arxml', 2, '<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2_STRICT_COMPACT.xsd">'))
 
     def test_TRS_ABU_GEN_002(self):
-        current_path = os.path.realpath(__file__)
-        head, tail = ntpath.split(current_path)
-        os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.002\input -out ' + head + '\\tests\TRS.ABU.GEN.002\output')
-        self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.ABU.GEN.002\output\Connectors.arxml', head + '\\tests\TRS.ABU.GEN.002\Connectors.arxml'))
-
-    def test_TRS_ABU_GEN_002_1(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
         os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.002\input -out ' + head + '\\tests\TRS.ABU.GEN.002\output')
@@ -241,23 +228,13 @@ class TestParser(unittest.TestCase):
         head, tail = ntpath.split(current_path)
         os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.003_1\input -out ' + head + '\\tests\TRS.ABU.GEN.003_1\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.ABU.GEN.003_1\output\Connectors.arxml', head + '\\tests\TRS.ABU.GEN.003_1\Connectors.arxml'))
-
-    def test_TRS_ABU_GEN_003_1_1(self):
-        current_path = os.path.realpath(__file__)
-        head, tail = ntpath.split(current_path)
-        os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.003_1\input -out ' + head + '\\tests\TRS.ABU.GEN.003_1\output')
-        self.assertTrue(FileCompare.checkLog(head + '\\tests\TRS.ABU.GEN.003_1\output\\result.log', "WARNING", ["PRP_CS_VehicleSPeed", "ASWC_M740_MSI"]))
+        self.assertTrue(FileCompare.checkLog(head + '\\tests\TRS.ABU.GEN.003_1\output\\result.log', "WARNING", ["PRP_CS_VehicleData", "PP_SR_VehicleSPeed", "RP_CS_VehicleMovement"]))
 
     def test_TRS_ABU_GEN_003_2(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
         os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.003_2\input -out ' + head + '\\tests\TRS.ABU.GEN.003_2\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.ABU.GEN.003_2\output\Connectors.arxml', head + '\\tests\TRS.ABU.GEN.003_2\Connectors.arxml'))
-
-    def test_TRS_ABU_GEN_003_2_1(self):
-        current_path = os.path.realpath(__file__)
-        head, tail = ntpath.split(current_path)
-        os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.003_2\input -out ' + head + '\\tests\TRS.ABU.GEN.003_2\output')
         self.assertTrue(FileCompare.checkLog(head + '\\tests\TRS.ABU.GEN.003_2\output\\result.log', "WARNING", ["PRP_CS_VehicleSPeed"]))
 
     def test_TRS_ABU_GEN_004_1(self):
@@ -265,11 +242,6 @@ class TestParser(unittest.TestCase):
         head, tail = ntpath.split(current_path)
         os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.004_1\input -out ' + head + '\\tests\TRS.ABU.GEN.004_1\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.ABU.GEN.004_1\output\Connectors.arxml', head + '\\tests\TRS.ABU.GEN.004_1\Connectors.arxml'))
-
-    def test_TRS_ABU_GEN_004_1_1(self):
-        current_path = os.path.realpath(__file__)
-        head, tail = ntpath.split(current_path)
-        os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.004_1\input -out ' + head + '\\tests\TRS.ABU.GEN.004_1\output')
         self.assertTrue(FileCompare.checkLog('' + head + '\\tests\TRS.ABU.GEN.004_1\output\\result.log', "ERROR", [""]))
 
     def test_TRS_ABU_GEN_004_2(self):
@@ -277,11 +249,6 @@ class TestParser(unittest.TestCase):
         head, tail = ntpath.split(current_path)
         os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.004_2\input -out ' + head + '\\tests\TRS.ABU.GEN.004_2\output')
         self.assertTrue(FileCompare.areSame('' + head + '\\tests\TRS.ABU.GEN.004_2\output\Connectors.arxml', '' + head + '\\tests\TRS.ABU.GEN.004_2\Connectors.arxml'))
-
-    def test_TRS_ABU_GEN_004_2_1(self):
-        current_path = os.path.realpath(__file__)
-        head, tail = ntpath.split(current_path)
-        os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.004_2\input -out ' + head + '\\tests\TRS.ABU.GEN.004_2\output')
         self.assertTrue(FileCompare.checkLog(head + '\\tests\TRS.ABU.GEN.004_2\output\\result.log', "ERROR", [""]))
 
     def test_TRS_ABU_GEN_004_3(self):
@@ -289,17 +256,13 @@ class TestParser(unittest.TestCase):
         head, tail = ntpath.split(current_path)
         os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.004_3\input -out ' + head + '\\tests\TRS.ABU.GEN.004_3\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.ABU.GEN.004_3\output\Connectors.arxml', head + '\\tests\TRS.ABU.GEN.004_3\Connectors.arxml'))
-
-    def test_TRS_ABU_GEN_004_3_1(self):
-        current_path = os.path.realpath(__file__)
-        head, tail = ntpath.split(current_path)
-        os.system('connectors -in ' + head + '\\tests\TRS.ABU.GEN.004_3\input -out ' + head + '\\tests\TRS.ABU.GEN.004_3\output')
         self.assertTrue(FileCompare.checkLog(head + '\\tests\TRS.ABU.GEN.004_3\output\\result.log', "ERROR", [""]))
-
 
 
 suite = unittest.TestLoader().loadTestsFromTestCase(TestParser)
 unittest.TextTestRunner(verbosity=2).run(suite)
 
+# current_path = os.path.realpath(__file__)
+# head, tail = ntpath.split(current_path)
 # if __name__ == "__main__":
-#     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output="C:\\Users\\Cristi\PycharmProjects\ConnectorsAsembly\\tests"))
+#     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=head + "\\tests"))

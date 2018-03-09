@@ -22,7 +22,7 @@
                     <SHORT-NAME>Compo_VSM</SHORT-NAME>
                     <COMPONENTS>
                         <SW-COMPONENT-PROTOTYPE>
-                            <SHORT-NAME>Instance_ASWC_M741</SHORT-NAME>
+                            <SHORT-NAME>Instance_AswcDiagForDcm</SHORT-NAME>
                             <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/RootP_ASWC_M741/AswcDiagForDcm</TYPE-TREF>
                         </SW-COMPONENT-PROTOTYPE>
                     </COMPONENTS>

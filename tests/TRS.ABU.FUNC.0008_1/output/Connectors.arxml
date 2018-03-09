@@ -7,21 +7,21 @@
                 <SHORT-NAME>Compo_VSM</SHORT-NAME>
                 <CONNECTORS>
                     <ASSEMBLY-SW-CONNECTOR>
-                        <SHORT-NAME>PP_NV_VehicleSpeed_ASWC_M741_to_ASWC_M740</SHORT-NAME>
-                        <PROVIDER-IREF>
-                            <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M741</CONTEXT-COMPONENT-REF>
-                            <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYOPE">/RootP_ASWC_M741/ASWC_M741/PP_NV_VehicleSpeed</TARGET-P-PORT-REF>
-                        </PROVIDER-IREF>
-                        <REQUESTER-IREF>
-                            <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M740</CONTEXT-COMPONENT-REF>
-                            <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYOPE">/RootP_ASWC_M740/ASWC_M740/RP_NV_VehicleSpeed</TARGET-R-PORT-REF>
-                        </REQUESTER-IREF>
-                    </ASSEMBLY-SW-CONNECTOR>
-                    <ASSEMBLY-SW-CONNECTOR>
                         <SHORT-NAME>PP_SR_ControlState_ASWC_M741_to_ASWC_M740</SHORT-NAME>
                         <PROVIDER-IREF>
                             <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M741</CONTEXT-COMPONENT-REF>
                             <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYOPE">/RootP_ASWC_M741/ASWC_M741/PP_SR_ControlState</TARGET-P-PORT-REF>
+                        </PROVIDER-IREF>
+                        <REQUESTER-IREF>
+                            <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M740</CONTEXT-COMPONENT-REF>
+                            <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYOPE">/RootP_ASWC_M740/ASWC_M740/RP_NV_ControlState</TARGET-R-PORT-REF>
+                        </REQUESTER-IREF>
+                    </ASSEMBLY-SW-CONNECTOR>
+                    <ASSEMBLY-SW-CONNECTOR>
+                        <SHORT-NAME>PP_NV_ControlState_ASWC_M741_to_ASWC_M740</SHORT-NAME>
+                        <PROVIDER-IREF>
+                            <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M741</CONTEXT-COMPONENT-REF>
+                            <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYOPE">/RootP_ASWC_M741/ASWC_M741/PP_NV_ControlState</TARGET-P-PORT-REF>
                         </PROVIDER-IREF>
                         <REQUESTER-IREF>
                             <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M740</CONTEXT-COMPONENT-REF>

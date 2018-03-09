@@ -8,8 +8,8 @@
                     <SHORT-NAME>ASWC_M740</SHORT-NAME>
                     <PORTS>
 						<R-PORT-PROTOTYPE UUID="b0cbf1e7-59e2-c2fc-9f85-ca503e355f6f">
-                            <SHORT-NAME>ASWC_M740_MSI</SHORT-NAME>
-                            <REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BswMMode/PortInterfaces/BswMMode</REQUIRED-INTERFACE-TREF>
+                            <SHORT-NAME>RP_CS_VehicleMovement</SHORT-NAME>
+                            <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS_Data/CS_VehicleMovement</REQUIRED-INTERFACE-TREF>
                         </R-PORT-PROTOTYPE>
                     </PORTS>
 				</APPLICATION-SW-COMPONENT-TYPE>

@@ -8,8 +8,8 @@
                     <SHORT-NAME>Aswc_IntDcm</SHORT-NAME>
                     <PORTS>
 						<PR-PORT-PROTOTYPE>
-                            <SHORT-NAME>PRP_CS_VehicleSPeed</SHORT-NAME>
-                            <PROVIDED-REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS_Data/CS_VehicleSPeed</PROVIDED-REQUIRED-INTERFACE-TREF>
+                            <SHORT-NAME>PRP_CS_VehicleData</SHORT-NAME>
+                            <PROVIDED-REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS_Data/CS_VehicleData</PROVIDED-REQUIRED-INTERFACE-TREF>
                         </PR-PORT-PROTOTYPE>
                     </PORTS>
                 </APPLICATION-SW-COMPONENT-TYPE>
