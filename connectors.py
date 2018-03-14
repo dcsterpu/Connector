@@ -26,8 +26,8 @@ def main():
     logger.addHandler(hdlr)
     logger.setLevel(logging.INFO)
     open(output_path + '/result.log', 'w').close()
-
     create_connectors(input_path, output_path, logger)
+
 
 def create_connectors(input_path, output_path, logger):
     current_path = os.path.realpath(__file__)
@@ -181,7 +181,7 @@ def create_connectors(input_path, output_path, logger):
         for elemSR in sr_pports[:]:
             short_name_SR = elemSR['PROVIDED-INTERFACE-TREF'].split('/')
             short_name_NV = elemNV['REQUIRED-INTERFACE-TREF'].split('/')
-            if short_name_NV[2][3:]== short_name_SR[2][3:]:
+            if short_name_NV[2][3:] == short_name_SR[2][3:]:
                 objConnector = {}
                 objConnector['NAME'] = elemNV['SHORT-NAME'][3:]
                 objConnector['INTERFACE'] = elemNV['REQUIRED-INTERFACE-TREF']
@@ -365,6 +365,19 @@ def create_connectors(input_path, output_path, logger):
     for indexP in range(len(final_pports)):
         if final_pports[indexP]['SINGLE']:
             logger.warning(final_pports[indexP]['FULL-NAME'] + ' is without connector')
+    for indexR in range(len(sr_rports)):
+        if sr_rports[indexR]['SINGLE']:
+            logger.warning(sr_rports[indexR]['FULL-NAME'] + ' is without connector')
+    for indexP in range(len(sr_pports)):
+        if sr_pports[indexP]['SINGLE']:
+            logger.warning(sr_pports[indexP]['FULL-NAME'] + ' is without connector')
+    for indexR in range(len(nv_rports)):
+        if nv_rports[indexR]['SINGLE']:
+            logger.warning(nv_rports[indexR]['FULL-NAME'] + ' is without connector')
+    for indexP in range(len(nv_pports)):
+        if nv_pports[indexP]['SINGLE']:
+            logger.warning(nv_pports[indexP]['FULL-NAME'] + ' is without connector')
+
 
     # implement TRS.ABU.FUNC.0004(0)
     # delete connector from list of dict if the same connector from input_connectors already exists
