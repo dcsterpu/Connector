@@ -1,8 +1,8 @@
-2018-03-09 11:32:22,005 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.004_3/input\ASWC_M740.aswc.arxml is well-formed
-2018-03-09 11:32:22,748 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.004_3/input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
-2018-03-09 11:32:22,784 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.004_3/input\ASWC_M741.aswc.arxml is well-formed
-2018-03-09 11:32:23,540 WARNING The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.004_3/input\ASWC_M741.aswc.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
-2018-03-09 11:32:23,577 ERROR multiple PPorts for interface CS_VehicleSPeed
-2018-03-09 11:32:23,577 ERROR multiple PPorts for interface CS_VehicleSPeed
-2018-03-09 11:32:23,577 WARNING RP_CS_VehicleSPeed is without connector
-2018-03-09 11:32:24,322 WARNING The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.004_3/output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-03-15 09:55:09,319 INFO The file: C:/Users/rconstantin/PycharmProjects/ConnectorsAsembly/tests/TRS.ABU.GEN.004_3/input\ASWC_M740.aswc.arxml is well-formed
+2018-03-15 09:55:09,869 INFO The file: C:/Users/rconstantin/PycharmProjects/ConnectorsAsembly/tests/TRS.ABU.GEN.004_3/input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-03-15 09:55:09,906 INFO The file: C:/Users/rconstantin/PycharmProjects/ConnectorsAsembly/tests/TRS.ABU.GEN.004_3/input\ASWC_M741.aswc.arxml is well-formed
+2018-03-15 09:55:10,434 WARNING The file: C:/Users/rconstantin/PycharmProjects/ConnectorsAsembly/tests/TRS.ABU.GEN.004_3/input\ASWC_M741.aswc.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-03-15 09:55:10,489 ERROR multiple PPorts for interface CS_VehicleSPeed
+2018-03-15 09:55:10,489 ERROR multiple PPorts for interface CS_VehicleSPeed
+2018-03-15 09:55:10,489 WARNING RP_CS_VehicleSPeed is without connector
+2018-03-15 09:55:11,039 WARNING The file: C:/Users/rconstantin/PycharmProjects/ConnectorsAsembly/tests/TRS.ABU.GEN.004_3/output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema

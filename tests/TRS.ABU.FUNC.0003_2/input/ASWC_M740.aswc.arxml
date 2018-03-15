@@ -7,9 +7,9 @@
                 <APPLICATION-SW-COMPONENT-TYPE>
                     <SHORT-NAME>ASWC_M740</SHORT-NAME>
                     <PORTS>
-						<R-PORT-PROTOTYPE UUID="b0cbf1e7-59e2-c2fc-9f85-ca503e355f6f">
-                            <SHORT-NAME>RP_CS_EtatBDE</SHORT-NAME>
-                            <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS_Data/CS_VitesseVehicule</REQUIRED-INTERFACE-TREF>
+						<R-PORT-PROTOTYPE UUID="978aab7d-b22c-307b-d55b-7524d9937a4a">
+                            <SHORT-NAME>RP_CS_VehicleSPeed</SHORT-NAME>
+                            <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS_Data/CS_VehicleSPeed</REQUIRED-INTERFACE-TREF>
                         </R-PORT-PROTOTYPE>
                     </PORTS>
 				</APPLICATION-SW-COMPONENT-TYPE>

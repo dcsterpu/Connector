@@ -12,8 +12,8 @@
                             <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/RootP_SR_Data/SR_ControlState</REQUIRED-INTERFACE-TREF>
                         </R-PORT-PROTOTYPE>
 						<R-PORT-PROTOTYPE UUID="978aab7d-b22c-307b-d55b-7524d9937a4a">
-                            <SHORT-NAME>RP_NV_VehicleSpeed</SHORT-NAME>
-                            <REQUIRED-INTERFACE-TREF DEST="NV-DATA-INTERFACE">/RootP_NV_Data/NV_VehicleSpeed</REQUIRED-INTERFACE-TREF>
+                            <SHORT-NAME>RP_NV_ControlState</SHORT-NAME>
+                            <REQUIRED-INTERFACE-TREF DEST="NV-DATA-INTERFACE">/RootP_NV_Data/NV_ControlState</REQUIRED-INTERFACE-TREF>
                         </R-PORT-PROTOTYPE>
                     </PORTS>
 				</APPLICATION-SW-COMPONENT-TYPE>

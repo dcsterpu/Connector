@@ -1,9 +1,10 @@
-2018-03-09 11:32:09,520 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.003_1/input\ASWC_M740.aswc.arxml is well-formed
-2018-03-09 11:32:10,227 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.003_1/input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
-2018-03-09 11:32:10,262 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.003_1/input\ASWC_M741.aswc.arxml is well-formed
-2018-03-09 11:32:10,973 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.003_1/input\ASWC_M741.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
-2018-03-09 11:32:11,008 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.003_1/input\ASWC_M742.aswc.arxml is well-formed
-2018-03-09 11:32:11,733 INFO The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.003_1/input\ASWC_M742.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
-2018-03-09 11:32:11,768 WARNING RP_CS_VehicleMovement is without connector
-2018-03-09 11:32:11,768 WARNING PRP_CS_VehicleData is without connector
-2018-03-09 11:32:12,494 WARNING The file: C:/Users/Cristi/PycharmProjects/AssemblyConnector/tests/TRS.ABU.GEN.003_1/output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-03-15 09:54:59,638 INFO The file: C:/Users/rconstantin/PycharmProjects/ConnectorsAsembly/tests/TRS.ABU.GEN.003_1/input\ASWC_M740.aswc.arxml is well-formed
+2018-03-15 09:55:00,183 INFO The file: C:/Users/rconstantin/PycharmProjects/ConnectorsAsembly/tests/TRS.ABU.GEN.003_1/input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-03-15 09:55:00,229 INFO The file: C:/Users/rconstantin/PycharmProjects/ConnectorsAsembly/tests/TRS.ABU.GEN.003_1/input\ASWC_M741.aswc.arxml is well-formed
+2018-03-15 09:55:00,775 INFO The file: C:/Users/rconstantin/PycharmProjects/ConnectorsAsembly/tests/TRS.ABU.GEN.003_1/input\ASWC_M741.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-03-15 09:55:00,792 INFO The file: C:/Users/rconstantin/PycharmProjects/ConnectorsAsembly/tests/TRS.ABU.GEN.003_1/input\ASWC_M742.aswc.arxml is well-formed
+2018-03-15 09:55:01,341 INFO The file: C:/Users/rconstantin/PycharmProjects/ConnectorsAsembly/tests/TRS.ABU.GEN.003_1/input\ASWC_M742.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-03-15 09:55:01,401 WARNING RP_CS_VehicleMovement is without connector
+2018-03-15 09:55:01,401 WARNING PP_SR_VehicleSPeed is without connector
+2018-03-15 09:55:01,401 WARNING PRP_NV_VehicleData is without connector
+2018-03-15 09:55:01,953 WARNING The file: C:/Users/rconstantin/PycharmProjects/ConnectorsAsembly/tests/TRS.ABU.GEN.003_1/output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
