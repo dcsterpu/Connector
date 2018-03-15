@@ -2,7 +2,7 @@ import unittest
 import os
 import os.path
 import ntpath
-# import HtmlTestRunner
+import HtmlTestRunner
 from lxml import etree
 
 
@@ -150,7 +150,7 @@ class FileCompare():
             return False
 
 
-class TestParser(unittest.TestCase):
+class ConnectorDescriptor(unittest.TestCase):
 
     def test_TRS_ABU_INOUT_001(self):
         current_path = os.path.realpath(__file__)
@@ -285,10 +285,10 @@ class TestParser(unittest.TestCase):
         self.assertTrue(FileCompare.checkError(head + '\\tests\TRS.ABU.GEN.004_3\output\\result.log', "ERROR", ["CS_VehicleSPeed"]))
 
 
-suite = unittest.TestLoader().loadTestsFromTestCase(TestParser)
-unittest.TextTestRunner(verbosity=2).run(suite)
+# suite = unittest.TestLoader().loadTestsFromTestCase(ConnectorDescriptor)
+# unittest.TextTestRunner(verbosity=2).run(suite)
 
-# current_path = os.path.realpath(__file__)
-# head, tail = ntpath.split(current_path)
-# if __name__ == "__main__":
-#     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=head + "\\tests"))
+current_path = os.path.realpath(__file__)
+head, tail = ntpath.split(current_path)
+if __name__ == "__main__":
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=head + "\\tests"))
