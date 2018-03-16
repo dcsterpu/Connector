@@ -96,15 +96,26 @@ class FileCompare():
         path2 = used for defining the file to be checked
         message = string to be matched
         """
-        list_arxml_file = [f for f in os.listdir(path1) if f.endswith('.arxml')]
+        all_files = []
+        found_files = []
+        for file in os.listdir(path1):
+            if file.endswith('.arxml'):
+                all_files.append(file)
+        for file in all_files:
+            found_files.append(False)
         datafile = open(path2)
         line_file = datafile.readline()
+        i = 0
         while line_file != "":
-            for files in list_arxml_file:
+            for files in all_files:
                 if files + " " + message in line_file:
-                    return True
+                    found_files[i] = True
+                    i =+ 1
             line_file = datafile.readline()
-        return False
+        for item in found_files:
+            if item == False:
+                return False
+        return True
 
     def isConnector(path):
         """
@@ -144,7 +155,7 @@ class FileCompare():
         """
         path = used for defining the folder to be checked
         """
-        if os.path.isdir(path):
+        if os.path.isfile(path):
             return True
         else:
             return False
@@ -162,7 +173,7 @@ class ConnectorDescriptor(unittest.TestCase):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
         os.system('connectors.py -in ' + head + '\\tests\TRS.ABU.FUNC.0001\input -out ' + head + '\\tests\TRS.ABU.FUNC.0001\output')
-        self.assertTrue(FileCompare.isOutput(head + '\\tests\TRS.ABU.FUNC.0001\output'))
+        self.assertTrue(FileCompare.isOutput(head + '\\tests\TRS.ABU.FUNC.0001\output\Connectors.arxml'))
 
     def test_TRS_ABU_FUNC_0002_1(self):
         current_path = os.path.realpath(__file__)
