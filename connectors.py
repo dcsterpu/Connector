@@ -310,6 +310,14 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                     objElem['PARTITION'] = elem.find("PARTITION").text
                     software_allocs.append(objElem)
 
+    # delete NV-DATA-INTERFACE related ports
+    for elemPort in PPorts[:]:
+        if elemPort['INTERFACE-TYPE'] == "NV-DATA-INTERFACE":
+            PPorts.remove(elemPort)
+    for elemPort in RPorts[:]:
+        if elemPort['INTERFACE-TYPE'] == "NV-DATA-INTERFACE":
+            RPorts.remove(elemPort)
+
     for elemPort in PPorts:
         for elemSw in compos:
             if elemPort['ASWC'] == elemSw['SWC']:
@@ -318,6 +326,13 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         for elemSw in compos:
             if elemPort['ASWC'] == elemSw['SWC']:
                 elemPort['SWC'] = elemSw['NAME']
+    # remove the ports where their ASWC is not referenced into a compo
+    for elemPort in PPorts[:]:
+        if elemPort['SWC'] == '':
+            PPorts.remove(elemPort)
+    for elemPort in RPorts[:]:
+        if elemPort['SWC'] == '':
+            RPorts.remove(elemPort)
 
     for elemPort in PPorts:
         for elemC in software_allocs:
@@ -379,166 +394,6 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         if elem['INTERFACE-TYPE'] == "MODE-SWITCH-INTERFACE":
             msi_rports.append(elem)
             final_rports.remove(elem)
-    # create a list of NV ports (RP/PP/PRP) from final_pports and final_rports
-    nv_rports = []
-    nv_pports = []
-    for elem in final_rports[:]:
-        if elem['TYPE'] == "NV-DATA-INTERFACE":
-            nv_rports.append(elem)
-            final_rports.remove(elem)
-    for elem in final_pports[:]:
-        if elem['TYPE'] == "NV-DATA-INTERFACE":
-            nv_pports.append(elem)
-            final_pports.remove(elem)
-
-    # create a list of SR ports (RP/PP/PRP) from final_pports and final_rports
-    sr_rports = []
-    sr_pports = []
-    for elem in final_rports[:]:
-        if elem['TYPE'] == "SENDER-RECEIVER-INTERFACE":
-            sr_rports.append(elem)
-            final_rports.remove(elem)
-    for elem in final_pports[:]:
-        if elem['TYPE'] == "SENDER-RECEIVER-INTERFACE":
-            sr_pports.append(elem)
-            final_pports.remove(elem)
-
-    # implement TRS.CONNECTOR.FUNC.0008(0)
-    # case 1: RP of type NVI with PP of type SRI which has the same short-name
-    for elemNV in nv_rports[:]:
-        for elemSR in sr_pports[:]:
-            short_name_SR = elemSR['PROVIDED-INTERFACE-TREF'].split('/')
-            short_name_NV = elemNV['REQUIRED-INTERFACE-TREF'].split('/')
-            if short_name_NV[2][3:] == short_name_SR[2][3:]:
-                objConnector = {}
-                objConnector['NAME'] = elemNV['SHORT-NAME'][3:]
-                objConnector['INTERFACE'] = elemNV['REQUIRED-INTERFACE-TREF']
-                objConnector['SHORT-NAME-PP'] = elemSR['FULL-NAME']
-                objConnector['PROVIDED-INTERFACE-TREF'] = elemSR['PROVIDED-INTERFACE-TREF']
-                objConnector['SHORT-NAME-RP'] = elemNV['FULL-NAME']
-                objConnector['REQUIRED-INTERFACE-TREF'] = elemNV['REQUIRED-INTERFACE-TREF']
-                objConnector['ASWC-PPORT'] = elemSR['ASWC']
-                objConnector['ASWC-RPORT'] = elemNV['ASWC']
-                objConnector['ROOT-PPORT'] = elemSR['ROOT']
-                objConnector['ROOT-RPORT'] = elemNV['ROOT']
-                objConnector['SWC-PPORT'] = elemSR['SWC']
-                objConnector['SWC-RPORT'] = elemNV['SWC']
-                connectors.append(objConnector)
-                elemNV['SINGLE'] = False
-                elemSR['SINGLE'] = False
-                nv_rports.remove(elemNV)
-                sr_pports.remove(elemSR)
-    # case 2: PP of type NVI with RP of type SRI which has the same short-name
-    for elemNV in nv_pports[:]:
-        for elemSR in sr_rports[:]:
-            short_name_SR = elemSR['REQUIRED-INTERFACE-TREF'].split('/')
-            short_name_NV = elemNV['PROVIDED-INTERFACE-TREF'].split('/')
-            if short_name_SR[2][3:] == short_name_NV[2][3:]:
-                objConnector = {}
-                objConnector['NAME'] = elemSR['SHORT-NAME'][3:]
-                objConnector['INTERFACE'] = elemSR['REQUIRED-INTERFACE-TREF']
-                objConnector['SHORT-NAME-PP'] = elemNV['FULL-NAME']
-                objConnector['PROVIDED-INTERFACE-TREF'] = elemNV['PROVIDED-INTERFACE-TREF']
-                objConnector['SHORT-NAME-RP'] = elemSR['FULL-NAME']
-                objConnector['REQUIRED-INTERFACE-TREF'] = elemSR['REQUIRED-INTERFACE-TREF']
-                objConnector['ASWC-PPORT'] = elemNV['ASWC']
-                objConnector['ASWC-RPORT'] = elemSR['ASWC']
-                objConnector['ROOT-PPORT'] = elemNV['ROOT']
-                objConnector['ROOT-RPORT'] = elemSR['ROOT']
-                objConnector['SWC-PPORT'] = elemNV['SWC']
-                objConnector['SWC-RPORT'] = elemSR['SWC']
-                connectors.append(objConnector)
-                elemNV['SINGLE'] = False
-                elemSR['SINGLE'] = False
-                nv_pports.remove(elemNV)
-                sr_rports.remove(elemSR)
-    # case 3: RP of type NVI with PP of type NVI
-    for elemNV1 in nv_rports:
-        if elemNV1['UNIQUE']:
-            # check only interface
-            for elemNV2 in nv_pports:
-                if elemNV1['REQUIRED-INTERFACE-TREF'] == elemNV2['PROVIDED-INTERFACE-TREF']:
-                    objConnector = {}
-                    objConnector['NAME'] = elemNV1['SHORT-NAME'][3:]
-                    objConnector['INTERFACE'] = elemNV1['REQUIRED-INTERFACE-TREF']
-                    objConnector['SHORT-NAME-PP'] = elemNV2['FULL-NAME']
-                    objConnector['PROVIDED-INTERFACE-TREF'] = elemNV2['PROVIDED-INTERFACE-TREF']
-                    objConnector['SHORT-NAME-RP'] = elemNV1['FULL-NAME']
-                    objConnector['REQUIRED-INTERFACE-TREF'] = elemNV1['REQUIRED-INTERFACE-TREF']
-                    objConnector['ASWC-PPORT'] = elemNV2['ASWC']
-                    objConnector['ASWC-RPORT'] = elemNV1['ASWC']
-                    objConnector['ROOT-PPORT'] = elemNV2['ROOT']
-                    objConnector['ROOT-RPORT'] = elemNV1['ROOT']
-                    objConnector['SWC-PPORT'] = elemNV2['SWC']
-                    objConnector['SWC-RPORT'] = elemNV1['SWC']
-                    connectors.append(objConnector)
-                    elemNV2['SINGLE'] = False
-                    elemNV1['SINGLE'] = False
-        else:
-            # check short name and interface
-            for elemNV2 in nv_pports:
-                if elemNV1['REQUIRED-INTERFACE-TREF'] == elemNV2['PROVIDED-INTERFACE-TREF']:
-                    if elemNV1['SHORT-NAME'] == elemNV2['SHORT-NAME']:
-                        objConnector = {}
-                        objConnector['NAME'] = elemNV1['SHORT-NAME'][3:]
-                        objConnector['INTERFACE'] = elemNV1['REQUIRED-INTERFACE-TREF']
-                        objConnector['SHORT-NAME-PP'] = elemNV2['FULL-NAME']
-                        objConnector['PROVIDED-INTERFACE-TREF'] = elemNV2['PROVIDED-INTERFACE-TREF']
-                        objConnector['SHORT-NAME-RP'] = elemNV1['FULL-NAME']
-                        objConnector['REQUIRED-INTERFACE-TREF'] = elemNV1['REQUIRED-INTERFACE-TREF']
-                        objConnector['ASWC-PPORT'] = elemNV2['ASWC']
-                        objConnector['ASWC-RPORT'] = elemNV1['ASWC']
-                        objConnector['ROOT-PPORT'] = elemNV2['ROOT']
-                        objConnector['ROOT-RPORT'] = elemNV1['ROOT']
-                        objConnector['SWC-PPORT'] = elemNV2['SWC']
-                        objConnector['SWC-RPORT'] = elemNV1['SWC']
-                        connectors.append(objConnector)
-                        elemNV2['SINGLE'] = False
-                        elemNV1['SINGLE'] = False
-    # implement TRS.CONNECTOR.FUNC.0007(0)
-    # case 4: RP of type SRI with PP of type SRI
-    for elemSR1 in sr_rports:
-        if elemSR1['UNIQUE']:
-            # check only interface
-            for elemSR2 in sr_pports:
-                if elemSR1['REQUIRED-INTERFACE-TREF'] == elemSR2['PROVIDED-INTERFACE-TREF']:
-                    objConnector = {}
-                    objConnector['NAME'] = elemSR1['SHORT-NAME'][3:]
-                    objConnector['INTERFACE'] = elemSR1['REQUIRED-INTERFACE-TREF']
-                    objConnector['SHORT-NAME-PP'] = elemSR2['FULL-NAME']
-                    objConnector['PROVIDED-INTERFACE-TREF'] = elemSR2['PROVIDED-INTERFACE-TREF']
-                    objConnector['SHORT-NAME-RP'] = elemSR1['FULL-NAME']
-                    objConnector['REQUIRED-INTERFACE-TREF'] = elemSR1['REQUIRED-INTERFACE-TREF']
-                    objConnector['ASWC-PPORT'] = elemSR2['ASWC']
-                    objConnector['ASWC-RPORT'] = elemSR1['ASWC']
-                    objConnector['ROOT-PPORT'] = elemSR2['ROOT']
-                    objConnector['ROOT-RPORT'] = elemSR1['ROOT']
-                    objConnector['SWC-PPORT'] = elemSR2['SWC']
-                    objConnector['SWC-RPORT'] = elemSR1['SWC']
-                    connectors.append(objConnector)
-                    elemSR2['SINGLE'] = False
-                    elemSR1['SINGLE'] = False
-        else:
-            # check short name and interface
-            for elemSR2 in sr_pports:
-                if elemSR1['REQUIRED-INTERFACE-TREF'] == elemSR2['PROVIDED-INTERFACE-TREF']:
-                    if elemSR1['SHORT-NAME'] == elemSR2['SHORT-NAME']:
-                        objConnector = {}
-                        objConnector['NAME'] = elemSR1['SHORT-NAME'][3:]
-                        objConnector['INTERFACE'] = elemSR1['REQUIRED-INTERFACE-TREF']
-                        objConnector['SHORT-NAME-PP'] = elemSR2['FULL-NAME']
-                        objConnector['PROVIDED-INTERFACE-TREF'] = elemSR2['PROVIDED-INTERFACE-TREF']
-                        objConnector['SHORT-NAME-RP'] = elemSR1['FULL-NAME']
-                        objConnector['REQUIRED-INTERFACE-TREF'] = elemSR1['REQUIRED-INTERFACE-TREF']
-                        objConnector['ASWC-PPORT'] = elemSR2['ASWC']
-                        objConnector['ASWC-RPORT'] = elemSR1['ASWC']
-                        objConnector['ROOT-PPORT'] = elemSR2['ROOT']
-                        objConnector['ROOT-RPORT'] = elemSR1['ROOT']
-                        objConnector['SWC-PPORT'] = elemSR2['SWC']
-                        objConnector['SWC-RPORT'] = elemSR1['SWC']
-                        connectors.append(objConnector)
-                        elemSR2['SINGLE'] = False
-                        elemSR1['SINGLE'] = False
 
     # implement TRS.CONNECTOR.FUNC.011
     for elemPP in msi_pports:
@@ -637,18 +492,6 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
     for indexP in range(len(final_pports)):
         if final_pports[indexP]['SINGLE']:
             logger.warning(final_pports[indexP]['FULL-NAME'] + ' is without connector')
-    for indexR in range(len(sr_rports)):
-        if sr_rports[indexR]['SINGLE']:
-            logger.warning(sr_rports[indexR]['FULL-NAME'] + ' is without connector')
-    for indexP in range(len(sr_pports)):
-        if sr_pports[indexP]['SINGLE']:
-            logger.warning(sr_pports[indexP]['FULL-NAME'] + ' is without connector')
-    for indexR in range(len(nv_rports)):
-        if nv_rports[indexR]['SINGLE']:
-            logger.warning(nv_rports[indexR]['FULL-NAME'] + ' is without connector')
-    for indexP in range(len(nv_pports)):
-        if nv_pports[indexP]['SINGLE']:
-            logger.warning(nv_pports[indexP]['FULL-NAME'] + ' is without connector')
     for indexR in range(len(msi_rports)):
         if msi_rports[indexR]['SINGLE']:
             logger.warning(msi_rports[indexR]['FULL-NAME'] + ' is without connector')
@@ -672,10 +515,10 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
     packages = ET.SubElement(rootConnectors, 'AR-PACKAGES', xmlns="")
     package = ET.SubElement(packages, 'AR-PACKAGE')
     short_name = ET.SubElement(package, 'SHORT-NAME').text = 'RootP_Composition'
-    compo = ET.SubElement(package, 'COMPOSITION-SW-COMPONENT-TYPE')
+    elements = ET.SubElement(package, 'ELEMENTS')
+    compo = ET.SubElement(elements, 'COMPOSITION-SW-COMPONENT-TYPE')
     short_name = ET.SubElement(compo, 'SHORT-NAME').text = 'Compo_VSM'
     connector = ET.SubElement(compo, 'CONNECTORS')
-
     for con in connectors:
         assembly = ET.SubElement(connector, 'ASSEMBLY-SW-CONNECTOR')
         short_name = ET.SubElement(assembly, 'SHORT-NAME')
