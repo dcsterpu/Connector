@@ -1,4 +1,4 @@
-import argparse, os, logging, ntpath        # pragma: no cover
+import argparse, os, logging                # pragma: no cover
 from xml.sax.handler import ContentHandler  # pragma: no cover
 from xml.sax import make_parser             # pragma: no cover
 from xml.dom import minidom                 # pragma: no cover
@@ -98,6 +98,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         objPPort['PARTITION'] = ""
                         objPPort['SWC'] = ""
                         objPPort['SINGLE'] = True
+                        objPPort['CROSSED'] = False
                         if elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                             root_s = elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
                             objPPort['ROOT'] = root_s + '/' + root_p
@@ -119,6 +120,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         objPRPort['PARTITION'] = ""
                         objPRPort['SWC'] = ""
                         objPRPort['SINGLE'] = True
+                        objPRPort['CROSSED'] = False
                         if elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                             root_s = elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
                             objPRPort['ROOT'] = root_s + '/' + root_p
@@ -140,6 +142,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         objRPort['SWC'] = ""
                         objRPort['SINGLE'] = True
                         objRPort['UNIQUE'] = True
+                        objRPort['CROSSED'] = False
                         if elemRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                             root_s = elemRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
                             objRPort['ROOT'] = root_s + '/' + root_p
@@ -199,6 +202,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                     objPPort['PARTITION'] = ""
                     objPPort['SWC'] = ""
                     objPPort['SINGLE'] = True
+                    objPPort['CROSSED'] = False
                     if elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                         root_s = elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
                         objPPort['ROOT'] = root_s + '/' + root_p
@@ -218,6 +222,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                     objPRPort['PARTITION'] = ""
                     objPRPort['SWC'] = ""
                     objPRPort['SINGLE'] = True
+                    objPRPort['CROSSED'] = False
                     if elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                         root_s = elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
                         objPRPort['ROOT'] = root_s + '/' + root_p
@@ -239,6 +244,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                     objRPort['SWC'] = ""
                     objRPort['SINGLE'] = True
                     objRPort['UNIQUE'] = True
+                    objRPort['CROSSED'] = False
                     if elemRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                         root_s = elemRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
                         objRPort['ROOT'] = root_s + '/' + root_p
@@ -317,6 +323,19 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
     for elemPort in RPorts[:]:
         if elemPort['INTERFACE-TYPE'] == "NV-DATA-INTERFACE":
             RPorts.remove(elemPort)
+
+    for index1 in range(len(RPorts)):
+        for index2 in range(len(RPorts)):
+            if index1 != index2:
+                if RPorts[index1]['REQUIRED-INTERFACE-TREF'] == RPorts[index2]['REQUIRED-INTERFACE-TREF']:
+                    RPorts[index1]['CROSSED'] = True
+                    RPorts[index2]['CROSSED'] = True
+    for index1 in range(len(PPorts)):
+        for index2 in range(len(PPorts)):
+            if index1 != index2:
+                if PPorts[index1]['PROVIDED-INTERFACE-TREF'] == PPorts[index2]['PROVIDED-INTERFACE-TREF']:
+                    PPorts[index1]['CROSSED'] = True
+                    PPorts[index2]['CROSSED'] = True
 
     for elemPort in PPorts:
         for elemSw in compos:
@@ -403,8 +422,8 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                     for elemASWC in software_allocs:
                         aswc = elemASWC['SWC'].split('/')
                         if elemRP['ASWC'] == aswc[2]:
-                            if elemPP['FULL-NAME'] == 'OS_APP_' + elemASWC['CORE'] + '_' + elemASWC['PARTITION'] + '_AppSwitchLocalPort' or \
-                                    elemPP['FULL-NAME'] == 'OS_APP_' + elemASWC['CORE'] + '_' + elemASWC['PARTITION'] + '_BswMSwitchLocalPort':
+                            if elemPP['FULL-NAME'] == 'OsApp_' + elemASWC['CORE'] + '_' + elemASWC['PARTITION'] + '_AppSwitchLocalPort' or \
+                                    elemPP['FULL-NAME'] == 'OsApp_' + elemASWC['CORE'] + '_' + elemASWC['PARTITION'] + '_BswMSwitchLocalPort':
                                 objConnector = {}
                                 objConnector['NAME'] = elemRP['SHORT-NAME']
                                 objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
@@ -441,30 +460,51 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
 
     # build list of remainig types of interface connectors
     for indexR in range(len(final_rports)):
-        if final_rports[indexR]['UNIQUE']:
-            # implement TRS.CONNECTOR.FUNC.0005(0)
-            # check only interface
-            for indexP in range(len(final_pports)):
-                if final_rports[indexR]['REQUIRED-INTERFACE-TREF'] == final_pports[indexP]['PROVIDED-INTERFACE-TREF']:
-                    objConnector = {}
-                    objConnector['NAME'] = final_rports[indexR]['SHORT-NAME'][3:]
-                    objConnector['INTERFACE'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
-                    objConnector['SHORT-NAME-PP'] = final_pports[indexP]['FULL-NAME']
-                    objConnector['PROVIDED-INTERFACE-TREF'] = final_pports[indexP]['PROVIDED-INTERFACE-TREF']
-                    objConnector['SHORT-NAME-RP'] = final_rports[indexR]['FULL-NAME']
-                    objConnector['REQUIRED-INTERFACE-TREF'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
-                    objConnector['ASWC-PPORT'] = final_pports[indexP]['ASWC']
-                    objConnector['ASWC-RPORT'] = final_rports[indexR]['ASWC']
-                    objConnector['ROOT-PPORT'] = final_pports[indexP]['ROOT']
-                    objConnector['ROOT-RPORT'] = final_rports[indexR]['ROOT']
-                    objConnector['SWC-PPORT'] = final_pports[indexP]['SWC']
-                    objConnector['SWC-RPORT'] = final_rports[indexR]['SWC']
-                    connectors.append(objConnector)
-                    final_rports[indexR]['SINGLE'] = False
-                    final_pports[indexP]['SINGLE'] = False
+        if final_rports[indexR]['CROSSED'] is not True:
+            if final_rports[indexR]['UNIQUE']:
+                # implement TRS.CONNECTOR.FUNC.0005(0)
+                # check only interface
+                for indexP in range(len(final_pports)):
+                    if final_rports[indexR]['REQUIRED-INTERFACE-TREF'] == final_pports[indexP]['PROVIDED-INTERFACE-TREF']:
+                        objConnector = {}
+                        objConnector['NAME'] = final_rports[indexR]['SHORT-NAME'][3:]
+                        objConnector['INTERFACE'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
+                        objConnector['SHORT-NAME-PP'] = final_pports[indexP]['FULL-NAME']
+                        objConnector['PROVIDED-INTERFACE-TREF'] = final_pports[indexP]['PROVIDED-INTERFACE-TREF']
+                        objConnector['SHORT-NAME-RP'] = final_rports[indexR]['FULL-NAME']
+                        objConnector['REQUIRED-INTERFACE-TREF'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
+                        objConnector['ASWC-PPORT'] = final_pports[indexP]['ASWC']
+                        objConnector['ASWC-RPORT'] = final_rports[indexR]['ASWC']
+                        objConnector['ROOT-PPORT'] = final_pports[indexP]['ROOT']
+                        objConnector['ROOT-RPORT'] = final_rports[indexR]['ROOT']
+                        objConnector['SWC-PPORT'] = final_pports[indexP]['SWC']
+                        objConnector['SWC-RPORT'] = final_rports[indexR]['SWC']
+                        connectors.append(objConnector)
+                        final_rports[indexR]['SINGLE'] = False
+                        final_pports[indexP]['SINGLE'] = False
+            else:
+                # implement TRS.CONNECTOR.FUNC.0006(0)
+                # check short name and interface
+                for indexP in range(len(final_pports)):
+                    if final_rports[indexR]['REQUIRED-INTERFACE-TREF'] == final_pports[indexP]['PROVIDED-INTERFACE-TREF']:
+                        if final_rports[indexR]['SHORT-NAME'] == final_pports[indexP]['SHORT-NAME']:
+                            objConnector = {}
+                            objConnector['NAME'] = final_rports[indexR]['SHORT-NAME'][3:]
+                            objConnector['INTERFACE'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
+                            objConnector['SHORT-NAME-PP'] = final_pports[indexP]['FULL-NAME']
+                            objConnector['PROVIDED-INTERFACE-TREF'] = final_pports[indexP]['PROVIDED-INTERFACE-TREF']
+                            objConnector['SHORT-NAME-RP'] = final_rports[indexR]['FULL-NAME']
+                            objConnector['REQUIRED-INTERFACE-TREF'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
+                            objConnector['ASWC-PPORT'] = final_pports[indexP]['ASWC']
+                            objConnector['ASWC-RPORT'] = final_rports[indexR]['ASWC']
+                            objConnector['ROOT-PPORT'] = final_pports[indexP]['ROOT']
+                            objConnector['ROOT-RPORT'] = final_rports[indexR]['ROOT']
+                            objConnector['SWC-PPORT'] = final_pports[indexP]['SWC']
+                            objConnector['SWC-RPORT'] = final_rports[indexR]['SWC']
+                            connectors.append(objConnector)
+                            final_rports[indexR]['SINGLE'] = False
+                            final_pports[indexP]['SINGLE'] = False
         else:
-            # implement TRS.CONNECTOR.FUNC.0006(0)
-            # check short name and interface
             for indexP in range(len(final_pports)):
                 if final_rports[indexR]['REQUIRED-INTERFACE-TREF'] == final_pports[indexP]['PROVIDED-INTERFACE-TREF']:
                     if final_rports[indexR]['SHORT-NAME'] == final_pports[indexP]['SHORT-NAME']:
@@ -484,7 +524,6 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         connectors.append(objConnector)
                         final_rports[indexR]['SINGLE'] = False
                         final_pports[indexP]['SINGLE'] = False
-
     # throw warning for any unconnected ports
     for indexR in range(len(final_rports)):
         if final_rports[indexR]['SINGLE']:
