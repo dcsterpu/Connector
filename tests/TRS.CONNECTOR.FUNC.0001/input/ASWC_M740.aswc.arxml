@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-2-1.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>RootP_ASWC_M740</SHORT-NAME>
+            <ELEMENTS>
+                <APPLICATION-SW-COMPONENT-TYPE>
+                    <SHORT-NAME>ASWC_M740</SHORT-NAME>
+                    <PORTS>
+						<R-PORT-PROTOTYPE UUID="b0cbf1e7-59e2-c2fc-9f85-ca503e355f6f">
+                            <SHORT-NAME>RP_SR_VitesseVehicule</SHORT-NAME>
+                            <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/RootP_SR_Data/SR_VitesseVehicule</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+						<R-PORT-PROTOTYPE UUID="b0cbf1e7-59e2-c2fc-9f85-ca503e355f6f">
+                            <SHORT-NAME>RP_SR_VitesseVehicule</SHORT-NAME>
+                            <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/RootP_SR_Data/SR_VitesseVehicule</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+						<R-PORT-PROTOTYPE UUID="b0cbf1e7-59e2-c2fc-9f85-ca503e355f6f">
+                            <SHORT-NAME>ASWC_M740_MSI</SHORT-NAME>
+                            <REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/BswMMode/PortInterfaces/BswMMode</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+						<R-PORT-PROTOTYPE UUID="b0cbf1e7-59e2-c2fc-9f85-ca503e355f6f">
+                            <SHORT-NAME>RP_CS_EtatBDE</SHORT-NAME>
+                            <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS_Data/CS_EtatBDE</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+						<R-PORT-PROTOTYPE T="2017-11-19T20:46:50+01:00" UUID="DCE:3fada05b-dbe2-4e0e-9a4d-4accd3678db4">
+							<SHORT-NAME>RP_ParamStruct</SHORT-NAME>
+							<REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/AUTOSAR/NvM_Package/ParamStruct</REQUIRED-INTERFACE-TREF>
+						</R-PORT-PROTOTYPE>
+                    </PORTS>
+				</APPLICATION-SW-COMPONENT-TYPE>
+            </ELEMENTS>   
+        </AR-PACKAGE>
+		<AR-PACKAGE>
+            <SHORT-NAME>RootP_Composition</SHORT-NAME>
+            <ELEMENTS>
+                <COMPOSITION-SW-COMPONENT-TYPE>
+                    <SHORT-NAME>Compo_VSM</SHORT-NAME>
+                    <COMPONENTS>
+                        <SW-COMPONENT-PROTOTYPE>
+                            <SHORT-NAME>Instance_ASWC_M740</SHORT-NAME>
+                            <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/RootP_ASWC_M740/ASWC_M740</TYPE-TREF>
+                        </SW-COMPONENT-PROTOTYPE>
+                    </COMPONENTS>
+                </COMPOSITION-SW-COMPONENT-TYPE>
+            </ELEMENTS>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>

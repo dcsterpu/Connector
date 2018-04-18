@@ -1,0 +1,16 @@
+2018-04-18 13:49:31,975 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\input\ASWC_M740.aswc.arxml is well-formed
+2018-04-18 13:49:32,552 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-18 13:49:32,586 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\input\ASWC_M741.aswc.arxml is well-formed
+2018-04-18 13:49:33,181 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\input\ASWC_M741.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-18 13:49:33,221 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\input\ASWC_M742.aswc.arxml is well-formed
+2018-04-18 13:49:33,770 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\input\ASWC_M742.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-18 13:49:33,800 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\input\TopLevel_Impl.arxml is well-formed
+2018-04-18 13:49:34,352 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\input\TopLevel_Impl.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-04-18 13:49:34,383 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\ConfigConnectorDescriptor.xml is well-formed
+2018-04-18 13:49:34,935 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\ConfigConnectorDescriptor.xml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-04-18 13:49:34,965 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\SwcAllocation.xml is well-formed
+2018-04-18 13:49:35,512 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\SwcAllocation.xml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-04-18 13:49:35,543 WARNING RP_CS_VehicleMovement is without connector
+2018-04-18 13:49:35,543 WARNING PP_SR_VehicleSPeed is without connector
+2018-04-18 13:49:35,543 WARNING PRP_NV_VehicleData is without connector
+2018-04-18 13:49:36,102 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.003_1\output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema

@@ -1,0 +1,11 @@
+2018-04-18 13:49:11,758 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0008_2\input\ASWC_M740.aswc.arxml is well-formed
+2018-04-18 13:49:12,313 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0008_2\input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-18 13:49:12,344 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0008_2\input\ASWC_M741.aswc.arxml is well-formed
+2018-04-18 13:49:12,884 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0008_2\input\ASWC_M741.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-18 13:49:12,941 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0008_2\input\TopLevel_Impl.arxml is well-formed
+2018-04-18 13:49:13,500 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0008_2\input\TopLevel_Impl.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-04-18 13:49:13,530 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0008_2\ConfigConnectorDescriptor.xml is well-formed
+2018-04-18 13:49:14,082 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0008_2\ConfigConnectorDescriptor.xml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-04-18 13:49:14,122 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0008_2\SwcAllocation.xml is well-formed
+2018-04-18 13:49:14,676 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0008_2\SwcAllocation.xml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-04-18 13:49:15,259 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0008_2\output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema

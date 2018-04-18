@@ -1,0 +1,20 @@
+2018-04-18 13:48:41,499 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\input\ASWC_M740.aswc.arxml is well-formed
+2018-04-18 13:48:42,064 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-18 13:48:42,094 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\input\ASWC_M741.aswc.arxml is well-formed
+2018-04-18 13:48:42,648 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\input\ASWC_M741.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-18 13:48:42,688 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\input\BswM.arxml is well-formed
+2018-04-18 13:48:43,244 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\input\BswM.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-18 13:48:43,286 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\input\BswMMode.arxml is well-formed
+2018-04-18 13:48:43,837 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\input\BswMMode.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-18 13:48:43,877 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\input\TopLevel_Impl.arxml is well-formed
+2018-04-18 13:48:44,438 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\input\TopLevel_Impl.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-04-18 13:48:44,468 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\ConfigConnectorDescriptor.xml is well-formed
+2018-04-18 13:48:45,023 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\ConfigConnectorDescriptor.xml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-04-18 13:48:45,056 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\SwcAllocation.xml is well-formed
+2018-04-18 13:48:45,623 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\SwcAllocation.xml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-04-18 13:48:45,663 WARNING ModeRequestPort_SwcMode_ReqPort is without connector
+2018-04-18 13:48:45,663 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_BswMSwitchLocalPort_Rte is without connector
+2018-04-18 13:48:45,663 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_AppSwitchLocalPort_Rte is without connector
+2018-04-18 13:48:45,663 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_BswMSwitchLocalPort_SlaveCore_Rte is without connector
+2018-04-18 13:48:45,663 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_AppSwitchLocalPort_Rte is without connector
+2018-04-18 13:48:46,216 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0002_2\output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
