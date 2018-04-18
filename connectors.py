@@ -418,45 +418,46 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
     for elemPP in msi_pports:
         for elemRP in msi_rports:
             if elemPP['PROVIDED-INTERFACE-TREF'] == elemRP['REQUIRED-INTERFACE-TREF']:
-                if elemPP['CORE'] == elemRP['CORE'] and elemPP['PARTITION'] == elemRP['PARTITION']:
-                    for elemASWC in software_allocs:
-                        aswc = elemASWC['SWC'].split('/')
-                        if elemRP['ASWC'] == aswc[2]:
-                            if elemPP['FULL-NAME'] == 'OsApp_' + elemASWC['CORE'] + '_' + elemASWC['PARTITION'] + '_AppSwitchLocalPort' or \
-                                    elemPP['FULL-NAME'] == 'OsApp_' + elemASWC['CORE'] + '_' + elemASWC['PARTITION'] + '_BswMSwitchLocalPort':
-                                objConnector = {}
-                                objConnector['NAME'] = elemRP['SHORT-NAME']
-                                objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
-                                objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
-                                objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
-                                objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
-                                objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
-                                objConnector['ASWC-PPORT'] = elemPP['ASWC']
-                                objConnector['ASWC-RPORT'] = elemRP['ASWC']
-                                objConnector['ROOT-PPORT'] = elemPP['ROOT']
-                                objConnector['ROOT-RPORT'] = elemRP['ROOT']
-                                objConnector['SWC-PPORT'] = elemPP['SWC']
-                                objConnector['SWC-RPORT'] = elemRP['SWC']
-                                connectors.append(objConnector)
-                                elemRP['SINGLE'] = False
-                                msi_pports['SINGLE'] = False
-                            else:
-                                objConnector = {}
-                                objConnector['NAME'] = elemRP['SHORT-NAME']
-                                objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
-                                objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
-                                objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
-                                objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
-                                objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
-                                objConnector['ASWC-PPORT'] = elemPP['ASWC']
-                                objConnector['ASWC-RPORT'] = elemRP['ASWC']
-                                objConnector['ROOT-PPORT'] = elemPP['ROOT']
-                                objConnector['ROOT-RPORT'] = elemRP['ROOT']
-                                objConnector['SWC-PPORT'] = elemPP['SWC']
-                                objConnector['SWC-RPORT'] = elemRP['SWC']
-                                connectors.append(objConnector)
-                                elemRP['SINGLE'] = False
-                                elemPP['SINGLE'] = False
+                infos = []
+                if find_between(elemPP['FULL-NAME'], "OsApp_", "_AppSwitchLocalPort") == '':
+                    infos = find_between(elemPP['FULL-NAME'], "OsApp_", "_BswMSwitchLocalPort").split('_', 1)
+                else:
+                    infos = find_between(elemPP['FULL-NAME'], "OsApp_", "_AppSwitchLocalPort").split('_', 1)
+                if infos[0]==elemRP['CORE'] and infos[1]==elemRP['PARTITION']:
+                    if 'AppSwitchLocalPort' in elemPP['FULL-NAME'] or 'BswMSwitchLocalPort' in elemPP['FULL-NAME']:
+                        objConnector = {}
+                        objConnector['NAME'] = elemRP['SHORT-NAME']
+                        objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
+                        objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
+                        objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
+                        objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
+                        objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
+                        objConnector['ASWC-PPORT'] = elemPP['ASWC']
+                        objConnector['ASWC-RPORT'] = elemRP['ASWC']
+                        objConnector['ROOT-PPORT'] = elemPP['ROOT']
+                        objConnector['ROOT-RPORT'] = elemRP['ROOT']
+                        objConnector['SWC-PPORT'] = elemPP['SWC']
+                        objConnector['SWC-RPORT'] = elemRP['SWC']
+                        connectors.append(objConnector)
+                        elemRP['SINGLE'] = False
+                        elemPP['SINGLE'] = False
+                    else:
+                        objConnector = {}
+                        objConnector['NAME'] = elemRP['SHORT-NAME']
+                        objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
+                        objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
+                        objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
+                        objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
+                        objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
+                        objConnector['ASWC-PPORT'] = elemPP['ASWC']
+                        objConnector['ASWC-RPORT'] = elemRP['ASWC']
+                        objConnector['ROOT-PPORT'] = elemPP['ROOT']
+                        objConnector['ROOT-RPORT'] = elemRP['ROOT']
+                        objConnector['SWC-PPORT'] = elemPP['SWC']
+                        objConnector['SWC-RPORT'] = elemRP['SWC']
+                        connectors.append(objConnector)
+                        elemRP['SINGLE'] = False
+                        elemPP['SINGLE'] = False
 
     # build list of remainig types of interface connectors
     for indexR in range(len(final_rports)):
@@ -622,6 +623,14 @@ def check_if_xml_is_wellformed(file):
     parser.setContentHandler(ContentHandler())
     parser.parse(file)
 
+
+def find_between(s, first, last):
+    try:
+        start = s.index( first ) + len( first )
+        end = s.index( last, start )
+        return s[start:end]
+    except ValueError:
+        return ""
 
 if __name__ == "__main__":                          # pragma: no cover
     # cov = Coverage()                                # pragma: no cover
