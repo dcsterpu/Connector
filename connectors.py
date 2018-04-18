@@ -374,12 +374,12 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         add = True
         for indexPort2 in range(len(PPorts)):
             if indexPort1 != indexPort2:
-                if PPorts[indexPort1]['SHORT-NAME'] == PPorts[indexPort2]['SHORT-NAME']:
+                if PPorts[indexPort1]['FULL-NAME'] == PPorts[indexPort2]['FULL-NAME'] and PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] == PPorts[indexPort2]['PROVIDED-INTERFACE-TREF']:
                     if PPorts[indexPort1]['ASWC'] != "AswcDiagForDcm":
                         if PPorts[indexPort2]['ASWC'] == "AswcDiagForDcm":
                             pass
                         else:
-                            logger.error('multiple PPorts for interface ' + PPorts[indexPort1]['SHORT-NAME'])
+                            logger.error('multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'])
                             add = False
                             logger.error('Connectors file not generated!')
                             try:
@@ -404,7 +404,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
     for indexPort1 in range(len(RPorts)):
         for indexPort2 in range(len(RPorts)):
             if indexPort1 != indexPort2:
-                if RPorts[indexPort1]['SHORT-NAME'] == RPorts[indexPort2]['SHORT-NAME']:
+                if RPorts[indexPort1]['FULL-NAME'] == RPorts[indexPort2]['FULL-NAME']:
                     RPorts[indexPort1]['UNIQUE'] = False
         final_rports.append(RPorts[indexPort1])
     # create list with MSI RPorts
@@ -488,9 +488,9 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                 # check short name and interface
                 for indexP in range(len(final_pports)):
                     if final_rports[indexR]['REQUIRED-INTERFACE-TREF'] == final_pports[indexP]['PROVIDED-INTERFACE-TREF']:
-                        if final_rports[indexR]['SHORT-NAME'] == final_pports[indexP]['SHORT-NAME']:
+                        if final_rports[indexR]['FULL-NAME'] == final_pports[indexP]['FULL-NAME']:
                             objConnector = {}
-                            objConnector['NAME'] = final_rports[indexR]['SHORT-NAME'][3:]
+                            objConnector['NAME'] = final_rports[indexR]['FULL-NAME'][3:]
                             objConnector['INTERFACE'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
                             objConnector['SHORT-NAME-PP'] = final_pports[indexP]['FULL-NAME']
                             objConnector['PROVIDED-INTERFACE-TREF'] = final_pports[indexP]['PROVIDED-INTERFACE-TREF']
@@ -508,9 +508,9 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         else:
             for indexP in range(len(final_pports)):
                 if final_rports[indexR]['REQUIRED-INTERFACE-TREF'] == final_pports[indexP]['PROVIDED-INTERFACE-TREF']:
-                    if final_rports[indexR]['SHORT-NAME'] == final_pports[indexP]['SHORT-NAME']:
+                    if final_rports[indexR]['FULL-NAME'] == final_pports[indexP]['FULL-NAME']:
                         objConnector = {}
-                        objConnector['NAME'] = final_rports[indexR]['SHORT-NAME'][3:]
+                        objConnector['NAME'] = final_rports[indexR]['FULL-NAME'][3:]
                         objConnector['INTERFACE'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
                         objConnector['SHORT-NAME-PP'] = final_pports[indexP]['FULL-NAME']
                         objConnector['PROVIDED-INTERFACE-TREF'] = final_pports[indexP]['PROVIDED-INTERFACE-TREF']
@@ -569,18 +569,18 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         context_provider.text = '/RootP_Composition/Compo_VSM/' + con['SWC-PPORT']
         if con['SHORT-NAME-PP'][:3] != "PRP":
             target_provided = ET.SubElement(provider, 'TARGET-P-PORT-REF')
-            target_provided.set('DEST', "P-PORT-PROTOTYOPE")
+            target_provided.set('DEST', "P-PORT-PROTOTYPE")
             target_provided.text = '/' + con['ROOT-PPORT'] + '/' + con['ASWC-PPORT'] + '/' + con['SHORT-NAME-PP']
         else:
             target_provided = ET.SubElement(provider, 'TARGET-PR-PORT-REF')
-            target_provided.set('DEST', "PR-PORT-PROTOTYOPE")
+            target_provided.set('DEST', "PR-PORT-PROTOTYPE")
             target_provided.text = '/' + con['ROOT-PPORT'] + '/' + con['ASWC-PPORT'] + '/' + con['SHORT-NAME-PP']
         requester = ET.SubElement(assembly, 'REQUESTER-IREF')
         context_requester = ET.SubElement(requester, 'CONTEXT-COMPONENT-REF')
         context_requester.set('DEST', "SW-COMPONENT-PROTOTYPE")
         context_requester.text = '/RootP_Composition/Compo_VSM/' + con['SWC-RPORT']
         target_requested = ET.SubElement(requester, 'TARGET-R-PORT-REF')
-        target_requested.set('DEST', "R-PORT-PROTOTYOPE")
+        target_requested.set('DEST', "R-PORT-PROTOTYPE")
         target_requested.text = '/' + con['ROOT-RPORT'] + '/' + con['ASWC-RPORT'] + '/' + con['SHORT-NAME-RP']
     pretty_xml = prettify_xml(rootConnectors)
     tree = ET.ElementTree(ET.fromstring(pretty_xml))
@@ -613,7 +613,7 @@ def validate_xml_with_xsd(path_xsd, path_xml, logger):
     # validate xml file
     xmldoc = etree.parse(path_xml)
     if xmlschema.validate(xmldoc) is not True:
-        logger.warning('The file: ' + path_xml + ' is not valid with the AUTOSAR4.2.2-STRICT  schema')
+        logger.warning('The file: ' + path_xml + ' is not valid with the AUTOSAR4.2.2-STRICT schema')
     else:
         logger.info('The file: ' + path_xml + ' is valid with the AUTOSAR4.2.2-STRICT schema')
 
