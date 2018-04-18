@@ -2,7 +2,7 @@ import unittest
 import os
 import os.path
 import ntpath
-import HtmlTestRunner
+#import HtmlTestRunner
 from lxml import etree
 
 
