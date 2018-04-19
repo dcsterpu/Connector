@@ -419,12 +419,12 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
     for elemPP in msi_pports:
         for elemRP in msi_rports:
             if elemPP['PROVIDED-INTERFACE-TREF'] == elemRP['REQUIRED-INTERFACE-TREF']:
-                infos = []
-                if find_between(elemPP['FULL-NAME'], "OsApp_", "_AppSwitchLocalPort") == '':
-                    infos = find_between(elemPP['FULL-NAME'], "OsApp_", "_BswMSwitchLocalPort").split('_', 1)
-                else:
-                    infos = find_between(elemPP['FULL-NAME'], "OsApp_", "_AppSwitchLocalPort").split('_', 1)
-                if infos[0]==elemRP['CORE'] and infos[1]==elemRP['PARTITION']:
+                # infos = []
+                # if find_between(elemPP['FULL-NAME'], "OsApp_", "_AppSwitchLocalPort") == '':
+                #     infos = find_between(elemPP['FULL-NAME'], "OsApp_", "_BswMSwitchLocalPort").split('_', 1)
+                # else:
+                #     infos = find_between(elemPP['FULL-NAME'], "OsApp_", "_AppSwitchLocalPort").split('_', 1)
+                if elemRP['CORE'] in elemPP['FULL-NAME'] and elemRP['PARTITION'] in elemPP['FULL-NAME']:
                     if 'AppSwitchLocalPort' in elemPP['FULL-NAME'] or 'BswMSwitchLocalPort' in elemPP['FULL-NAME']:
                         objConnector = {}
                         objConnector['NAME'] = elemRP['SHORT-NAME']
@@ -459,6 +459,8 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         connectors.append(objConnector)
                         elemRP['SINGLE'] = False
                         elemPP['SINGLE'] = False
+                else:
+                    logger.warning("Not the same CORE or PARTITION for "+elemPP['FULL-NAME']+" and "+elemRP['FULL-NAME']+" referencing the interface"+elemRP['REQUIRED-INTERFACE-TREF'])
 
     # build list of remainig types of interface connectors
     for indexR in range(len(final_rports)):
