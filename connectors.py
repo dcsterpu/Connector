@@ -348,7 +348,8 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
     # remove the ports where their ASWC is not referenced into a compo
     for elemPort in PPorts[:]:
         if elemPort['SWC'] == '':
-            PPorts.remove(elemPort)
+            if elemPort['TYPE'] != "MODE-SWITCH-INTERFACE":
+                PPorts.remove(elemPort)
     for elemPort in RPorts[:]:
         if elemPort['SWC'] == '':
             RPorts.remove(elemPort)
