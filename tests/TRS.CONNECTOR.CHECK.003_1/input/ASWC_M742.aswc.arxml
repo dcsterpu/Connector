@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-2-1.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>RootP_ASWC_N742</SHORT-NAME>
+            <ELEMENTS>
+                <APPLICATION-SW-COMPONENT-TYPE>
+                    <SHORT-NAME>ASWC_N742</SHORT-NAME>
+                    <PORTS>
+						<PR-PORT-PROTOTYPE>
+                            <SHORT-NAME>PRP_NV_VehicleData</SHORT-NAME>
+                            <PROVIDED-REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/RootP_PI_Data/PI_VehicleData</PROVIDED-REQUIRED-INTERFACE-TREF>
+                        </PR-PORT-PROTOTYPE>
+                    </PORTS>
+                </APPLICATION-SW-COMPONENT-TYPE>
+            </ELEMENTS>
+        </AR-PACKAGE>
+		<AR-PACKAGE>
+            <SHORT-NAME>RootP_Composition</SHORT-NAME>
+            <ELEMENTS>
+                <COMPOSITION-SW-COMPONENT-TYPE>
+                    <SHORT-NAME>Compo_VSM</SHORT-NAME>
+                    <COMPONENTS>
+                        <SW-COMPONENT-PROTOTYPE>
+                            <SHORT-NAME>Instance_ASWC_M742</SHORT-NAME>
+                            <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/RootP_ASWC_N742/ASWC_N742</TYPE-TREF>
+                        </SW-COMPONENT-PROTOTYPE>
+                    </COMPONENTS>
+                </COMPOSITION-SW-COMPONENT-TYPE>
+            </ELEMENTS>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>
