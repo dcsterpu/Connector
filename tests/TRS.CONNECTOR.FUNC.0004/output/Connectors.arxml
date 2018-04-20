@@ -3,10 +3,12 @@
     <AR-PACKAGES>
         <AR-PACKAGE>
             <SHORT-NAME>RootP_Composition</SHORT-NAME>
-            <COMPOSITION-SW-COMPONENT-TYPE>
-                <SHORT-NAME>Compo_VSM</SHORT-NAME>
-                <CONNECTORS />
-            </COMPOSITION-SW-COMPONENT-TYPE>
+            <ELEMENTS>
+                <COMPOSITION-SW-COMPONENT-TYPE>
+                    <SHORT-NAME>Compo_VSM</SHORT-NAME>
+                    <CONNECTORS />
+                </COMPOSITION-SW-COMPONENT-TYPE>
+            </ELEMENTS>
         </AR-PACKAGE>
     </AR-PACKAGES>
 </AUTOSAR>

@@ -3,22 +3,24 @@
     <AR-PACKAGES>
         <AR-PACKAGE>
             <SHORT-NAME>RootP_Composition</SHORT-NAME>
-            <COMPOSITION-SW-COMPONENT-TYPE>
-                <SHORT-NAME>Compo_VSM</SHORT-NAME>
-                <CONNECTORS>
-                    <ASSEMBLY-SW-CONNECTOR>
-                        <SHORT-NAME>PRP_CS_EtatBDE_AswcDiagForDcm_to_ASWC_M740</SHORT-NAME>
-                        <PROVIDER-IREF>
-                            <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Inst_bla</CONTEXT-COMPONENT-REF>
-                            <TARGET-PR-PORT-REF DEST="PR-PORT-PROTOTYOPE">/RootP_IntDcm/AswcDiagForDcm/PRP_CS_EtatBDE</TARGET-PR-PORT-REF>
-                        </PROVIDER-IREF>
-                        <REQUESTER-IREF>
-                            <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M740</CONTEXT-COMPONENT-REF>
-                            <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYOPE">/RootP_ASWC_M740/ASWC_M740/RP_CS_EtatBDE</TARGET-R-PORT-REF>
-                        </REQUESTER-IREF>
-                    </ASSEMBLY-SW-CONNECTOR>
-                </CONNECTORS>
-            </COMPOSITION-SW-COMPONENT-TYPE>
+            <ELEMENTS>
+                <COMPOSITION-SW-COMPONENT-TYPE>
+                    <SHORT-NAME>Compo_VSM</SHORT-NAME>
+                    <CONNECTORS>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>PRP_CS_EtatBDE_AswcDiagForDcm_to_ASWC_M740</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Inst_bla</CONTEXT-COMPONENT-REF>
+                                <TARGET-PR-PORT-REF DEST="PR-PORT-PROTOTYPE">/RootP_IntDcm/AswcDiagForDcm/PRP_CS_EtatBDE</TARGET-PR-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M740</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_M740/ASWC_M740/RP_CS_EtatBDE</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                    </CONNECTORS>
+                </COMPOSITION-SW-COMPONENT-TYPE>
+            </ELEMENTS>
         </AR-PACKAGE>
     </AR-PACKAGES>
 </AUTOSAR>

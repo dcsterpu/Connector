@@ -8,7 +8,7 @@
                     <SHORT-NAME>ASWC_M743</SHORT-NAME>
                     <PORTS>
 						<P-PORT-PROTOTYPE>
-                            <SHORT-NAME>PP_CS_EtatBDEtest</SHORT-NAME>
+                            <SHORT-NAME>PP_CS_EtatBDE</SHORT-NAME>
                             <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS_Data/CS_EtatBDE</PROVIDED-INTERFACE-TREF>
                         </P-PORT-PROTOTYPE>
                     </PORTS>

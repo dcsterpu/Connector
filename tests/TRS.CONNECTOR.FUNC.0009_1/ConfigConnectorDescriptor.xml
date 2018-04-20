@@ -9,7 +9,7 @@
 			<FILE_PATH>C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\AUTOSAR_4-2-2_STRICT.xsd</FILE_PATH>
 		</XSD>
 		<SWC_ALLOCATION>
-			<DIR RECURSIVE="false">C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0009_1</DIR>
+			<DIR RECURSIVE="false">C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0009_1\input</DIR>
 		</SWC_ALLOCATION>
 	</INPUTS>
 	<OUTPUTS>

@@ -1,11 +1,11 @@
-2018-04-18 13:49:28,081 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\input\ASWC_M740.aswc.arxml is well-formed
-2018-04-18 13:49:28,633 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
-2018-04-18 13:49:28,683 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\input\ASWC_M743.aswc.arxml is well-formed
-2018-04-18 13:49:29,241 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\input\ASWC_M743.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
-2018-04-18 13:49:29,281 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\input\TopLevel_Impl.arxml is well-formed
-2018-04-18 13:49:29,834 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\input\TopLevel_Impl.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
-2018-04-18 13:49:29,874 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\ConfigConnectorDescriptor.xml is well-formed
-2018-04-18 13:49:30,437 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\ConfigConnectorDescriptor.xml is not valid with the AUTOSAR4.2.2-STRICT  schema
-2018-04-18 13:49:30,477 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\SwcAllocation.xml is well-formed
-2018-04-18 13:49:31,029 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\SwcAllocation.xml is not valid with the AUTOSAR4.2.2-STRICT  schema
-2018-04-18 13:49:31,618 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT  schema
+2018-04-20 09:42:22,746 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\input\ASWC_M740.aswc.arxml is well-formed
+2018-04-20 09:42:23,308 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-20 09:42:23,339 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\input\ASWC_M743.aswc.arxml is well-formed
+2018-04-20 09:42:23,885 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\input\ASWC_M743.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-20 09:42:23,916 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\input\TopLevel_Impl.arxml is well-formed
+2018-04-20 09:42:24,462 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\input\TopLevel_Impl.arxml is not valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-20 09:42:24,494 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\ConfigConnectorDescriptor.xml is well-formed
+2018-04-20 09:42:25,055 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\ConfigConnectorDescriptor.xml is not valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-20 09:42:25,086 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\SwcAllocation.xml is well-formed
+2018-04-20 09:42:25,618 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\SwcAllocation.xml is not valid with the AUTOSAR4.2.2-STRICT schema
+2018-04-20 09:42:26,195 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.GEN.002\output/Connectors.arxml is not valid with the AUTOSAR4.2.2-STRICT schema
