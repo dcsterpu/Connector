@@ -375,7 +375,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         add = True
         for indexPort2 in range(len(PPorts)):
             if indexPort1 != indexPort2:
-                if PPorts[indexPort1]['FULL-NAME'] == PPorts[indexPort2]['FULL-NAME'] and PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] == PPorts[indexPort2]['PROVIDED-INTERFACE-TREF']:
+                if PPorts[indexPort1]['SHORT-NAME'] == PPorts[indexPort2]['SHORT-NAME'] and PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] == PPorts[indexPort2]['PROVIDED-INTERFACE-TREF']:
                     if PPorts[indexPort1]['ASWC'] != "AswcDiagForDcm":
                         if PPorts[indexPort2]['ASWC'] == "AswcDiagForDcm":
                             pass
@@ -511,7 +511,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         else:
             for indexP in range(len(final_pports)):
                 if final_rports[indexR]['REQUIRED-INTERFACE-TREF'] == final_pports[indexP]['PROVIDED-INTERFACE-TREF']:
-                    if final_rports[indexR]['FULL-NAME'] == final_pports[indexP]['FULL-NAME']:
+                    if final_rports[indexR]['SHORT-NAME'] == final_pports[indexP]['SHORT-NAME']:
                         objConnector = {}
                         objConnector['NAME'] = final_rports[indexR]['FULL-NAME'][3:]
                         objConnector['INTERFACE'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
@@ -636,8 +636,8 @@ def find_between(s, first, last):
         return ""
 
 if __name__ == "__main__":                          # pragma: no cover
-    # cov = Coverage()                                # pragma: no cover
-    # cov.start()                                     # pragma: no cover
+    cov = Coverage()                                # pragma: no cover
+    cov.start()                                     # pragma: no cover
     main()                                          # pragma: no cover
-    # cov.stop()                                      # pragma: no cover
-    # cov.html_report(directory='coverage-html')      # pragma: no cover
+    cov.stop()                                      # pragma: no cover
+    cov.html_report(directory='coverage-html')      # pragma: no cover
