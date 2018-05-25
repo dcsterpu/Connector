@@ -6,7 +6,7 @@
             <ELEMENTS>
                 <COMPOSITION-SW-COMPONENT-TYPE>
                     <SHORT-NAME>Compo_VSM</SHORT-NAME>
-                    <CONNECTORS />
+                    <CONNECTORS/>
                 </COMPOSITION-SW-COMPONENT-TYPE>
             </ELEMENTS>
         </AR-PACKAGE>

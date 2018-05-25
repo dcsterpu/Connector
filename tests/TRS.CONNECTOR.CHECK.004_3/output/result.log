@@ -1,12 +1,12 @@
-2018-04-20 09:41:27,894 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.CHECK.004_3\input\ASWC_M740.aswc.arxml is well-formed
-2018-04-20 09:41:28,424 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.CHECK.004_3\input\ASWC_M740.aswc.arxml is valid with the AUTOSAR4.2.2-STRICT schema
-2018-04-20 09:41:28,455 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.CHECK.004_3\input\ASWC_M741.aswc.arxml is well-formed
-2018-04-20 09:41:29,001 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.CHECK.004_3\input\ASWC_M741.aswc.arxml is not valid with the AUTOSAR4.2.2-STRICT schema
-2018-04-20 09:41:29,032 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.CHECK.004_3\input\TopLevel_Impl.arxml is well-formed
-2018-04-20 09:41:29,579 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.CHECK.004_3\input\TopLevel_Impl.arxml is not valid with the AUTOSAR4.2.2-STRICT schema
-2018-04-20 09:41:29,611 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.CHECK.004_3\ConfigConnectorDescriptor.xml is well-formed
-2018-04-20 09:41:30,142 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.CHECK.004_3\ConfigConnectorDescriptor.xml is not valid with the AUTOSAR4.2.2-STRICT schema
-2018-04-20 09:41:30,173 INFO The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.CHECK.004_3\SwcAllocation.xml is well-formed
-2018-04-20 09:41:30,706 WARNING The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.CHECK.004_3\SwcAllocation.xml is not valid with the AUTOSAR4.2.2-STRICT schema
-2018-04-20 09:41:30,753 ERROR multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed
-2018-04-20 09:41:30,753 ERROR Connectors file not generated!
+2018-05-25 09:24:14,687 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_3\input\ASWC_M740.aswc.arxml is well-formed
+2018-05-25 09:24:14,688 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_3\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-05-25 09:24:14,689 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_3\input\ASWC_M741.aswc.arxml is well-formed
+2018-05-25 09:24:14,689 WARNING The file: ./tests\TRS.CONNECTOR.CHECK.004_3\input\ASWC_M741.aswc.arxml is NOT valid with the provided xsd schema
+2018-05-25 09:24:14,690 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_3\input\TopLevel_Impl.arxml is well-formed
+2018-05-25 09:24:14,690 WARNING The file: ./tests\TRS.CONNECTOR.CHECK.004_3\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
+2018-05-25 09:24:14,691 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_3\ConfigConnectorDescriptor.xml is well-formed
+2018-05-25 09:24:14,692 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_3\SwcAllocation.xml is well-formed
+2018-05-25 09:24:14,692 ERROR multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed
+2018-05-25 09:24:14,692 ERROR multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed
+2018-05-25 09:24:14,693 WARNING RP_CS_VehicleSPeed is without connector
+2018-05-25 09:24:14,698 INFO The file: Connectors.arxml is valid with the provided xsd schema

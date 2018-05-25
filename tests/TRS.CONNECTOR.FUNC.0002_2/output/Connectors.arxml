@@ -11,7 +11,7 @@
                             <SHORT-NAME>PRP_CS_EtatBDE_AswcDiagForDcm_to_ASWC_M740</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Inst_bla</CONTEXT-COMPONENT-REF>
-                                <TARGET-PR-PORT-REF DEST="PR-PORT-PROTOTYPE">/RootP_IntDcm/AswcDiagForDcm/PRP_CS_EtatBDE</TARGET-PR-PORT-REF>
+                                <TARGET-P-PORT-REF DEST="PR-PORT-PROTOTYPE">/RootP_IntDcm/AswcDiagForDcm/PRP_CS_EtatBDE</TARGET-P-PORT-REF>
                             </PROVIDER-IREF>
                             <REQUESTER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M740</CONTEXT-COMPONENT-REF>

@@ -1,1 +1,1 @@
-2018-04-20 09:41:12,663 ERROR The file: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\CHECK.ARXML\input\ASWC_M740.aswc.arxml is not well-formed: C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\CHECK.ARXML\input\ASWC_M740.aswc.arxml:32:6: mismatched tag
+2018-05-25 09:24:09,022 ERROR The file: ./tests\CHECK.ARXML\input\ASWC_M740.aswc.arxml is not well-formed: ./tests\CHECK.ARXML\input\ASWC_M740.aswc.arxml:32:6: mismatched tag

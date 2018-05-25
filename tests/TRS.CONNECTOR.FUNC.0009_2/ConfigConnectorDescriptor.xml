@@ -3,21 +3,21 @@
 <CONF-CONNECTOR-DESC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=".\ConfigConnectorDescriptor.xsd">
 	<INPUTS>
 		<ARXML>
-			<DIR RECURSIVE="false">C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0009_2\input</DIR>
+			<DIR RECURSIVE="false">./tests\TRS.CONNECTOR.FUNC.0009_2\input</DIR>
 		</ARXML>
 		<XSD>
-			<FILE_PATH>C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\AUTOSAR_4-2-2_STRICT.xsd</FILE_PATH>
+			<FILE_PATH>./AUTOSAR_4-2-2_STRICT.xsd</FILE_PATH>
 		</XSD>
 		<SWC_ALLOCATION>
-			<DIR RECURSIVE="false">C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0009_2</DIR>
+			<DIR RECURSIVE="false">./tests\TRS.CONNECTOR.FUNC.0009_2</DIR>
 		</SWC_ALLOCATION>
 	</INPUTS>
 	<OUTPUTS>
 		<ARXML>
-			<DIR>C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0009_2\output</DIR>
+			<DIR>./tests\TRS.CONNECTOR.FUNC.0009_2\output</DIR>
 		</ARXML>
 		<REPORT>
-			<DIR>C:\Users\rconstantin\PycharmProjects\ConnectorDescriptor\tests\TRS.CONNECTOR.FUNC.0009_2\output</DIR>
+			<DIR>./tests\TRS.CONNECTOR.FUNC.0009_2\output</DIR>
 		</REPORT>
 	</OUTPUTS>
 </CONF-CONNECTOR-DESC>
