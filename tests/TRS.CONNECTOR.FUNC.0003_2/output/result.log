@@ -1,9 +1,9 @@
-2018-05-25 09:24:18,942 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M740.aswc.arxml is well-formed
-2018-05-25 09:24:18,943 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:18,944 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M743.aswc.arxml is well-formed
-2018-05-25 09:24:18,944 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:18,945 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\TopLevel_Impl.arxml is well-formed
-2018-05-25 09:24:18,945 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-05-25 09:24:18,946 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\ConfigConnectorDescriptor.xml is well-formed
-2018-05-25 09:24:18,947 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\SwcAllocation.xml is well-formed
-2018-05-25 09:24:18,952 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-06-05 11:08:43,517 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M740.aswc.arxml is well-formed
+2018-06-05 11:08:43,518 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-06-05 11:08:43,519 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M743.aswc.arxml is well-formed
+2018-06-05 11:08:43,520 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
+2018-06-05 11:08:43,521 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\TopLevel_Impl.arxml is well-formed
+2018-06-05 11:08:43,521 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
+2018-06-05 11:08:43,522 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\ConfigConnectorDescriptor.xml is well-formed
+2018-06-05 11:08:43,523 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\SwcAllocation.xml is well-formed
+2018-06-05 11:08:43,528 INFO The file: Connectors.arxml is valid with the provided xsd schema

@@ -1,12 +1,12 @@
-2018-05-25 09:24:11,383 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\ASWC_M740.aswc.arxml is well-formed
-2018-05-25 09:24:11,383 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:11,384 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\ASWC_M741.aswc.arxml is well-formed
-2018-05-25 09:24:11,384 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\ASWC_M741.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:11,385 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\ASWC_M742.aswc.arxml is well-formed
-2018-05-25 09:24:11,385 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\ASWC_M742.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:11,386 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\TopLevel_Impl.arxml is well-formed
-2018-05-25 09:24:11,387 WARNING The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-05-25 09:24:11,388 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\ConfigConnectorDescriptor.xml is well-formed
-2018-05-25 09:24:11,388 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\SwcAllocation.xml is well-formed
-2018-05-25 09:24:11,389 WARNING PRP_CS_VehicleSPeed is without connector
-2018-05-25 09:24:11,394 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-06-05 11:08:35,431 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\ASWC_M740.aswc.arxml is well-formed
+2018-06-05 11:08:35,432 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-06-05 11:08:35,433 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\ASWC_M741.aswc.arxml is well-formed
+2018-06-05 11:08:35,434 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\ASWC_M741.aswc.arxml is valid with the provided xsd schema
+2018-06-05 11:08:35,435 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\ASWC_M742.aswc.arxml is well-formed
+2018-06-05 11:08:35,435 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\ASWC_M742.aswc.arxml is valid with the provided xsd schema
+2018-06-05 11:08:35,437 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\TopLevel_Impl.arxml is well-formed
+2018-06-05 11:08:35,437 WARNING The file: ./tests\TRS.CONNECTOR.CHECK.003_2\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
+2018-06-05 11:08:35,438 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\ConfigConnectorDescriptor.xml is well-formed
+2018-06-05 11:08:35,439 INFO The file: ./tests\TRS.CONNECTOR.CHECK.003_2\SwcAllocation.xml is well-formed
+2018-06-05 11:08:35,440 WARNING PRP_CS_VehicleSPeed is without connector
+2018-06-05 11:08:35,443 INFO The file: Connectors.arxml is valid with the provided xsd schema

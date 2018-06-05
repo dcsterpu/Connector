@@ -1,18 +1,18 @@
-2018-05-25 09:24:17,875 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\ASWC_M740.aswc.arxml is well-formed
-2018-05-25 09:24:17,876 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:17,876 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\ASWC_M743.aswc.arxml is well-formed
-2018-05-25 09:24:17,877 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:17,878 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\BswM.arxml is well-formed
-2018-05-25 09:24:17,879 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\BswM.arxml is valid with the provided xsd schema
-2018-05-25 09:24:17,880 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\BswMMode.arxml is well-formed
-2018-05-25 09:24:17,881 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\BswMMode.arxml is valid with the provided xsd schema
-2018-05-25 09:24:17,881 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\TopLevel_Impl.arxml is well-formed
-2018-05-25 09:24:17,882 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-05-25 09:24:17,883 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\ConfigConnectorDescriptor.xml is well-formed
-2018-05-25 09:24:17,884 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\SwcAllocation.xml is well-formed
-2018-05-25 09:24:17,884 WARNING ModeRequestPort_SwcMode_ReqPort is without connector
-2018-05-25 09:24:17,884 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_BswMSwitchLocalPort_Rte is without connector
-2018-05-25 09:24:17,884 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_AppSwitchLocalPort_Rte is without connector
-2018-05-25 09:24:17,884 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_BswMSwitchLocalPort_SlaveCore_Rte is without connector
-2018-05-25 09:24:17,884 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_AppSwitchLocalPort_Rte is without connector
-2018-05-25 09:24:17,890 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-06-05 11:08:42,362 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\ASWC_M740.aswc.arxml is well-formed
+2018-06-05 11:08:42,363 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-06-05 11:08:42,364 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\ASWC_M743.aswc.arxml is well-formed
+2018-06-05 11:08:42,365 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
+2018-06-05 11:08:42,366 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\BswM.arxml is well-formed
+2018-06-05 11:08:42,367 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\BswM.arxml is valid with the provided xsd schema
+2018-06-05 11:08:42,369 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\BswMMode.arxml is well-formed
+2018-06-05 11:08:42,370 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\BswMMode.arxml is valid with the provided xsd schema
+2018-06-05 11:08:42,371 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\TopLevel_Impl.arxml is well-formed
+2018-06-05 11:08:42,371 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
+2018-06-05 11:08:42,372 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\ConfigConnectorDescriptor.xml is well-formed
+2018-06-05 11:08:42,373 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_1\SwcAllocation.xml is well-formed
+2018-06-05 11:08:42,374 WARNING ModeRequestPort_SwcMode_ReqPort is without connector
+2018-06-05 11:08:42,374 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_BswMSwitchLocalPort_Rte is without connector
+2018-06-05 11:08:42,374 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_AppSwitchLocalPort_Rte is without connector
+2018-06-05 11:08:42,374 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_BswMSwitchLocalPort_SlaveCore_Rte is without connector
+2018-06-05 11:08:42,374 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_AppSwitchLocalPort_Rte is without connector
+2018-06-05 11:08:42,377 INFO The file: Connectors.arxml is valid with the provided xsd schema
