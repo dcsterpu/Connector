@@ -6,7 +6,8 @@ from xml.sax.handler import ContentHandler  # pragma: no cover
 from xml.sax import make_parser             # pragma: no cover
 from xml.dom.minidom import parseString     # pragma: no cover
 from lxml import etree                      # pragma: no cover
-
+import time                                 # pragma: no cover
+import psutil                               # pragma: no cover
 
 def main():
     # parsing the command line arguments
@@ -102,7 +103,10 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                             aswc = elemPP.getparent().getparent().getchildren()[0].text
                             objPPort['TYPE'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").attrib['DEST']
                             objPPort['FULL-NAME'] = elemPP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                            objPPort['SHORT-NAME'] = objPPort['FULL-NAME'][3:]
+                            if objPPort['FULL-NAME'][:2] == "PP":
+                                objPPort['SHORT-NAME'] = objPPort['FULL-NAME'][3:]
+                            elif objPPort['FULL-NAME'][:2] != "PP":
+                                objPPort['SHORT-NAME'] = objPPort['FULL-NAME']
                             objPPort['INTERFACE-TYPE'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").attrib['DEST']
                             objPPort['PROVIDED-INTERFACE-TREF'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").text
                             objPPort['ASWC'] = aswc
@@ -121,7 +125,10 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                             root_p = elemPRP.getparent().getparent().getparent().getparent().getchildren()[0].text
                             objPRPort = {}
                             objPRPort['FULL-NAME'] = elemPRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                            objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
+                            if objPRPort['FULL-NAME'][:3] == "PRP":
+                                objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
+                            elif objPRPort['FULL-NAME'][:3] != "PRP":
+                                objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME']
                             objPRPort['INTERFACE-TYPE'] = \
                             elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
                             objPRPort['PROVIDED-INTERFACE-TREF'] = elemPRP.find(
@@ -144,7 +151,10 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                             root_p = elemRP.getparent().getparent().getparent().getparent().getchildren()[0].text
                             objRPort = {}
                             objRPort['FULL-NAME'] = elemRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                            objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][3:]
+                            if objRPort['FULL-NAME'][:2] == "RP":
+                                objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][3:]
+                            elif objRPort['FULL-NAME'][:2] != "RP":
+                                objRPort['SHORT-NAME'] = objRPort['FULL-NAME']
                             objRPort['INTERFACE-TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
                             objRPort['REQUIRED-INTERFACE-TREF'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").text
                             objRPort['TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
@@ -209,7 +219,10 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         root_p = elemPP.getparent().getparent().getparent().getparent().getchildren()[0].text
                         objPPort['TYPE'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").attrib['DEST']
                         objPPort['FULL-NAME'] = elemPP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                        objPPort['SHORT-NAME'] = objPPort['FULL-NAME'][3:]
+                        if objPPort['FULL-NAME'][:2] == "PP":
+                            objPPort['SHORT-NAME'] = objPPort['FULL-NAME'][3:]
+                        elif objPPort['FULL-NAME'][:2] != "PP":
+                            objPPort['SHORT-NAME'] = objPPort['FULL-NAME']
                         objPPort['INTERFACE-TYPE'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").attrib['DEST']
                         objPPort['PROVIDED-INTERFACE-TREF'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").text
                         objPPort['ASWC'] = aswc
@@ -228,7 +241,11 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         root_p = elemPRP.getparent().getparent().getparent().getparent().getchildren()[0].text
                         objPRPort = {}
                         objPRPort['FULL-NAME'] = elemPRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                        objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
+                        if objPRPort['FULL-NAME'][:3] == "PRP":
+                            objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
+                        elif objPRPort['FULL-NAME'][:3] != "PRP":
+                            objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME']
+                        # objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
                         objPRPort['INTERFACE-TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
                         objPRPort['PROVIDED-INTERFACE-TREF'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").text
                         objPRPort['TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
@@ -249,7 +266,11 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         root_p = elemRP.getparent().getparent().getparent().getparent().getchildren()[0].text
                         objRPort = {}
                         objRPort['FULL-NAME'] = elemRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                        objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][3:]
+                        if objRPort['FULL-NAME'][:2] == "RP":
+                            objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][3:]
+                        elif objRPort['FULL-NAME'][:2] != "RP":
+                            objRPort['SHORT-NAME'] = objRPort['FULL-NAME']
+                        # objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][3:]
                         objRPort['INTERFACE-TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
                         objRPort['REQUIRED-INTERFACE-TREF'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").text
                         objRPort['TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
@@ -544,6 +565,23 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                             connectors.append(objConnector)
                             final_rports[indexR]['SINGLE'] = False
                             final_pports[indexP]['SINGLE'] = False
+                        else:
+                            objConnector = {}
+                            objConnector['NAME'] = final_rports[indexR]['FULL-NAME'][3:]
+                            objConnector['INTERFACE'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
+                            objConnector['SHORT-NAME-PP'] = final_pports[indexP]['FULL-NAME']
+                            objConnector['PROVIDED-INTERFACE-TREF'] = final_pports[indexP]['PROVIDED-INTERFACE-TREF']
+                            objConnector['SHORT-NAME-RP'] = final_rports[indexR]['FULL-NAME']
+                            objConnector['REQUIRED-INTERFACE-TREF'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
+                            objConnector['ASWC-PPORT'] = final_pports[indexP]['ASWC']
+                            objConnector['ASWC-RPORT'] = final_rports[indexR]['ASWC']
+                            objConnector['ROOT-PPORT'] = final_pports[indexP]['ROOT']
+                            objConnector['ROOT-RPORT'] = final_rports[indexR]['ROOT']
+                            objConnector['SWC-PPORT'] = final_pports[indexP]['SWC']
+                            objConnector['SWC-RPORT'] = final_rports[indexR]['SWC']
+                            connectors.append(objConnector)
+                            final_rports[indexR]['SINGLE'] = False
+                            final_pports[indexP]['SINGLE'] = False
         # throw warning for any unconnected ports
         for indexR in range(len(final_rports)):
             if final_rports[indexR]['SINGLE']:
@@ -660,8 +698,12 @@ def find_between(s, first, last):
 
 
 if __name__ == "__main__":                          # pragma: no cover
+    # process = psutil.Process(os.getpid())
+    # start_time = time.clock()
     # cov = Coverage()                                # pragma: no cover
     # cov.start()                                     # pragma: no cover
     main()                                          # pragma: no cover
     # cov.stop()                                      # pragma: no cover
     # cov.html_report(directory='coverage-html')      # pragma: no cover
+    # print(str(time.clock() - start_time) + " seconds ")
+    # print(str(process.memory_info()[0]/float(2**20)) + " MB ")
