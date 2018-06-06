@@ -1,9 +1,8 @@
-2018-05-25 09:24:18,942 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M740.aswc.arxml is well-formed
-2018-05-25 09:24:18,943 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:18,944 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M743.aswc.arxml is well-formed
-2018-05-25 09:24:18,944 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:18,945 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\TopLevel_Impl.arxml is well-formed
-2018-05-25 09:24:18,945 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-05-25 09:24:18,946 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\ConfigConnectorDescriptor.xml is well-formed
-2018-05-25 09:24:18,947 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\SwcAllocation.xml is well-formed
-2018-05-25 09:24:18,952 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-06-06 09:33:20,607 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M740.aswc.arxml is well-formed
+2018-06-06 09:33:20,607 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:33:20,607 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M743.aswc.arxml is well-formed
+2018-06-06 09:33:20,607 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:33:20,617 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\TopLevel_Impl.arxml is well-formed
+2018-06-06 09:33:20,617 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
+2018-06-06 09:33:20,617 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0003_2\ConfigConnectorDescriptor.xml is well-formed
+2018-06-06 09:33:20,617 INFO The file: Connectors.arxml is valid with the provided xsd schema

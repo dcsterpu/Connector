@@ -1,18 +1,17 @@
-2018-05-25 09:24:21,080 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\ASWC_M740.aswc.arxml is well-formed
-2018-05-25 09:24:21,081 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:21,081 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\ASWC_M743.aswc.arxml is well-formed
-2018-05-25 09:24:21,082 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:21,083 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\BswM.arxml is well-formed
-2018-05-25 09:24:21,084 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\BswM.arxml is valid with the provided xsd schema
-2018-05-25 09:24:21,085 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\BswMMode.arxml is well-formed
-2018-05-25 09:24:21,086 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\BswMMode.arxml is valid with the provided xsd schema
-2018-05-25 09:24:21,087 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\TopLevel_Impl.arxml is well-formed
-2018-05-25 09:24:21,087 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-05-25 09:24:21,088 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\ConfigConnectorDescriptor.xml is well-formed
-2018-05-25 09:24:21,089 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\SwcAllocation.xml is well-formed
-2018-05-25 09:24:21,089 WARNING ModeRequestPort_SwcMode_ReqPort is without connector
-2018-05-25 09:24:21,089 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_BswMSwitchLocalPort_Rte is without connector
-2018-05-25 09:24:21,090 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_AppSwitchLocalPort_Rte is without connector
-2018-05-25 09:24:21,090 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_BswMSwitchLocalPort_SlaveCore_Rte is without connector
-2018-05-25 09:24:21,090 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_AppSwitchLocalPort_Rte is without connector
-2018-05-25 09:24:21,096 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-06-06 09:33:22,281 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\ASWC_M740.aswc.arxml is well-formed
+2018-06-06 09:33:22,281 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:33:22,281 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\ASWC_M743.aswc.arxml is well-formed
+2018-06-06 09:33:22,281 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:33:22,281 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\BswM.arxml is well-formed
+2018-06-06 09:33:22,291 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\BswM.arxml is valid with the provided xsd schema
+2018-06-06 09:33:22,291 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\BswMMode.arxml is well-formed
+2018-06-06 09:33:22,291 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\BswMMode.arxml is valid with the provided xsd schema
+2018-06-06 09:33:22,291 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\TopLevel_Impl.arxml is well-formed
+2018-06-06 09:33:22,291 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0005\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
+2018-06-06 09:33:22,291 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0005\ConfigConnectorDescriptor.xml is well-formed
+2018-06-06 09:33:22,291 WARNING ModeRequestPort_SwcMode_ReqPort is without connector
+2018-06-06 09:33:22,291 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_BswMSwitchLocalPort_Rte is without connector
+2018-06-06 09:33:22,291 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_AppSwitchLocalPort_Rte is without connector
+2018-06-06 09:33:22,291 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_BswMSwitchLocalPort_SlaveCore_Rte is without connector
+2018-06-06 09:33:22,291 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_AppSwitchLocalPort_Rte is without connector
+2018-06-06 09:33:22,291 INFO The file: Connectors.arxml is valid with the provided xsd schema

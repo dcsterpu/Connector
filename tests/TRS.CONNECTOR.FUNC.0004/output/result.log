@@ -1,9 +1,12 @@
-2018-05-25 09:24:19,994 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M740.aswc.arxml is well-formed
-2018-05-25 09:24:19,995 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:19,996 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M741.aswc.arxml is well-formed
-2018-05-25 09:24:19,996 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M741.aswc.arxml is NOT valid with the provided xsd schema
-2018-05-25 09:24:19,997 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M743.aswc.arxml is well-formed
-2018-05-25 09:24:19,997 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:19,998 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\ConfigConnectorDescriptor.xml is well-formed
-2018-05-25 09:24:19,998 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\SwcAllocation.xml is well-formed
-2018-05-25 09:24:20,004 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M740.aswc.arxml is well-formed
+2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M741.aswc.arxml is well-formed
+2018-06-06 09:33:21,451 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M741.aswc.arxml is NOT valid with the provided xsd schema
+2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M743.aswc.arxml is well-formed
+2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\ConfigConnectorDescriptor.xml is well-formed
+2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\SwcAllocation.xml is well-formed
+2018-06-06 09:33:21,461 WARNING Not the same CORE or PARTITION for PP_CS_EtatBDE and RP_CS_EtatBDE referencing the interface /RootP_CS_Data/CS_EtatBDE
+2018-06-06 09:33:21,461 WARNING RP_CS_EtatBDE is without connector
+2018-06-06 09:33:21,461 WARNING PP_CS_EtatBDE is without connector
+2018-06-06 09:33:21,461 INFO The file: Connectors.arxml is valid with the provided xsd schema

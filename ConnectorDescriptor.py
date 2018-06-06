@@ -129,8 +129,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                                 objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
                             elif objPRPort['FULL-NAME'][:3] != "PRP":
                                 objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME']
-                            objPRPort['INTERFACE-TYPE'] = \
-                            elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
+                            objPRPort['INTERFACE-TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
                             objPRPort['PROVIDED-INTERFACE-TREF'] = elemPRP.find(
                                 "{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").text
                             objPRPort['TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
@@ -428,6 +427,14 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                             add = False
             if add:
                 final_pports.append(PPorts[indexPort1])
+
+        # create list with CSI PPorts
+        csi_pports = []
+        for elem in final_pports[:]:
+            if elem['INTERFACE-TYPE'] == "CLIENT-SERVER-INTERFACE":
+                csi_pports.append(elem)
+                final_pports.remove(elem)
+
         # create list with MSI PPorts
         msi_pports = []
         for elem in final_pports[:]:
@@ -444,12 +451,64 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                     if RPorts[indexPort1]['FULL-NAME'] == RPorts[indexPort2]['FULL-NAME']:
                         RPorts[indexPort1]['UNIQUE'] = False
             final_rports.append(RPorts[indexPort1])
+
+        # create list with CSI RPorts
+        csi_rports = []
+        for elem in final_rports[:]:
+            if elem['INTERFACE-TYPE'] == "CLIENT-SERVER-INTERFACE":
+                csi_rports.append(elem)
+                final_rports.remove(elem)
+
         # create list with MSI RPorts
         msi_rports = []
         for elem in final_rports[:]:
             if elem['INTERFACE-TYPE'] == "MODE-SWITCH-INTERFACE":
                 msi_rports.append(elem)
                 final_rports.remove(elem)
+
+        # create connector between Pport and Rport referencing a CLIENT-SERVER-INTERFACE
+        for elemPP in csi_pports:
+            for elemRP in csi_rports:
+                if elemPP['PROVIDED-INTERFACE-TREF'] == elemRP['REQUIRED-INTERFACE-TREF']:
+                    if elemRP['CORE'] in elemPP['FULL-NAME'] and elemRP['PARTITION'] in elemPP['FULL-NAME']:
+                        if 'AppSwitchLocalPort' in elemPP['FULL-NAME'] or 'BswMSwitchLocalPort' in elemPP['FULL-NAME']:
+                            objConnector = {}
+                            objConnector['NAME'] = elemRP['SHORT-NAME']
+                            objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
+                            objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
+                            objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
+                            objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
+                            objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
+                            objConnector['ASWC-PPORT'] = elemPP['ASWC']
+                            objConnector['ASWC-RPORT'] = elemRP['ASWC']
+                            objConnector['ROOT-PPORT'] = elemPP['ROOT']
+                            objConnector['ROOT-RPORT'] = elemRP['ROOT']
+                            objConnector['SWC-PPORT'] = elemPP['SWC']
+                            objConnector['SWC-RPORT'] = elemRP['SWC']
+                            connectors.append(objConnector)
+                            elemRP['SINGLE'] = False
+                            elemPP['SINGLE'] = False
+                        else:
+                            objConnector = {}
+                            objConnector['NAME'] = elemRP['SHORT-NAME']
+                            objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
+                            objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
+                            objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
+                            objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
+                            objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
+                            objConnector['ASWC-PPORT'] = elemPP['ASWC']
+                            objConnector['ASWC-RPORT'] = elemRP['ASWC']
+                            objConnector['ROOT-PPORT'] = elemPP['ROOT']
+                            objConnector['ROOT-RPORT'] = elemRP['ROOT']
+                            objConnector['SWC-PPORT'] = elemPP['SWC']
+                            objConnector['SWC-RPORT'] = elemRP['SWC']
+                            connectors.append(objConnector)
+                            elemRP['SINGLE'] = False
+                            elemPP['SINGLE'] = False
+                    else:
+                        logger.warning("Not the same CORE or PARTITION for "+elemPP['FULL-NAME']+" and "+elemRP['FULL-NAME']+" referencing the interface "+elemRP['REQUIRED-INTERFACE-TREF'])
+                        warning_no = warning_no + 1
+
 
         # implement TRS.CONNECTOR.FUNC.011
         for elemPP in msi_pports:
@@ -590,6 +649,14 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         for indexP in range(len(final_pports)):
             if final_pports[indexP]['SINGLE']:
                 logger.warning(final_pports[indexP]['FULL-NAME'] + ' is without connector')
+                warning_no = warning_no + 1
+        for indexR in range(len(csi_rports)):
+            if csi_rports[indexR]['SINGLE']:
+                logger.warning(csi_rports[indexR]['FULL-NAME'] + ' is without connector')
+                warning_no = warning_no + 1
+        for indexP in range(len(csi_pports)):
+            if csi_pports[indexP]['SINGLE']:
+                logger.warning(csi_pports[indexP]['FULL-NAME'] + ' is without connector')
                 warning_no = warning_no + 1
         for indexR in range(len(msi_rports)):
             if msi_rports[indexR]['SINGLE']:

@@ -1,12 +1,12 @@
-2018-05-25 09:24:13,614 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M740.aswc.arxml is well-formed
-2018-05-25 09:24:13,614 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-05-25 09:24:13,615 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M742.aswc.arxml is well-formed
-2018-05-25 09:24:13,616 WARNING The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M742.aswc.arxml is NOT valid with the provided xsd schema
-2018-05-25 09:24:13,616 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\TopLevel_Impl.arxml is well-formed
-2018-05-25 09:24:13,617 WARNING The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-05-25 09:24:13,618 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\ConfigConnectorDescriptor.xml is well-formed
-2018-05-25 09:24:13,619 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\SwcAllocation.xml is well-formed
-2018-05-25 09:24:13,619 ERROR multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed
-2018-05-25 09:24:13,619 ERROR multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed
-2018-05-25 09:24:13,620 WARNING RP_CS_VehicleSPeed is without connector
-2018-05-25 09:24:13,625 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-06-06 09:33:16,359 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M740.aswc.arxml is well-formed
+2018-06-06 09:33:16,359 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:33:16,359 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M742.aswc.arxml is well-formed
+2018-06-06 09:33:16,359 WARNING The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M742.aswc.arxml is NOT valid with the provided xsd schema
+2018-06-06 09:33:16,359 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\TopLevel_Impl.arxml is well-formed
+2018-06-06 09:33:16,359 WARNING The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
+2018-06-06 09:33:16,359 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\ConfigConnectorDescriptor.xml is well-formed
+2018-06-06 09:33:16,359 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\SwcAllocation.xml is well-formed
+2018-06-06 09:33:16,359 ERROR multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed
+2018-06-06 09:33:16,359 ERROR multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed
+2018-06-06 09:33:16,359 WARNING RP_CS_VehicleSPeed is without connector
+2018-06-06 09:33:16,359 INFO The file: Connectors.arxml is valid with the provided xsd schema
