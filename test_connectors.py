@@ -308,6 +308,19 @@ class ConnectorDescriptor(unittest.TestCase):
         os.system('ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.TEST.BUG\\ConfigConnectorDescriptor.xml')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.TEST.BUG\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.TEST.BUG\Connectors.arxml'))
 
+    def test_TRS_CONNECTOR_FUNC_CSI(self):
+        current_path = os.path.realpath(__file__)
+        head, tail = ntpath.split(current_path)
+        os.system('ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.CSI\ConfigConnectorDescriptor.xml')
+        self.assertFalse(FileCompare.isOutput(head + '\\tests\TRS.CONNECTOR.FUNC.CSI\output\Connectors.arxml'))
+        self.assertTrue(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.FUNC.CSI\output\\result.log', "ERROR", [" "]))
+
+    def test_TRS_CONNECTOR_FUNC_CSI_1(self):
+        current_path = os.path.realpath(__file__)
+        head, tail = ntpath.split(current_path)
+        os.system('ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.CSI_1\ConfigConnectorDescriptor.xml')
+        self.assertFalse(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.FUNC.CSI_1\output\\result.log', "ERROR", [" "]))
+
 
 
 suite = unittest.TestLoader().loadTestsFromTestCase(ConnectorDescriptor)

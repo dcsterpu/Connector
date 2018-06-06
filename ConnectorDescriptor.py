@@ -414,7 +414,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
             add = True
             for indexPort2 in range(len(PPorts)):
                 if indexPort1 != indexPort2:
-                    if PPorts[indexPort1]['SHORT-NAME'] == PPorts[indexPort2]['SHORT-NAME'] and PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] == PPorts[indexPort2]['PROVIDED-INTERFACE-TREF']:
+                    if PPorts[indexPort1]['SHORT-NAME'] == PPorts[indexPort2]['SHORT-NAME'] and PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] == PPorts[indexPort2]['PROVIDED-INTERFACE-TREF'] and PPorts[indexPort1]['CORE'] == PPorts[indexPort2]['CORE'] and PPorts[indexPort1]['PARTITION'] == PPorts[indexPort2]['PARTITION']:
                         if PPorts[indexPort1]['ASWC'] != "AswcDiagForDcm":
                             if PPorts[indexPort2]['ASWC'] == "AswcDiagForDcm":
                                 pass
