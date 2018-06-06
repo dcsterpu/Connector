@@ -1,7 +1,7 @@
-2018-06-06 09:33:23,131 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0006\input\ASWC_M740.aswc.arxml is well-formed
-2018-06-06 09:33:23,131 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0006\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-06-06 09:33:23,131 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0006\input\ASWC_M743.aswc.arxml is well-formed
-2018-06-06 09:33:23,131 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0006\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
-2018-06-06 09:33:23,131 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0006\input\TopLevel_Impl.arxml is well-formed
-2018-06-06 09:33:23,131 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0006\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-06-06 09:33:23,141 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-06-06 09:43:01,169 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0006\input\ASWC_M740.aswc.arxml is well-formed
+2018-06-06 09:43:01,169 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0006\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:43:01,169 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0006\input\ASWC_M743.aswc.arxml is well-formed
+2018-06-06 09:43:01,169 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0006\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:43:01,169 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0006\input\TopLevel_Impl.arxml is well-formed
+2018-06-06 09:43:01,169 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0006\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
+2018-06-06 09:43:01,179 INFO The file: Connectors.arxml is valid with the provided xsd schema

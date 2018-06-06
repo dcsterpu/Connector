@@ -1,9 +1,9 @@
-2018-06-06 09:33:29,052 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\ASWC_M740.aswc.arxml is well-formed
-2018-06-06 09:33:29,052 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-06-06 09:33:29,052 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\ASWC_M743.aswc.arxml is well-formed
-2018-06-06 09:33:29,052 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
-2018-06-06 09:33:29,052 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\TopLevel_Impl.arxml is well-formed
-2018-06-06 09:33:29,052 WARNING The file: ./tests\TRS.CONNECTOR.GEN.002\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-06-06 09:33:29,052 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\ConfigConnectorDescriptor.xml is well-formed
-2018-06-06 09:33:29,052 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\SwcAllocation.xml is well-formed
-2018-06-06 09:33:29,052 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-06-06 09:43:07,177 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\ASWC_M740.aswc.arxml is well-formed
+2018-06-06 09:43:07,177 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:43:07,177 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\ASWC_M743.aswc.arxml is well-formed
+2018-06-06 09:43:07,177 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:43:07,177 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\TopLevel_Impl.arxml is well-formed
+2018-06-06 09:43:07,177 WARNING The file: ./tests\TRS.CONNECTOR.GEN.002\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
+2018-06-06 09:43:07,177 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\ConfigConnectorDescriptor.xml is well-formed
+2018-06-06 09:43:07,177 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\SwcAllocation.xml is well-formed
+2018-06-06 09:43:07,177 INFO The file: Connectors.arxml is valid with the provided xsd schema

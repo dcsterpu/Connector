@@ -1,12 +1,12 @@
-2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M740.aswc.arxml is well-formed
-2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M741.aswc.arxml is well-formed
-2018-06-06 09:33:21,451 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M741.aswc.arxml is NOT valid with the provided xsd schema
-2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M743.aswc.arxml is well-formed
-2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
-2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\ConfigConnectorDescriptor.xml is well-formed
-2018-06-06 09:33:21,451 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\SwcAllocation.xml is well-formed
-2018-06-06 09:33:21,461 WARNING Not the same CORE or PARTITION for PP_CS_EtatBDE and RP_CS_EtatBDE referencing the interface /RootP_CS_Data/CS_EtatBDE
-2018-06-06 09:33:21,461 WARNING RP_CS_EtatBDE is without connector
-2018-06-06 09:33:21,461 WARNING PP_CS_EtatBDE is without connector
-2018-06-06 09:33:21,461 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-06-06 09:42:59,458 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M740.aswc.arxml is well-formed
+2018-06-06 09:42:59,458 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:42:59,458 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M741.aswc.arxml is well-formed
+2018-06-06 09:42:59,458 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M741.aswc.arxml is NOT valid with the provided xsd schema
+2018-06-06 09:42:59,458 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M743.aswc.arxml is well-formed
+2018-06-06 09:42:59,458 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
+2018-06-06 09:42:59,458 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\ConfigConnectorDescriptor.xml is well-formed
+2018-06-06 09:42:59,458 INFO The file: ./tests\TRS.CONNECTOR.FUNC.0004\SwcAllocation.xml is well-formed
+2018-06-06 09:42:59,468 WARNING Not the same CORE or PARTITION for PP_CS_EtatBDE and RP_CS_EtatBDE referencing the interface /RootP_CS_Data/CS_EtatBDE
+2018-06-06 09:42:59,468 WARNING RP_CS_EtatBDE is without connector
+2018-06-06 09:42:59,468 WARNING PP_CS_EtatBDE is without connector
+2018-06-06 09:42:59,468 INFO The file: Connectors.arxml is valid with the provided xsd schema
