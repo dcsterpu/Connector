@@ -470,41 +470,23 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         for elemPP in csi_pports:
             for elemRP in csi_rports:
                 if elemPP['PROVIDED-INTERFACE-TREF'] == elemRP['REQUIRED-INTERFACE-TREF']:
-                    if elemRP['CORE'] in elemPP['FULL-NAME'] and elemRP['PARTITION'] in elemPP['FULL-NAME']:
-                        if 'AppSwitchLocalPort' in elemPP['FULL-NAME'] or 'BswMSwitchLocalPort' in elemPP['FULL-NAME']:
-                            objConnector = {}
-                            objConnector['NAME'] = elemRP['SHORT-NAME']
-                            objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
-                            objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
-                            objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
-                            objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
-                            objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
-                            objConnector['ASWC-PPORT'] = elemPP['ASWC']
-                            objConnector['ASWC-RPORT'] = elemRP['ASWC']
-                            objConnector['ROOT-PPORT'] = elemPP['ROOT']
-                            objConnector['ROOT-RPORT'] = elemRP['ROOT']
-                            objConnector['SWC-PPORT'] = elemPP['SWC']
-                            objConnector['SWC-RPORT'] = elemRP['SWC']
-                            connectors.append(objConnector)
-                            elemRP['SINGLE'] = False
-                            elemPP['SINGLE'] = False
-                        else:
-                            objConnector = {}
-                            objConnector['NAME'] = elemRP['SHORT-NAME']
-                            objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
-                            objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
-                            objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
-                            objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
-                            objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
-                            objConnector['ASWC-PPORT'] = elemPP['ASWC']
-                            objConnector['ASWC-RPORT'] = elemRP['ASWC']
-                            objConnector['ROOT-PPORT'] = elemPP['ROOT']
-                            objConnector['ROOT-RPORT'] = elemRP['ROOT']
-                            objConnector['SWC-PPORT'] = elemPP['SWC']
-                            objConnector['SWC-RPORT'] = elemRP['SWC']
-                            connectors.append(objConnector)
-                            elemRP['SINGLE'] = False
-                            elemPP['SINGLE'] = False
+                    if elemRP['CORE'] == elemPP['CORE'] and elemRP['PARTITION'] == elemPP['PARTITION']:
+                        objConnector = {}
+                        objConnector['NAME'] = elemRP['SHORT-NAME']
+                        objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
+                        objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
+                        objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
+                        objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
+                        objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
+                        objConnector['ASWC-PPORT'] = elemPP['ASWC']
+                        objConnector['ASWC-RPORT'] = elemRP['ASWC']
+                        objConnector['ROOT-PPORT'] = elemPP['ROOT']
+                        objConnector['ROOT-RPORT'] = elemRP['ROOT']
+                        objConnector['SWC-PPORT'] = elemPP['SWC']
+                        objConnector['SWC-RPORT'] = elemRP['SWC']
+                        connectors.append(objConnector)
+                        elemRP['SINGLE'] = False
+                        elemPP['SINGLE'] = False
                     else:
                         logger.warning("Not the same CORE or PARTITION for "+elemPP['FULL-NAME']+" and "+elemRP['FULL-NAME']+" referencing the interface "+elemRP['REQUIRED-INTERFACE-TREF'])
                         warning_no = warning_no + 1
