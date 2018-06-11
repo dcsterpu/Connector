@@ -8,7 +8,7 @@
                     <SHORT-NAME>Compo_VSM</SHORT-NAME>
                     <CONNECTORS>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>Test_OsApp_CORE1_PARTITION0_bla_bla_BswM_OsApp_CORE1_PARTITION0_to_ASWC_M740</SHORT-NAME>
+                            <SHORT-NAME>BswM_OsApp_CORE1_PARTITION0_Test_OsApp_CORE1_PARTITION0_bla_bla_to_ASWC_M740_ASWC_M740_MSI</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR_BswM/SwComponentTypes_OsApp_CORE1_PARTITION0/BswM_OsApp_CORE1_PARTITION0/Test_OsApp_CORE1_PARTITION0_bla_bla</TARGET-P-PORT-REF>

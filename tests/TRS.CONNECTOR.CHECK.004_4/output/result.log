@@ -1,9 +1,9 @@
-2018-06-06 16:11:44,708 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\ASWC_M740.aswc.arxml is well-formed
-2018-06-06 16:11:44,708 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-06-06 16:11:44,708 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\ASWC_M743.aswc.arxml is well-formed
-2018-06-06 16:11:44,708 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
-2018-06-06 16:11:44,708 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\SwcAllocation.xml is well-formed
-2018-06-06 16:11:44,708 ERROR multiple PPorts for interface /RootP_CS_Data/CS_EtatBDE
-2018-06-06 16:11:44,708 ERROR multiple PPorts for interface /RootP_CS_Data/CS_EtatBDE
-2018-06-06 16:11:44,708 WARNING RP_CS_EtatBDE is without connector
-2018-06-06 16:11:44,708 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-06-11 12:05:21,965 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\ASWC_M740.aswc.arxml is well-formed
+2018-06-11 12:05:21,965 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-06-11 12:05:21,965 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\ASWC_M743.aswc.arxml is well-formed
+2018-06-11 12:05:21,965 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
+2018-06-11 12:05:21,965 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\SwcAllocation.xml is well-formed
+2018-06-11 12:05:21,965 ERROR multiple PPorts for interface /RootP_CS_Data/CS_EtatBDE
+2018-06-11 12:05:21,965 ERROR multiple PPorts for interface /RootP_CS_Data/CS_EtatBDE
+2018-06-11 12:05:21,965 WARNING RP_CS_EtatBDE is without connector
+2018-06-11 12:05:21,965 INFO The file: Connectors.arxml is valid with the provided xsd schema

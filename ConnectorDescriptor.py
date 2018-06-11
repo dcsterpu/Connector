@@ -669,7 +669,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         for con in connectors:
             assembly = etree.SubElement(connector, 'ASSEMBLY-SW-CONNECTOR')
             short_name = etree.SubElement(assembly, 'SHORT-NAME')
-            short_name.text = con['SHORT-NAME-PP'] + "_" + con['ASWC-PPORT'] + "_to_" + con['ASWC-RPORT']
+            short_name.text = con['ASWC-PPORT'] + "_" + con['SHORT-NAME-PP'] + "_to_" + con['ASWC-RPORT'] + "_" + con['SHORT-NAME-RP']
             provider = etree.SubElement(assembly, 'PROVIDER-IREF')
             context_provider = etree.SubElement(provider, 'CONTEXT-COMPONENT-REF')
             context_provider.set('DEST', "SW-COMPONENT-PROTOTYPE")

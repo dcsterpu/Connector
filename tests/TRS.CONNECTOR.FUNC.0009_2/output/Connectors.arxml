@@ -8,7 +8,7 @@
                     <SHORT-NAME>Compo_VSM</SHORT-NAME>
                     <CONNECTORS>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>PP_CS_VehicleSpeed_AswcDiagForDcm_to_ASWC_M740</SHORT-NAME>
+                            <SHORT-NAME>AswcDiagForDcm_PP_CS_VehicleSpeed_to_ASWC_M740_RP_CS_VehicleSpeed</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_AswcDiagForDcm</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_M741/AswcDiagForDcm/PP_CS_VehicleSpeed</TARGET-P-PORT-REF>

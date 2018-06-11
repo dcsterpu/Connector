@@ -8,7 +8,7 @@
                     <SHORT-NAME>Compo_VSM</SHORT-NAME>
                     <CONNECTORS>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>BswM_ModeSwitchPort_OS_APP_APP_1_QM_AppSwitchLocalPort_Rte_BswM_OS_APP_APP_1_QM_to_ASWC_M740</SHORT-NAME>
+                            <SHORT-NAME>BswM_OS_APP_APP_1_QM_BswM_ModeSwitchPort_OS_APP_APP_1_QM_AppSwitchLocalPort_Rte_to_ASWC_M740_ASWC_M740_MSI</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Inst_BswM2</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR_BswM/SwComponentTypes_OS_APP_APP_1_QM/BswM_OS_APP_APP_1_QM/BswM_ModeSwitchPort_OS_APP_APP_1_QM_AppSwitchLocalPort_Rte</TARGET-P-PORT-REF>
@@ -19,7 +19,7 @@
                             </REQUESTER-IREF>
                         </ASSEMBLY-SW-CONNECTOR>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>PRP_SR_VitesseVehicule_Aswc_IntDcm_to_ASWC_M740</SHORT-NAME>
+                            <SHORT-NAME>Aswc_IntDcm_PRP_SR_VitesseVehicule_to_ASWC_M740_RP_SR_VitesseVehicule</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Inst_bla-bla</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="PR-PORT-PROTOTYPE">/RootP_IntDcm/Aswc_IntDcm/PRP_SR_VitesseVehicule</TARGET-P-PORT-REF>
@@ -30,7 +30,7 @@
                             </REQUESTER-IREF>
                         </ASSEMBLY-SW-CONNECTOR>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>PRP_SR_VitesseVehicule_Aswc_IntDcm_to_ASWC_M740</SHORT-NAME>
+                            <SHORT-NAME>Aswc_IntDcm_PRP_SR_VitesseVehicule_to_ASWC_M740_RP_SR_VitesseVehicule</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Inst_bla-bla</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="PR-PORT-PROTOTYPE">/RootP_IntDcm/Aswc_IntDcm/PRP_SR_VitesseVehicule</TARGET-P-PORT-REF>
@@ -41,7 +41,7 @@
                             </REQUESTER-IREF>
                         </ASSEMBLY-SW-CONNECTOR>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>PP_ParamStruct_Aswc_IntDcm_to_ASWC_M740</SHORT-NAME>
+                            <SHORT-NAME>Aswc_IntDcm_PP_ParamStruct_to_ASWC_M740_RP_ParamStruct</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Inst_bla-bla</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_IntDcm/Aswc_IntDcm/PP_ParamStruct</TARGET-P-PORT-REF>
@@ -52,7 +52,7 @@
                             </REQUESTER-IREF>
                         </ASSEMBLY-SW-CONNECTOR>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>PP_SR_VitesseVehiculeCorrompue_Aswc_IntDcm_to_ASWC_M740</SHORT-NAME>
+                            <SHORT-NAME>Aswc_IntDcm_PP_SR_VitesseVehiculeCorrompue_to_ASWC_M740_RP_SR_VitesseVehiculeCorrompue</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Inst_bla-bla</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_IntDcm/Aswc_IntDcm/PP_SR_VitesseVehiculeCorrompue</TARGET-P-PORT-REF>
