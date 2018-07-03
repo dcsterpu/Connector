@@ -6,6 +6,8 @@ from xml.sax.handler import ContentHandler  # pragma: no cover
 from xml.sax import make_parser             # pragma: no cover
 from xml.dom.minidom import parseString     # pragma: no cover
 from lxml import etree                      # pragma: no cover
+import uuid                                 # pragma: no cover
+import datetime
 import time                                 # pragma: no cover
 import psutil                               # pragma: no cover
 
@@ -669,7 +671,8 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         for con in connectors:
             assembly = etree.SubElement(connector, 'ASSEMBLY-SW-CONNECTOR')
             short_name = etree.SubElement(assembly, 'SHORT-NAME')
-            short_name.text = con['ASWC-PPORT'] + "_" + con['SHORT-NAME-PP'] + "_to_" + con['ASWC-RPORT'] + "_" + con['SHORT-NAME-RP']
+            # short_name.text = con['ASWC-PPORT'] + "_" + con['SHORT-NAME-PP'] + "_to_" + con['ASWC-RPORT'] + "_" + con['SHORT-NAME-RP']
+            short_name.text = "ASSEMBLY-CONNECTOR-" + uuid.uuid4().hex[:6].upper() + "-" + uuid.uuid4().hex[:6].upper() + "-" + uuid.uuid4().hex[:6].upper() + "-" + str(datetime.datetime.now()).split(".")[-1]
             provider = etree.SubElement(assembly, 'PROVIDER-IREF')
             context_provider = etree.SubElement(provider, 'CONTEXT-COMPONENT-REF')
             context_provider.set('DEST', "SW-COMPONENT-PROTOTYPE")
