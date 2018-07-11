@@ -8,7 +8,7 @@
                     <SHORT-NAME>Compo_VSM</SHORT-NAME>
                     <CONNECTORS>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>ASWC_M741_SR_VehicleSPeed_to_ASWC_M740_SR_VehicleSPeed</SHORT-NAME>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_C81E6D_F292E6_C865C5_452505</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M741</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_M741/ASWC_M741/SR_VehicleSPeed</TARGET-P-PORT-REF>
@@ -19,7 +19,7 @@
                             </REQUESTER-IREF>
                         </ASSEMBLY-SW-CONNECTOR>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>ASWC_M741_SR_VehicleSPeed_to_ASWC_M740_123_SR_VehicleSPeed</SHORT-NAME>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_077037_EF0EF4_FCD1CD_452505</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M741</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_M741/ASWC_M741/SR_VehicleSPeed</TARGET-P-PORT-REF>

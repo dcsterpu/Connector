@@ -1,23 +1,23 @@
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M740.aswc.arxml is well-formed
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M741.aswc.arxml is well-formed
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M741.aswc.arxml is valid with the provided xsd schema
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M742.aswc.arxml is well-formed
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M742.aswc.arxml is valid with the provided xsd schema
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M743.aswc.arxml is well-formed
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\BswM.arxml is well-formed
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\BswM.arxml is valid with the provided xsd schema
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\BswMMode.arxml is well-formed
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\BswMMode.arxml is valid with the provided xsd schema
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\TopLevel_Impl.arxml is well-formed
-2018-06-11 12:05:35,804 WARNING The file: ./tests\TRS.CONNECTOR.INOUT.001\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\ConfigConnectorDescriptor.xml is well-formed
-2018-06-11 12:05:35,804 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\SwcAllocation.xml is well-formed
-2018-06-11 12:05:35,804 WARNING ModeRequestPort_SwcMode_ReqPort is without connector
-2018-06-11 12:05:35,804 WARNING PP_SR_VitesseVehiculeCorro is without connector
-2018-06-11 12:05:35,804 WARNING RP_CS_EtatBDE is without connector
-2018-06-11 12:05:35,804 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_BswMSwitchLocalPort_Rte is without connector
-2018-06-11 12:05:35,804 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_AppSwitchLocalPort_Rte is without connector
-2018-06-11 12:05:35,804 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_BswMSwitchLocalPort_SlaveCore_Rte is without connector
-2018-06-11 12:05:35,820 WARNING The file: Connectors.arxml is NOT valid with the provided xsd schema
+2018-07-11 16:43:52,808 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M740.aswc.arxml is well-formed
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M741.aswc.arxml is well-formed
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M741.aswc.arxml is valid with the provided xsd schema
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M742.aswc.arxml is well-formed
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M742.aswc.arxml is valid with the provided xsd schema
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M743.aswc.arxml is well-formed
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\BswM.arxml is well-formed
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\BswM.arxml is valid with the provided xsd schema
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\BswMMode.arxml is well-formed
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\BswMMode.arxml is valid with the provided xsd schema
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\input\TopLevel_Impl.arxml is well-formed
+2018-07-11 16:43:52,824 WARNING The file: ./tests\TRS.CONNECTOR.INOUT.001\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\ConfigConnectorDescriptor.xml is well-formed
+2018-07-11 16:43:52,824 INFO The file: ./tests\TRS.CONNECTOR.INOUT.001\SwcAllocation.xml is well-formed
+2018-07-11 16:43:52,824 WARNING ModeRequestPort_SwcMode_ReqPort is without connector
+2018-07-11 16:43:52,824 WARNING PP_SR_VitesseVehiculeCorro is without connector
+2018-07-11 16:43:52,824 WARNING RP_CS_EtatBDE is without connector
+2018-07-11 16:43:52,824 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_BswMSwitchLocalPort_Rte is without connector
+2018-07-11 16:43:52,824 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_AppSwitchLocalPort_Rte is without connector
+2018-07-11 16:43:52,824 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_BswMSwitchLocalPort_SlaveCore_Rte is without connector
+2018-07-11 16:43:52,839 WARNING The file: Connectors.arxml is NOT valid with the provided xsd schema

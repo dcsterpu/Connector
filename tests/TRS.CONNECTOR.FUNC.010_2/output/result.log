@@ -1,12 +1,12 @@
-2018-06-11 12:05:32,323 INFO The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\ASWC_M740.aswc.arxml is well-formed
-2018-06-11 12:05:32,323 INFO The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-06-11 12:05:32,323 INFO The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\BswM.arxml is well-formed
-2018-06-11 12:05:32,323 INFO The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\BswM.arxml is valid with the provided xsd schema
-2018-06-11 12:05:32,323 INFO The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\TopLevel_Impl.arxml is well-formed
-2018-06-11 12:05:32,323 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-06-11 12:05:32,323 INFO The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\SwcAllocation.xml is well-formed
-2018-06-11 12:05:32,323 WARNING Not the same CORE or PARTITION for BswM_ModeSwitchPort_OsApp_CORE0_PARTITION0_BswMSwitchLocalPort_Rte and ASWC_M740_MSI referencing the interface /BswMMode/PortInterfaces/BswMModeInterface
-2018-06-11 12:05:32,323 WARNING BswM_ModeSwitchPort_OsApp_CORE0_PARTITION0_BswMSwitchLocalPort_Rte is without connector
-2018-06-11 12:05:32,323 WARNING BswM_ModeSwitchPort_OsApp_CORE0_PARTITION0_AppSwitchLocalPort_Rte is without connector
-2018-06-11 12:05:32,323 WARNING BswM_ModeSwitchPort_OsApp_CORE1_PARTITION0_AppSwitchLocalPort_Rte is without connector
-2018-06-11 12:05:32,323 WARNING The file: Connectors.arxml is NOT valid with the provided xsd schema
+2018-07-11 16:51:13,284 INFO The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\ASWC_M740.aswc.arxml is well-formed
+2018-07-11 16:51:13,284 INFO The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-07-11 16:51:13,284 INFO The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\BswM.arxml is well-formed
+2018-07-11 16:51:13,284 INFO The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\BswM.arxml is valid with the provided xsd schema
+2018-07-11 16:51:13,284 INFO The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\TopLevel_Impl.arxml is well-formed
+2018-07-11 16:51:13,300 WARNING The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
+2018-07-11 16:51:13,300 INFO The file: ./tests\TRS.CONNECTOR.FUNC.010_2\input\SwcAllocation.xml is well-formed
+2018-07-11 16:51:13,300 WARNING Not the same CORE or PARTITION for BswM_ModeSwitchPort_OsApp_CORE0_PARTITION0_BswMSwitchLocalPort_Rte and ASWC_M740_MSI referencing the interface /BswMMode/PortInterfaces/BswMModeInterface
+2018-07-11 16:51:13,300 WARNING BswM_ModeSwitchPort_OsApp_CORE0_PARTITION0_BswMSwitchLocalPort_Rte is without connector
+2018-07-11 16:51:13,300 WARNING BswM_ModeSwitchPort_OsApp_CORE0_PARTITION0_AppSwitchLocalPort_Rte is without connector
+2018-07-11 16:51:13,300 WARNING BswM_ModeSwitchPort_OsApp_CORE1_PARTITION0_AppSwitchLocalPort_Rte is without connector
+2018-07-11 16:51:13,300 WARNING The file: Connectors.arxml is NOT valid with the provided xsd schema
