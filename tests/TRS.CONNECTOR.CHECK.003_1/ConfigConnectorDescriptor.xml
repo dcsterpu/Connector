@@ -3,13 +3,13 @@
 <CONF-CONNECTOR-DESC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=".\ConfigConnectorDescriptor.xsd">
 	<INPUTS>
 		<ARXML>
-			<DIR RECURSIVE="false">./tests\TRS.CONNECTOR.CHECK.003_1\input</DIR>
+			<DIR RECURSIVE="true">./tests\TRS.CONNECTOR.CHECK.003_1\input</DIR>
 		</ARXML>
 		<XSD>
 			<FILE_PATH>./AUTOSAR_4-2-2_STRICT.xsd</FILE_PATH>
 		</XSD>
 		<SWC_ALLOCATION>
-			<DIR RECURSIVE="false">./tests\TRS.CONNECTOR.CHECK.003_1</DIR>
+			<DIR RECURSIVE="true">./tests\TRS.CONNECTOR.CHECK.003_1</DIR>
 		</SWC_ALLOCATION>
 	</INPUTS>
 	<OUTPUTS>

@@ -1,1 +1,1 @@
-2018-06-11 12:05:15,945 ERROR The file: ./tests\CHECK.ARXML\input\ASWC_M740.aswc.arxml is not well-formed: ./tests\CHECK.ARXML\input\ASWC_M740.aswc.arxml:32:6: mismatched tag
+2018-07-11 16:53:47,514 ERROR The file: ./tests\CHECK.ARXML\input\ASWC_M740.aswc.arxml is not well-formed: ./tests\CHECK.ARXML\input\ASWC_M740.aswc.arxml:32:6: mismatched tag
