@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2_STRICT_COMPACT.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>RootP_Composition</SHORT-NAME>
+            <ELEMENTS>
+                <COMPOSITION-SW-COMPONENT-TYPE>
+                    <SHORT-NAME>Compo_VSM</SHORT-NAME>
+                    <CONNECTORS>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_87B285_41CC3E_9EF16F_278627</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Inst_BswM</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR_BswM/SwComponentTypes_OsApp_CORE0_PARTITION0/BswM_OsApp_CORE0_PARTITION0/BswM_ModeSwitchPort_OsApp_AppSwitchLocalPort_Switch_Rte_CORE0_PARTITION0</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M740</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_M740/ASWC_M740/ASWC_M740_MSI</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                    </CONNECTORS>
+                </COMPOSITION-SW-COMPONENT-TYPE>
+            </ELEMENTS>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>

@@ -11,6 +11,10 @@
                             <SHORT-NAME>PP_CS_EtatBDE</SHORT-NAME>
                             <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS_Data/CS_EtatBDE</PROVIDED-INTERFACE-TREF>
                         </P-PORT-PROTOTYPE>
+						<P-PORT-PROTOTYPE>
+                            <SHORT-NAME>PP_CS_EtatBDE2</SHORT-NAME>
+                            <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS_Data/CS_EtatBDE</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
                     </PORTS>
                 </APPLICATION-SW-COMPONENT-TYPE>
             </ELEMENTS>

@@ -1,12 +1,7 @@
-2018-07-11 16:52:46,148 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_1\input\ASWC_M740.aswc.arxml is well-formed
-2018-07-11 16:52:46,148 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_1\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-07-11 16:52:46,148 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_1\input\ASWC_M741.aswc.arxml is well-formed
-2018-07-11 16:52:46,148 WARNING The file: ./tests\TRS.CONNECTOR.CHECK.004_1\input\ASWC_M741.aswc.arxml is NOT valid with the provided xsd schema
-2018-07-11 16:52:46,148 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_1\input\TopLevel_Impl.arxml is well-formed
-2018-07-11 16:52:46,148 WARNING The file: ./tests\TRS.CONNECTOR.CHECK.004_1\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-07-11 16:52:46,148 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_1\ConfigConnectorDescriptor.xml is well-formed
-2018-07-11 16:52:46,148 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_1\SwcAllocation.xml is well-formed
-2018-07-11 16:52:46,148 ERROR multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed
-2018-07-11 16:52:46,148 ERROR multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed
-2018-07-11 16:52:46,148 WARNING RP_CS_VehicleSPeed is without connector
-2018-07-11 16:52:46,164 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-08-14 12:09:57,802 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\ASWC_M740.aswc.arxml is well-formed
+2018-08-14 12:09:57,803 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-08-14 12:09:57,804 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\ASWC_M743.aswc.arxml is well-formed
+2018-08-14 12:09:57,804 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
+2018-08-14 12:09:57,805 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_4\input\SwcAllocation.xml is well-formed
+2018-08-14 12:09:57,806 ERROR Multiple PPorts for interface /RootP_CS_Data/CS_EtatBDE: PP_CS_EtatBDE(ASWC ASWC_M743, CORE APP_1, PARTITION A)
+2018-08-14 12:09:57,806 ERROR Multiple PPorts for interface /RootP_CS_Data/CS_EtatBDE: PP_CS_EtatBDE(ASWC ASWC_M742, CORE APP_1, PARTITION A)

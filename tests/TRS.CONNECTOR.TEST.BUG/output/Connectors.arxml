@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2_STRICT_COMPACT.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>RootP_Composition</SHORT-NAME>
+            <ELEMENTS>
+                <COMPOSITION-SW-COMPONENT-TYPE>
+                    <SHORT-NAME>Compo_VSM</SHORT-NAME>
+                    <CONNECTORS>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_D48C99_8ABDF8_06BF45_186022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldBODY_3</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_61F44C_15A3D9_5FC4FF_186022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldBODY_4</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_107C2B_8B8916_F79829_186022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldBODY_5</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_694D5D_1E622F_79B603_187022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldBODY_6</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_083038_980C93_FA1D2B_187022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldBODY_7</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_9DE048_380DBC_F97423_187022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldBODY_9</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_7BD34C_AF08BA_B57B7F_187022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldInternal</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_AA3026_726808_7C13DC_187022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldLin_1</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_D7482E_F16C15_DD1D38_187022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldLin_2</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_FA52C1_F05418_E928BA_187022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldLin_3</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_94CBC5_AC5D86_C9F85E_187022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldLin_4</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_A66438_356737_305F6C_187022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldLin_5</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_C64D66_1FFA36_00295F_187022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldLin_6</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_E6F9BC_42F87D_4A6DD9_188022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldLin_7</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_B8BD83_1CE156_2491A7_188022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldLin_8</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_68474C_99FE11_258A9C_188022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldPWT1</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_EF7DC7_D6C9DB_BDE968_188022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldPWT2</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_0BD2EC_010AFF_84E357_188022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_HoldPWT8</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_770EE7_6B63C3_934689_188022</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_A7G</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_A7G/ASWC_A7G/PP_SR_HoldCluster</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_LPhM</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RootP_ASWC_LPhM/ASWC_LPhM/RP_SR_HoldCluster</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                    </CONNECTORS>
+                </COMPOSITION-SW-COMPONENT-TYPE>
+            </ELEMENTS>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>

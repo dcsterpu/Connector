@@ -1,12 +1,9 @@
-2018-07-11 16:53:21,144 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M740.aswc.arxml is well-formed
-2018-07-11 16:53:21,144 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-07-11 16:53:21,144 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M742.aswc.arxml is well-formed
-2018-07-11 16:53:21,144 WARNING The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M742.aswc.arxml is NOT valid with the provided xsd schema
-2018-07-11 16:53:21,144 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\TopLevel_Impl.arxml is well-formed
-2018-07-11 16:53:21,144 WARNING The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-07-11 16:53:21,144 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\ConfigConnectorDescriptor.xml is well-formed
-2018-07-11 16:53:21,144 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\SwcAllocation.xml is well-formed
-2018-07-11 16:53:21,144 ERROR multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed
-2018-07-11 16:53:21,144 ERROR multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed
-2018-07-11 16:53:21,144 WARNING RP_CS_VehicleSPeed is without connector
-2018-07-11 16:53:21,144 INFO The file: Connectors.arxml is valid with the provided xsd schema
+2018-08-14 16:52:27,495 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M740.aswc.arxml is well-formed
+2018-08-14 16:52:27,496 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
+2018-08-14 16:52:27,497 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M743.aswc.arxml is well-formed
+2018-08-14 16:52:27,498 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
+2018-08-14 16:52:27,498 INFO The file: ./tests\TRS.CONNECTOR.CHECK.004_2\input\SwcAllocation.xml is well-formed
+2018-08-14 16:52:27,499 WARNING Not the same CORE or PARTITION for PP_CS_EtatBDEsss and RP_CS_EtatBDE referencing the interface /RootP_CS_Data/CS_EtatBDE
+2018-08-14 16:52:27,499 WARNING RP_CS_EtatBDE is without connector
+2018-08-14 16:52:27,499 WARNING PP_CS_EtatBDEsss is without connector
+2018-08-14 16:52:27,503 INFO The file: Connectors.arxml is valid with the provided xsd schema

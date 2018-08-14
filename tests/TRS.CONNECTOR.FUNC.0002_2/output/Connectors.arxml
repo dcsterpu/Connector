@@ -8,7 +8,7 @@
                     <SHORT-NAME>Compo_VSM</SHORT-NAME>
                     <CONNECTORS>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>ASSEMBLY_CONNECTOR_B6B9AD_0C7329_9BCBA1_752651</SHORT-NAME>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_4A61EC_A947A3_DF761D_032041</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Inst_bla</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="PR-PORT-PROTOTYPE">/RootP_IntDcm/AswcDiagForDcm/PRP_CS_EtatBDE</TARGET-P-PORT-REF>
