@@ -9,7 +9,6 @@ from lxml import etree                      # pragma: no cover
 import uuid                                 # pragma: no cover
 import datetime
 import time                                 # pragma: no cover
-import psutil                               # pragma: no cover
 
 def main():
     # parsing the command line arguments
@@ -117,6 +116,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                             objPPort['PARTITION'] = ""
                             objPPort['SWC'] = ""
                             objPPort['SINGLE'] = True
+                            objPPort['UNIQUE'] = True
                             objPPort['CROSSED'] = False
                             if elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                                 root_s = elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
@@ -126,6 +126,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                             aswc = elemPRP.getparent().getparent().getchildren()[0].text
                             root_p = elemPRP.getparent().getparent().getparent().getparent().getchildren()[0].text
                             objPRPort = {}
+                            objPRPort['TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
                             objPRPort['FULL-NAME'] = elemPRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
                             if objPRPort['FULL-NAME'][:3] == "PRP":
                                 objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
@@ -141,6 +142,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                             objPRPort['PARTITION'] = ""
                             objPRPort['SWC'] = ""
                             objPRPort['SINGLE'] = True
+                            objPRPort['UNIQUE'] = True
                             objPRPort['CROSSED'] = False
                             if elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                                 root_s = elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
@@ -151,6 +153,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                             aswc = elemRP.getparent().getparent().getchildren()[0].text
                             root_p = elemRP.getparent().getparent().getparent().getparent().getchildren()[0].text
                             objRPort = {}
+                            objRPort['TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
                             objRPort['FULL-NAME'] = elemRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
                             if objRPort['FULL-NAME'][:2] == "RP":
                                 objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][3:]
@@ -232,6 +235,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         objPPort['PARTITION'] = ""
                         objPPort['SWC'] = ""
                         objPPort['SINGLE'] = True
+                        objPPort['UNIQUE'] = True
                         objPPort['CROSSED'] = False
                         if elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                             root_s = elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
@@ -241,6 +245,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         aswc = elemPRP.getparent().getparent().getchildren()[0].text
                         root_p = elemPRP.getparent().getparent().getparent().getparent().getchildren()[0].text
                         objPRPort = {}
+                        objPRPort['TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
                         objPRPort['FULL-NAME'] = elemPRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
                         if objPRPort['FULL-NAME'][:3] == "PRP":
                             objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
@@ -256,6 +261,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         objPRPort['PARTITION'] = ""
                         objPRPort['SWC'] = ""
                         objPRPort['SINGLE'] = True
+                        objPRPort['UNIQUE'] = True
                         objPRPort['CROSSED'] = False
                         if elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                             root_s = elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
@@ -406,29 +412,58 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                     elemPort['CORE'] = elemC['CORE']
                     elemPort['PARTITION'] = elemC['PARTITION']
 
+        # check that the PPort is the only provided port of the interface
+        for indexPort1 in range(len(PPorts)):
+            for indexPort2 in range(len(PPorts)):
+                if indexPort1 != indexPort2:
+                    if PPorts[indexPort1]["PROVIDED-INTERFACE-TREF"] == PPorts[indexPort2]["PROVIDED-INTERFACE-TREF"]:
+                        PPorts[indexPort1]['UNIQUE'] = False
+
         # implement TRS.CONNECTOR.FUNC.0003(0) & TRS.CONNECTOR.FUNC.0009(0)
         # filter for multiple PPorts or PRPorts
-        # also, if there are several PPorts or PRPorts, and one of them is from <DiagForDcm>, ignore it
+        # also, if there are several PPorts or PRPorts, and one of them is from <Aswc_IntDcm>, ignore it
         # this creates a new list with valid PPorts to be further used in creating the connectors
-        # TODO: define with Julien the name for <AswcDiagForDcm>
         final_pports = []
         for indexPort1 in range(len(PPorts)):
             add = True
-            for indexPort2 in range(len(PPorts)):
-                if indexPort1 != indexPort2:
-                    if PPorts[indexPort1]['SHORT-NAME'] == PPorts[indexPort2]['SHORT-NAME'] and PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] == PPorts[indexPort2]['PROVIDED-INTERFACE-TREF'] and PPorts[indexPort1]['CORE'] == PPorts[indexPort2]['CORE'] and PPorts[indexPort1]['PARTITION'] == PPorts[indexPort2]['PARTITION']:
-                        if PPorts[indexPort1]['ASWC'] != "AswcDiagForDcm":
-                            if PPorts[indexPort2]['ASWC'] == "AswcDiagForDcm":
-                                pass
+            if PPorts[indexPort1]["TYPE"] == "CLIENT-SERVER-INTERFACE" or PPorts[indexPort1]["TYPE"] == "MODE-SWITCH-INTERFACE":
+                for indexPort2 in range(len(PPorts)):
+                    if indexPort1 != indexPort2:
+                        if PPorts[indexPort1]['SHORT-NAME'] == PPorts[indexPort2]['SHORT-NAME'] and PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] == PPorts[indexPort2]['PROVIDED-INTERFACE-TREF'] and PPorts[indexPort1]['CORE'] == PPorts[indexPort2]['CORE'] and PPorts[indexPort1]['PARTITION'] == PPorts[indexPort2]['PARTITION']:
+                            if PPorts[indexPort1]['ASWC'] != "Aswc_IntDcm":
+                                if PPorts[indexPort2]['ASWC'] == "Aswc_IntDcm":
+                                    pass
+                                else:
+                                    logger.error('Multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] + ": " + PPorts[indexPort1]['FULL-NAME'] + "(ASWC " +PPorts[indexPort1]['ASWC'] + ", CORE " + PPorts[indexPort1]['CORE'] +  ", PARTITION " + PPorts[indexPort1]['PARTITION'] + ")")
+                                    print('Error: Multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] + ": " + PPorts[indexPort1]['FULL-NAME'] + "(ASWC " +PPorts[indexPort1]['ASWC'] + ", CORE " + PPorts[indexPort1]['CORE'] +  ", PARTITION " + PPorts[indexPort1]['PARTITION'] + ")")
+                                    error_no = error_no + 1
+                                    add = False
                             else:
-                                logger.error('multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'])
-                                print('Error: multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'])
-                                error_no = error_no + 1
                                 add = False
-                        else:
-                            add = False
+            else:
+                for indexPort2 in range(len(PPorts)):
+                    if indexPort1 != indexPort2:
+                        if PPorts[indexPort1]['SHORT-NAME'] == PPorts[indexPort2]['SHORT-NAME'] and PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] == PPorts[indexPort2]['PROVIDED-INTERFACE-TREF']:
+                            if PPorts[indexPort1]['ASWC'] != "Aswc_IntDcm":
+                                if PPorts[indexPort2]['ASWC'] == "Aswc_IntDcm":
+                                    pass
+                                else:
+                                    logger.error('Multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] + ": " + PPorts[indexPort1]['FULL-NAME'] + "(ASWC " +PPorts[indexPort1]['ASWC'] + ")")
+                                    print('Error: Multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] + ": " + PPorts[indexPort1]['FULL-NAME'] + "(ASWC " +PPorts[indexPort1]['ASWC'] + ")")
+                                    error_no = error_no + 1
+                                    add = False
+                            else:
+                                add = False
             if add:
                 final_pports.append(PPorts[indexPort1])
+        if error_no != 0:
+            print("There is at least one blocking error! Check the generated log.")
+            print("\nExecution stopped with: " + str(info_no) + " infos, " + str(warning_no) + " warnings, " + str(error_no) + " errors\n")
+            try:
+                os.remove(output_path + '/Connectors.arxml')
+            except OSError:
+                pass
+            sys.exit(1)
 
         # create list with CSI PPorts
         csi_pports = []
@@ -471,9 +506,64 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         # create connector between Pport and Rport referencing a CLIENT-SERVER-INTERFACE
         for elemPP in csi_pports:
             for elemRP in csi_rports:
+                if elemRP['UNIQUE'] and elemPP['UNIQUE']:
+                    if elemPP['PROVIDED-INTERFACE-TREF'] == elemRP['REQUIRED-INTERFACE-TREF']:
+                        if elemRP['CORE'] == elemPP['CORE'] and elemRP['PARTITION'] == elemPP['PARTITION']:
+                            objConnector = {}
+                            objConnector['CONNECTOR'] = elemPP['ASWC'] + "_" + elemPP['FULL-NAME'] + "_to_" + elemRP['ASWC'] + "_" + elemRP['FULL-NAME']
+                            objConnector['NAME'] = elemRP['SHORT-NAME']
+                            objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
+                            objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
+                            objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
+                            objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
+                            objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
+                            objConnector['ASWC-PPORT'] = elemPP['ASWC']
+                            objConnector['ASWC-RPORT'] = elemRP['ASWC']
+                            objConnector['ROOT-PPORT'] = elemPP['ROOT']
+                            objConnector['ROOT-RPORT'] = elemRP['ROOT']
+                            objConnector['SWC-PPORT'] = elemPP['SWC']
+                            objConnector['SWC-RPORT'] = elemRP['SWC']
+                            connectors.append(objConnector)
+                            elemRP['SINGLE'] = False
+                            elemPP['SINGLE'] = False
+                        else:
+                            logger.warning("Not the same CORE or PARTITION for "+elemPP['FULL-NAME']+" and "+elemRP['FULL-NAME']+" referencing the interface "+elemRP['REQUIRED-INTERFACE-TREF'])
+                            warning_no = warning_no + 1
+                else:
+                    if elemPP['PROVIDED-INTERFACE-TREF'] == elemRP['REQUIRED-INTERFACE-TREF']:
+                        if elemRP['CORE'] == elemPP['CORE'] and elemRP['PARTITION'] == elemPP['PARTITION']:
+                            if elemPP['SHORT-NAME'] == elemRP['SHORT-NAME']:
+                                objConnector = {}
+                                objConnector['CONNECTOR'] = elemPP['ASWC'] + "_" + elemPP['FULL-NAME'] + "_to_" + elemRP['ASWC'] + "_" + elemRP['FULL-NAME']
+                                objConnector['NAME'] = elemRP['SHORT-NAME']
+                                objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
+                                objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
+                                objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
+                                objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
+                                objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
+                                objConnector['ASWC-PPORT'] = elemPP['ASWC']
+                                objConnector['ASWC-RPORT'] = elemRP['ASWC']
+                                objConnector['ROOT-PPORT'] = elemPP['ROOT']
+                                objConnector['ROOT-RPORT'] = elemRP['ROOT']
+                                objConnector['SWC-PPORT'] = elemPP['SWC']
+                                objConnector['SWC-RPORT'] = elemRP['SWC']
+                                connectors.append(objConnector)
+                                elemRP['SINGLE'] = False
+                                elemPP['SINGLE'] = False
+                        else:
+                            logger.warning("Not the same CORE or PARTITION for "+elemPP['FULL-NAME']+" and "+elemRP['FULL-NAME']+" referencing the interface "+elemRP['REQUIRED-INTERFACE-TREF'])
+                            warning_no = warning_no + 1
+
+
+        # implement TRS.CONNECTOR.FUNC.011
+        for elemPP in msi_pports:
+            portCore = elemPP['FULL-NAME'].split('_')[-2]
+            portPartition = elemPP['FULL-NAME'].split('_')[-1]
+            for elemRP in msi_rports:
                 if elemPP['PROVIDED-INTERFACE-TREF'] == elemRP['REQUIRED-INTERFACE-TREF']:
-                    if elemRP['CORE'] == elemPP['CORE'] and elemRP['PARTITION'] == elemPP['PARTITION']:
+                    if elemRP['CORE'] == portCore and elemRP['PARTITION'] == portPartition:
                         objConnector = {}
+                        objConnector['CONNECTOR'] = elemPP['ASWC'] + "_" + elemPP['FULL-NAME'] + "_to_" + elemRP['ASWC'] + "_" + elemRP['FULL-NAME']
                         objConnector['NAME'] = elemRP['SHORT-NAME']
                         objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
                         objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
@@ -492,124 +582,78 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                     else:
                         logger.warning("Not the same CORE or PARTITION for "+elemPP['FULL-NAME']+" and "+elemRP['FULL-NAME']+" referencing the interface "+elemRP['REQUIRED-INTERFACE-TREF'])
                         warning_no = warning_no + 1
-
-
-        # implement TRS.CONNECTOR.FUNC.011
-        for elemPP in msi_pports:
-            for elemRP in msi_rports:
-                if elemPP['PROVIDED-INTERFACE-TREF'] == elemRP['REQUIRED-INTERFACE-TREF']:
-                    # infos = []
-                    # if find_between(elemPP['FULL-NAME'], "OsApp_", "_AppSwitchLocalPort") == '':
-                    #     infos = find_between(elemPP['FULL-NAME'], "OsApp_", "_BswMSwitchLocalPort").split('_', 1)
+                    # if elemRP['CORE'] in elemPP['FULL-NAME'] and elemRP['PARTITION'] in elemPP['FULL-NAME']:
+                    #     if 'AppSwitchLocalPort' in elemPP['FULL-NAME'] or 'BswMSwitchLocalPort' in elemPP['FULL-NAME']:
+                    #         objConnector = {}
+                    #         objConnector['CONNECTOR'] = elemPP['ASWC'] + "_" + elemPP['FULL-NAME'] + "_to_" + elemRP['ASWC'] + "_" + elemRP['FULL-NAME']
+                    #         objConnector['NAME'] = elemRP['SHORT-NAME']
+                    #         objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
+                    #         objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
+                    #         objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
+                    #         objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
+                    #         objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
+                    #         objConnector['ASWC-PPORT'] = elemPP['ASWC']
+                    #         objConnector['ASWC-RPORT'] = elemRP['ASWC']
+                    #         objConnector['ROOT-PPORT'] = elemPP['ROOT']
+                    #         objConnector['ROOT-RPORT'] = elemRP['ROOT']
+                    #         objConnector['SWC-PPORT'] = elemPP['SWC']
+                    #         objConnector['SWC-RPORT'] = elemRP['SWC']
+                    #         connectors.append(objConnector)
+                    #         elemRP['SINGLE'] = False
+                    #         elemPP['SINGLE'] = False
+                    #     else:
+                    #         objConnector = {}
+                    #         objConnector['CONNECTOR'] = elemPP['ASWC'] + "_" + elemPP['FULL-NAME'] + "_to_" + elemRP['ASWC'] + "_" + elemRP['FULL-NAME']
+                    #         objConnector['NAME'] = elemRP['SHORT-NAME']
+                    #         objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
+                    #         objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
+                    #         objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
+                    #         objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
+                    #         objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
+                    #         objConnector['ASWC-PPORT'] = elemPP['ASWC']
+                    #         objConnector['ASWC-RPORT'] = elemRP['ASWC']
+                    #         objConnector['ROOT-PPORT'] = elemPP['ROOT']
+                    #         objConnector['ROOT-RPORT'] = elemRP['ROOT']
+                    #         objConnector['SWC-PPORT'] = elemPP['SWC']
+                    #         objConnector['SWC-RPORT'] = elemRP['SWC']
+                    #         connectors.append(objConnector)
+                    #         elemRP['SINGLE'] = False
+                    #         elemPP['SINGLE'] = False
                     # else:
-                    #     infos = find_between(elemPP['FULL-NAME'], "OsApp_", "_AppSwitchLocalPort").split('_', 1)
-                    if elemRP['CORE'] in elemPP['FULL-NAME'] and elemRP['PARTITION'] in elemPP['FULL-NAME']:
-                        if 'AppSwitchLocalPort' in elemPP['FULL-NAME'] or 'BswMSwitchLocalPort' in elemPP['FULL-NAME']:
-                            objConnector = {}
-                            objConnector['NAME'] = elemRP['SHORT-NAME']
-                            objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
-                            objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
-                            objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
-                            objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
-                            objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
-                            objConnector['ASWC-PPORT'] = elemPP['ASWC']
-                            objConnector['ASWC-RPORT'] = elemRP['ASWC']
-                            objConnector['ROOT-PPORT'] = elemPP['ROOT']
-                            objConnector['ROOT-RPORT'] = elemRP['ROOT']
-                            objConnector['SWC-PPORT'] = elemPP['SWC']
-                            objConnector['SWC-RPORT'] = elemRP['SWC']
-                            connectors.append(objConnector)
-                            elemRP['SINGLE'] = False
-                            elemPP['SINGLE'] = False
-                        else:
-                            objConnector = {}
-                            objConnector['NAME'] = elemRP['SHORT-NAME']
-                            objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
-                            objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
-                            objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
-                            objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
-                            objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
-                            objConnector['ASWC-PPORT'] = elemPP['ASWC']
-                            objConnector['ASWC-RPORT'] = elemRP['ASWC']
-                            objConnector['ROOT-PPORT'] = elemPP['ROOT']
-                            objConnector['ROOT-RPORT'] = elemRP['ROOT']
-                            objConnector['SWC-PPORT'] = elemPP['SWC']
-                            objConnector['SWC-RPORT'] = elemRP['SWC']
-                            connectors.append(objConnector)
-                            elemRP['SINGLE'] = False
-                            elemPP['SINGLE'] = False
-                    else:
-                        logger.warning("Not the same CORE or PARTITION for "+elemPP['FULL-NAME']+" and "+elemRP['FULL-NAME']+" referencing the interface "+elemRP['REQUIRED-INTERFACE-TREF'])
-                        warning_no = warning_no + 1
+                    #     logger.warning("Not the same CORE or PARTITION for " + elemPP['FULL-NAME'] + " and " + elemRP['FULL-NAME'] + " referencing the interface " + elemRP['REQUIRED-INTERFACE-TREF'])
+                    #     warning_no = warning_no + 1
 
         # build list of remainig types of interface connectors
-        for indexR in range(len(final_rports)):
-            if final_rports[indexR]['CROSSED'] is not True:
-                if final_rports[indexR]['UNIQUE']:
-                    # implement TRS.CONNECTOR.FUNC.0005(0)
-                    # check only interface
-                    for indexP in range(len(final_pports)):
-                        if final_rports[indexR]['REQUIRED-INTERFACE-TREF'] == final_pports[indexP]['PROVIDED-INTERFACE-TREF']:
-                            objConnector = {}
-                            objConnector['NAME'] = final_rports[indexR]['SHORT-NAME'][3:]
-                            objConnector['INTERFACE'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
-                            objConnector['SHORT-NAME-PP'] = final_pports[indexP]['FULL-NAME']
-                            objConnector['PROVIDED-INTERFACE-TREF'] = final_pports[indexP]['PROVIDED-INTERFACE-TREF']
-                            objConnector['SHORT-NAME-RP'] = final_rports[indexR]['FULL-NAME']
-                            objConnector['REQUIRED-INTERFACE-TREF'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
-                            objConnector['ASWC-PPORT'] = final_pports[indexP]['ASWC']
-                            objConnector['ASWC-RPORT'] = final_rports[indexR]['ASWC']
-                            objConnector['ROOT-PPORT'] = final_pports[indexP]['ROOT']
-                            objConnector['ROOT-RPORT'] = final_rports[indexR]['ROOT']
-                            objConnector['SWC-PPORT'] = final_pports[indexP]['SWC']
-                            objConnector['SWC-RPORT'] = final_rports[indexR]['SWC']
-                            connectors.append(objConnector)
-                            final_rports[indexR]['SINGLE'] = False
-                            final_pports[indexP]['SINGLE'] = False
+        for indexP in range(len(final_pports)):
+            for indexR in range(len(final_rports)):
+                # implement TRS.CONNECTOR.FUNC.0005(0)
+                # check only interface because the PPort and the RPort are the only ports of their interface
+                if final_pports[indexP]['UNIQUE'] and final_rports[indexR]['UNIQUE']:
+                    if final_rports[indexR]['REQUIRED-INTERFACE-TREF'] == final_pports[indexP]['PROVIDED-INTERFACE-TREF']:
+                        objConnector = {}
+                        objConnector['CONNECTOR'] = final_pports[indexP]['ASWC'] + "_" + final_pports[indexP]['FULL-NAME'] + "_to_" + final_rports[indexR]['ASWC'] + "_" + final_rports[indexR]['FULL-NAME']
+                        objConnector['NAME'] = final_rports[indexR]['SHORT-NAME'][3:]
+                        objConnector['INTERFACE'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
+                        objConnector['SHORT-NAME-PP'] = final_pports[indexP]['FULL-NAME']
+                        objConnector['PROVIDED-INTERFACE-TREF'] = final_pports[indexP]['PROVIDED-INTERFACE-TREF']
+                        objConnector['SHORT-NAME-RP'] = final_rports[indexR]['FULL-NAME']
+                        objConnector['REQUIRED-INTERFACE-TREF'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
+                        objConnector['ASWC-PPORT'] = final_pports[indexP]['ASWC']
+                        objConnector['ASWC-RPORT'] = final_rports[indexR]['ASWC']
+                        objConnector['ROOT-PPORT'] = final_pports[indexP]['ROOT']
+                        objConnector['ROOT-RPORT'] = final_rports[indexR]['ROOT']
+                        objConnector['SWC-PPORT'] = final_pports[indexP]['SWC']
+                        objConnector['SWC-RPORT'] = final_rports[indexR]['SWC']
+                        connectors.append(objConnector)
+                        final_rports[indexR]['SINGLE'] = False
+                        final_pports[indexP]['SINGLE'] = False
                 else:
                     # implement TRS.CONNECTOR.FUNC.0006(0)
                     # check short name and interface
-                    for indexP in range(len(final_pports)):
-                        if final_rports[indexR]['REQUIRED-INTERFACE-TREF'] == final_pports[indexP]['PROVIDED-INTERFACE-TREF']:
-                            if final_rports[indexR]['SHORT-NAME'] == final_pports[indexP]['SHORT-NAME']:
-                                objConnector = {}
-                                objConnector['NAME'] = final_rports[indexR]['FULL-NAME'][3:]
-                                objConnector['INTERFACE'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
-                                objConnector['SHORT-NAME-PP'] = final_pports[indexP]['FULL-NAME']
-                                objConnector['PROVIDED-INTERFACE-TREF'] = final_pports[indexP]['PROVIDED-INTERFACE-TREF']
-                                objConnector['SHORT-NAME-RP'] = final_rports[indexR]['FULL-NAME']
-                                objConnector['REQUIRED-INTERFACE-TREF'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
-                                objConnector['ASWC-PPORT'] = final_pports[indexP]['ASWC']
-                                objConnector['ASWC-RPORT'] = final_rports[indexR]['ASWC']
-                                objConnector['ROOT-PPORT'] = final_pports[indexP]['ROOT']
-                                objConnector['ROOT-RPORT'] = final_rports[indexR]['ROOT']
-                                objConnector['SWC-PPORT'] = final_pports[indexP]['SWC']
-                                objConnector['SWC-RPORT'] = final_rports[indexR]['SWC']
-                                connectors.append(objConnector)
-                                final_rports[indexR]['SINGLE'] = False
-                                final_pports[indexP]['SINGLE'] = False
-            else:
-                for indexP in range(len(final_pports)):
                     if final_rports[indexR]['REQUIRED-INTERFACE-TREF'] == final_pports[indexP]['PROVIDED-INTERFACE-TREF']:
                         if final_rports[indexR]['SHORT-NAME'] == final_pports[indexP]['SHORT-NAME']:
                             objConnector = {}
-                            objConnector['NAME'] = final_rports[indexR]['FULL-NAME'][3:]
-                            objConnector['INTERFACE'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
-                            objConnector['SHORT-NAME-PP'] = final_pports[indexP]['FULL-NAME']
-                            objConnector['PROVIDED-INTERFACE-TREF'] = final_pports[indexP]['PROVIDED-INTERFACE-TREF']
-                            objConnector['SHORT-NAME-RP'] = final_rports[indexR]['FULL-NAME']
-                            objConnector['REQUIRED-INTERFACE-TREF'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
-                            objConnector['ASWC-PPORT'] = final_pports[indexP]['ASWC']
-                            objConnector['ASWC-RPORT'] = final_rports[indexR]['ASWC']
-                            objConnector['ROOT-PPORT'] = final_pports[indexP]['ROOT']
-                            objConnector['ROOT-RPORT'] = final_rports[indexR]['ROOT']
-                            objConnector['SWC-PPORT'] = final_pports[indexP]['SWC']
-                            objConnector['SWC-RPORT'] = final_rports[indexR]['SWC']
-                            connectors.append(objConnector)
-                            final_rports[indexR]['SINGLE'] = False
-                            final_pports[indexP]['SINGLE'] = False
-                        else:
-                            objConnector = {}
+                            objConnector['CONNECTOR'] = final_pports[indexP]['ASWC'] + "_" + final_pports[indexP]['FULL-NAME'] + "_to_" + final_rports[indexR]['ASWC'] + "_" + final_rports[indexR]['FULL-NAME']
                             objConnector['NAME'] = final_rports[indexR]['FULL-NAME'][3:]
                             objConnector['INTERFACE'] = final_rports[indexR]['REQUIRED-INTERFACE-TREF']
                             objConnector['SHORT-NAME-PP'] = final_pports[indexP]['FULL-NAME']
@@ -653,12 +697,14 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
 
         # implement TRS.CONNECTOR.FUNC.0004(0)
         # delete connector from list of dict if the same connector from input_connectors already exists
-        for elem in connectors[:]:
-            for elemC in input_connectors:
+        for elemC in input_connectors:
+            for elem in connectors[:]:
                 if str("/" + elem['ROOT-PPORT'] + "/" + elem['ASWC-PPORT'] + "/" + elem['SHORT-NAME-PP']) == elemC['PROVIDER']:
                     if str("/" + elem['ROOT-RPORT'] + "/" + elem['ASWC-RPORT'] + "/" + elem['SHORT-NAME-RP']) == elemC['REQUESTER']:
                         connectors.remove(elem)
 
+        # remove duplicates
+        connectors = list(unique_items(connectors))
         # build Connectors.arxml
         rootConnectors = etree.Element('AUTOSAR', {attr_qname: 'http://autosar.org/schema/r4.0 AUTOSAR_4-2-2_STRICT_COMPACT.xsd'}, nsmap=NSMAP)
         packages = etree.SubElement(rootConnectors, 'AR-PACKAGES')
@@ -739,6 +785,13 @@ def check_if_xml_is_wellformed(file):
     parser.setContentHandler(ContentHandler())
     parser.parse(file)
 
+
+def unique_items(list_to_check):
+    found = set()
+    for item in list_to_check:
+        if item['CONNECTOR'] not in found:
+            yield item
+            found.add(item['CONNECTOR'])
 
 def find_between(s, first, last):
     try:
