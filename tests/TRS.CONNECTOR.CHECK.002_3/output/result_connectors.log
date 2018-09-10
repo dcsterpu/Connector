@@ -1,0 +1,5 @@
+2018-08-30 10:23:59,446 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_3\input\ASWC_M740.aswc.arxml is well-formed
+2018-08-30 10:23:59,450 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_3\input\ASWC_M741.aswc.arxml is well-formed
+2018-08-30 10:23:59,453 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_3\input\TopLevel_Impl.arxml is well-formed
+2018-08-30 10:23:59,455 ERROR Multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed: PP_CS_VehicleSPeed(ASWC ASWC_M6, CORE , PARTITION )
+2018-08-30 10:23:59,455 ERROR Multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed: PRP_CS_VehicleSPeed(ASWC ASWC_M6, CORE , PARTITION )

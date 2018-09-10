@@ -170,75 +170,75 @@ class ConnectorDescriptor(unittest.TestCase):
     def test_TRS_CONNECTOR_INOUT_001(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\\TRS.CONNECTOR.INOUT.001\\ConfigConnectorDescriptor.xml')
-        self.assertTrue(FileCompare.checkParsing(head + '\\tests\\TRS.CONNECTOR.INOUT.001\\input', head + '\\tests\\TRS.CONNECTOR.INOUT.001\\output\\result.log', 'is well-formed'))
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\\TRS.CONNECTOR.INOUT.001\\input -out ' + head + '\\tests\\TRS.CONNECTOR.INOUT.001\\output')
+        self.assertTrue(FileCompare.checkParsing(head + '\\tests\\TRS.CONNECTOR.INOUT.001\\input', head + '\\tests\\TRS.CONNECTOR.INOUT.001\\output\\result_ConDesc.log', 'is well-formed'))
 
     def test_TRS_CONNECTOR_FUNC_0002_1(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.0002_1\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.FUNC.0002_1\\input -out ' + head + '\\tests\\TRS.CONNECTOR.FUNC.0002_1\\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.FUNC.0002_1\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.FUNC.0002_1\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_FUNC_0002_2(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.0002_2\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.FUNC.0002_2\\input -out ' + head + '\\tests\TRS.CONNECTOR.FUNC.0002_2\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.FUNC.0002_2\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.FUNC.0002_2\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_FUNC_0003_1(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.0003_1\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.FUNC.0003_1\\input -out ' + head + '\\tests\TRS.CONNECTOR.FUNC.0003_1\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.FUNC.0003_1\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.FUNC.0003_1\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_FUNC_0003_2(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.0003_2\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.FUNC.0003_2\\input -out ' + head + '\\tests\TRS.CONNECTOR.FUNC.0003_2\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.FUNC.0003_2\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.FUNC.0003_2\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_FUNC_0004(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.0004\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.FUNC.0004\\input -out ' + head + '\\tests\TRS.CONNECTOR.FUNC.0004\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.FUNC.0004\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.FUNC.0004\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_FUNC_0005(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.0005\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.FUNC.0005\\input -out ' + head + '\\tests\TRS.CONNECTOR.FUNC.0005\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.FUNC.0005\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.FUNC.0005\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_FUNC_0006(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.0006\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.FUNC.0006\\input -out ' + head + '\\tests\TRS.CONNECTOR.FUNC.0006\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.FUNC.0006\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.FUNC.0006\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_FUNC_007_1(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.007_1\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.FUNC.007_1\\input -out ' + head + '\\tests\TRS.CONNECTOR.FUNC.007_1\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.FUNC.007_1\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.FUNC.007_1\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_FUNC_007_2(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.007_2\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.FUNC.007_2\\input -out ' + head + '\\tests\TRS.CONNECTOR.FUNC.007_2\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.FUNC.007_2\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.FUNC.007_2\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_FUNC_008_1(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.008_1\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.FUNC.008_1\\input -out ' + head + '\\tests\TRS.CONNECTOR.FUNC.008_1\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.FUNC.008_1\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.FUNC.008_1\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_FUNC_008_2(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.FUNC.008_2\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.FUNC.008_2\\input -out ' + head + '\\tests\TRS.CONNECTOR.FUNC.008_2\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.FUNC.008_2\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.FUNC.008_2\Connectors.arxml'))
-        self.assertTrue(FileCompare.checkLog(head + '\\tests\TRS.CONNECTOR.FUNC.008_2\output\\result.log', "WARNING", ["ASWC_M740_MSI is without connector"]))
+        self.assertTrue(FileCompare.checkLog(head + '\\tests\TRS.CONNECTOR.FUNC.008_2\output\\result_ConDesc.log', "WARNING", ["ASWC_M740_MSI is without connector"]))
     #
     # rule is no longer applicable
     # def test_TRS_CONNECTOR_FUNC_009(self):
@@ -250,88 +250,82 @@ class ConnectorDescriptor(unittest.TestCase):
     def test_TRS_CONNECTOR_GEN_001(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.GEN.001\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.GEN.001\\input -out ' + head + '\\tests\TRS.CONNECTOR.GEN.001\output')
         self.assertTrue(FileCompare.matchLine(head + '\\tests\TRS.CONNECTOR.GEN.001\output\Connectors.arxml', 1, "<?xml version='1.0' encoding='UTF-8'?>"))
         self.assertTrue(FileCompare.matchLine(head + '\\tests\TRS.CONNECTOR.GEN.001\output\Connectors.arxml', 2, '<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2_STRICT_COMPACT.xsd">'))
 
     def test_TRS_CONNECTOR_GEN_002(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.GEN.002\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.GEN.002\\input -out ' + head + '\\tests\TRS.CONNECTOR.GEN.002\output')
         self.assertTrue(FileCompare.isConnector(head + '\\tests\TRS.CONNECTOR.GEN.002\output\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_CHECK_001_1(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.CHECK.001_1\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.CHECK.001_1\\input -out ' + head + '\\tests\TRS.CONNECTOR.CHECK.001_1\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.CHECK.001_1\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.CHECK.001_1\Connectors.arxml'))
-        self.assertTrue(FileCompare.checkLog(head + '\\tests\TRS.CONNECTOR.CHECK.001_1\output\\result.log', "WARNING", ["PRP_NV_VehicleData", "PP_SR_VehicleSPeed", "RP_CS_VehicleMovement"]))
+        self.assertTrue(FileCompare.checkLog(head + '\\tests\TRS.CONNECTOR.CHECK.001_1\output\\result_ConDesc.log', "WARNING", ["PRP_NV_VehicleData", "PP_SR_VehicleSPeed", "RP_CS_VehicleMovement"]))
 
     def test_TRS_CONNECTOR_CHECK_001_2(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.CHECK.001_2\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.CHECK.001_2\\input -out ' + head + '\\tests\TRS.CONNECTOR.CHECK.001_2\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.CHECK.001_2\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.CHECK.001_2\Connectors.arxml'))
-        self.assertTrue(FileCompare.checkLog(head + '\\tests\TRS.CONNECTOR.CHECK.001_2\output\\result.log', "WARNING", ["PRP_CS_VehicleSPeed"]))
+        self.assertTrue(FileCompare.checkLog(head + '\\tests\TRS.CONNECTOR.CHECK.001_2\output\\result_ConDesc.log', "WARNING", ["PRP_CS_VehicleSPeed"]))
 
     def test_TRS_CONNECTOR_CHECK_001_3(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.CHECK.001_3\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.CHECK.001_3\\input -out ' + head + '\\tests\TRS.CONNECTOR.CHECK.001_3\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.CHECK.001_3\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.CHECK.001_3\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_CHECK_002_1(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.CHECK.002_1\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.CHECK.002_1\input -out ' + head + '\\tests\TRS.CONNECTOR.CHECK.002_1\output')
         self.assertFalse(FileCompare.isOutput(head + '\\tests\TRS.CONNECTOR.CHECK.002_1\output\Connectors.arxml'))
-        self.assertTrue(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.CHECK.002_1\output\\result.log', "ERROR", ["Multiple PPorts"]))
+        self.assertTrue(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.CHECK.002_1\output\\result_ConDesc.log', "ERROR", ["Multiple PPorts"]))
 
     def test_TRS_CONNECTOR_CHECK_002_2(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.CHECK.002_2\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.CHECK.002_2\input -out ' + head + '\\tests\TRS.CONNECTOR.CHECK.002_2\output')
         self.assertFalse(FileCompare.isOutput('' + head + '\\tests\TRS.CONNECTOR.CHECK.002_2\output\Connectors.arxml'))
-        self.assertTrue(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.CHECK.002_2\output\\result.log', "ERROR", ["Multiple PPorts"]))
+        self.assertTrue(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.CHECK.002_2\output\\result_ConDesc.log', "ERROR", ["Multiple PPorts"]))
 
     def test_TRS_CONNECTOR_CHECK_002_3(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.CHECK.002_3\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.CHECK.002_3\input -out ' + head + '\\tests\TRS.CONNECTOR.CHECK.002_3\output')
         self.assertFalse(FileCompare.isOutput(head + '\\tests\TRS.CONNECTOR.CHECK.002_3\output\Connectors.arxml'))
-        self.assertTrue(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.CHECK.002_3\output\\result.log', "ERROR", ["Multiple PPorts"]))
+        self.assertTrue(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.CHECK.002_3\output\\result_ConDesc.log', "ERROR", ["Multiple PPorts"]))
 
     def test_TRS_CONNECTOR_CHECK_003(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.CHECK.003\\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.CHECK.003\\input -out ' + head + '\\tests\TRS.CONNECTOR.CHECK.003\output')
         self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.CHECK.003\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.CHECK.003\Connectors.arxml'))
 
     def test_TRS_CONNECTOR_CHECK_004_1(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.CHECK.004_2\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.CHECK.004_1\input -out ' + head + '\\tests\TRS.CONNECTOR.CHECK.004_1\output')
         self.assertFalse(FileCompare.isOutput(head + '\\tests\TRS.CONNECTOR.CHECK.004_1\output\Connectors.arxml'))
-        self.assertTrue(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.CHECK.004_1\output\\result.log', "ERROR", [" "]))
+        self.assertTrue(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.CHECK.004_1\output\\result_ConDesc.log', "ERROR", [" "]))
 
     def test_TRS_CONNECTOR_CHECK_004_2(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.CHECK.004_2\ConfigConnectorDescriptor.xml')
-        self.assertFalse(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.CHECK.004_2\output\\result.log', "ERROR", [" "]))
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.CHECK.004_2\input -out ' + head + '\\tests\TRS.CONNECTOR.CHECK.004_2\output')
+        self.assertFalse(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.CHECK.004_2\output\\result_ConDesc.log', "ERROR", [" "]))
 
     def test_CHECK_ARXML(self):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\CHECK.ARXML\ConfigConnectorDescriptor.xml')
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\CHECK.ARXML\input -out ' + head + '\\tests\CHECK.ARXML\output')
         self.assertFalse(FileCompare.isOutput(head + '\\tests\CHECK.ARXML\output\Connectors.arxml'))
-        self.assertTrue(FileCompare.checkError(head + '\\tests\CHECK.ARXML\output\\result.log', "ERROR", ["mismatched tag"]))
-
-    def test_TRS_CONNECTOR_TEST_BUG(self):
-        current_path = os.path.realpath(__file__)
-        head, tail = ntpath.split(current_path)
-        os.system('coverage run ConnectorDescriptor.py -config ' + head + '\\tests\TRS.CONNECTOR.TEST.BUG\\ConfigConnectorDescriptor.xml')
-        self.assertTrue(FileCompare.areSame(head + '\\tests\TRS.CONNECTOR.TEST.BUG\output\Connectors.arxml', head + '\\tests\TRS.CONNECTOR.TEST.BUG\Connectors.arxml'))
+        self.assertTrue(FileCompare.checkError(head + '\\tests\CHECK.ARXML\output\\result_ConDesc.log', "ERROR", ["mismatched tag"]))
 
 
 suite = unittest.TestLoader().loadTestsFromTestCase(ConnectorDescriptor)

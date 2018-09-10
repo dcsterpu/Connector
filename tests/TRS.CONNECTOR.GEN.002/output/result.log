@@ -1,9 +1,0 @@
-2018-08-14 16:52:44,148 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\ASWC_M740.aswc.arxml is well-formed
-2018-08-14 16:52:44,150 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\ASWC_M740.aswc.arxml is valid with the provided xsd schema
-2018-08-14 16:52:44,151 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\ASWC_M743.aswc.arxml is well-formed
-2018-08-14 16:52:44,151 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\ASWC_M743.aswc.arxml is valid with the provided xsd schema
-2018-08-14 16:52:44,152 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\input\TopLevel_Impl.arxml is well-formed
-2018-08-14 16:52:44,152 WARNING The file: ./tests\TRS.CONNECTOR.GEN.002\input\TopLevel_Impl.arxml is NOT valid with the provided xsd schema
-2018-08-14 16:52:44,153 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\ConfigConnectorDescriptor.xml is well-formed
-2018-08-14 16:52:44,154 INFO The file: ./tests\TRS.CONNECTOR.GEN.002\SwcAllocation.xml is well-formed
-2018-08-14 16:52:44,161 INFO The file: Connectors.arxml is valid with the provided xsd schema

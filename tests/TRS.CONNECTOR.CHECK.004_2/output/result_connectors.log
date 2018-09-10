@@ -1,0 +1,6 @@
+2018-08-30 10:24:00,854 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M740.aswc.arxml is well-formed
+2018-08-30 10:24:00,857 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.004_2\input\ASWC_M743.aswc.arxml is well-formed
+2018-08-30 10:24:00,859 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.004_2\input\SwcAllocation.xml is well-formed
+2018-08-30 10:24:00,859 WARNING Not the same CORE or PARTITION for PP_CS_EtatBDEsss and RP_CS_EtatBDE referencing the interface /RootP_CS_Data/CS_EtatBDE
+2018-08-30 10:24:00,859 WARNING RP_CS_EtatBDE is without connector
+2018-08-30 10:24:00,860 WARNING PP_CS_EtatBDEsss is without connector

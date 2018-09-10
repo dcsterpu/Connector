@@ -8,54 +8,89 @@ from xml.dom.minidom import parseString     # pragma: no cover
 from lxml import etree                      # pragma: no cover
 import uuid                                 # pragma: no cover
 import datetime
-import time                                 # pragma: no cover
+
 
 def main():
     # parsing the command line arguments
     parser = argparse.ArgumentParser()
     arg_parse(parser)
     args = parser.parse_args()
-    config_file = args.input_configuration_file
-    config_file = config_file.replace("\\", "/")
-    # get all configuration parameters
-    recursive_path_arxml = []
-    simple_path_arxml = []
-    recursive_path_swc = []
-    simple_path_swc = []
-    tree = etree.parse(config_file)
-    root = tree.getroot()
-    directories = root.findall(".//DIR")
-    output_path = ""
-    report_path = ""
-    for element in directories:
-        if element.getparent().tag == "ARXML":
-            if element.getparent().getparent().tag == "INPUTS":
-                if element.attrib['RECURSIVE'] == "true":
-                    recursive_path_arxml.append(element.text)
+    input_path = args.inp
+    error = False
+    path_list = []
+    file_list = []
+    entry_list = []
+    for path in input_path:
+        if path.startswith('@'):
+            file = open(path[1:])
+            line_file = file.readline()
+            while line_file != "":
+                line_file = line_file.rstrip()
+                line_file = line_file.lstrip()
+                if "#" not in line_file:
+                    if os.path.isdir(line_file):
+                        path_list.append(line_file)
+                    elif os.path.isfile(line_file):
+                        file_list.append(line_file)
+                    else:
+                        print("\nError defining the input path: " + line_file + "\n")
+                        error = True
+                    line_file = file.readline()
                 else:
-                    simple_path_arxml.append(element.text)
+                    line_file = file.readline()
+            file.close()
+        else:
+            if os.path.isdir(path):
+                path_list.append(path)
+            elif os.path.isfile(path):
+                file_list.append(path)
             else:
-                output_path = element.text
-        elif element.getparent().tag == "REPORT":
-            report_path = element.text
-        elif element.getparent().tag == "SWC_ALLOCATION":
-            if element.attrib['RECURSIVE'] == "true":
-                recursive_path_swc.append(element.text)
+                print("\nError defining the input path: " + path + "\n")
+                error = True
+    for path in path_list:
+        for (dirpath, dirnames, filenames) in os.walk(path):
+            for file in filenames:
+                fullname = dirpath + '\\' + file
+                file_list.append(fullname)
+    [entry_list.append(elem) for elem in file_list if elem not in entry_list]
+    if error:
+        sys.exit(1)
+    output_path = args.out
+    output_arxml = args.out_arxml
+    output_log = args.out_log
+    if output_path:
+        if not os.path.isdir(output_path):
+            print("\nError defining the output path!\n")
+            sys.exit(1)
+        if output_log:
+            if not os.path.isdir(output_log):
+                print("\nError defining the output log path!\n")
+                sys.exit(1)
+            logger = set_logger(output_log)
+            create_connectors(entry_list, output_path, logger)
+        else:
+            logger = set_logger(output_path)
+            create_connectors(entry_list, output_path, logger)
+    elif not output_path:
+        if output_arxml:
+            if not os.path.isdir(output_arxml):
+                print("\nError defining the output configuration path!\n")
+                sys.exit(1)
+            if output_log:
+                if not os.path.isdir(output_log):
+                    print("\nError defining the output log path!\n")
+                    sys.exit(1)
+                logger = set_logger(output_log)
+                create_connectors(entry_list, output_arxml, logger)
             else:
-                simple_path_swc.append(element.text)
-    xsd_path = root.find(".//FILE_PATH").text
-    # logger creation and setting
-    logger = logging.getLogger('result')
-    hdlr = logging.FileHandler(report_path + '/result.log')
-    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-    hdlr.setFormatter(formatter)
-    logger.addHandler(hdlr)
-    logger.setLevel(logging.INFO)
-    open(report_path + '/result.log', 'w').close()
-    create_connectors(recursive_path_arxml, simple_path_arxml, recursive_path_swc, simple_path_swc, xsd_path, output_path, logger)
+                logger = set_logger(output_arxml)
+                create_connectors(entry_list, output_arxml, logger)
+    else:
+        print("\nNo output path defined!\n")
+        sys.exit(1)
 
 
-def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, xsd_path, output_path, logger):
+def create_connectors(files_list, output_path, logger):
     NSMAP = {None: 'http://autosar.org/schema/r4.0',
              "xsi": 'http://www.w3.org/2001/XMLSchema-instance'}
     attr_qname = etree.QName("http://www.w3.org/2001/XMLSchema-instance", "schemaLocation")
@@ -68,292 +103,144 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
     input_connectors = []
     software_allocs = []
     compos = []
-    xmlschema_xsd_arxml = etree.parse(xsd_path)
-    xmlschema_arxml = etree.XMLSchema(xmlschema_xsd_arxml)
     try:
-        for each_path in recursive_arxml:
-            for directory, directories, files in os.walk(each_path):
-                for file in files:
-                    if file.endswith('.arxml'):
-                        fullname = os.path.join(directory, file)
-                        try:
-                            check_if_xml_is_wellformed(fullname)
-                            logger.info('The file: ' + fullname + ' is well-formed')
-                            info_no = info_no + 1
-                        except Exception as e:
-                            logger.error('The file: ' + fullname + ' is not well-formed: ' + str(e))
-                            print('Error: The file: ' + fullname + ' is not well-formed: ' + str(e))
-                            error_no = error_no + 1
-                        tree = etree.parse(fullname)
-                        if xmlschema_arxml.validate(tree) is not True:
-                            logger.warning('The file: ' + fullname + ' is NOT valid with the provided xsd schema')
-                            warning_no = warning_no + 1
-                        else:
-                            logger.info('The file: ' + fullname + ' is valid with the provided xsd schema')
-                            info_no = info_no + 1
-                        root = tree.getroot()
-                        PPort = root.findall(".//{http://autosar.org/schema/r4.0}P-PORT-PROTOTYPE")
-                        PRPort = root.findall(".//{http://autosar.org/schema/r4.0}PR-PORT-PROTOTYPE")
-                        RPort = root.findall(".//{http://autosar.org/schema/r4.0}R-PORT-PROTOTYPE")
-                        input_connector = root.findall(".//{http://autosar.org/schema/r4.0}ASSEMBLY-SW-CONNECTOR")
-                        sw_compos = root.findall(".//{http://autosar.org/schema/r4.0}SW-COMPONENT-PROTOTYPE")
-                        # build list of PPorts
-                        for elemPP in PPort:
-                            objPPort = {}
-                            root_p = elemPP.getparent().getparent().getparent().getparent().getchildren()[0].text
-                            aswc = elemPP.getparent().getparent().getchildren()[0].text
-                            objPPort['TYPE'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").attrib['DEST']
-                            objPPort['FULL-NAME'] = elemPP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                            if objPPort['FULL-NAME'][:2] == "PP":
-                                objPPort['SHORT-NAME'] = objPPort['FULL-NAME'][3:]
-                            elif objPPort['FULL-NAME'][:2] != "PP":
-                                objPPort['SHORT-NAME'] = objPPort['FULL-NAME']
-                            objPPort['INTERFACE-TYPE'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").attrib['DEST']
-                            objPPort['PROVIDED-INTERFACE-TREF'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").text
-                            objPPort['ASWC'] = aswc
-                            objPPort['ROOT'] = root_p
-                            objPPort['CORE'] = ""
-                            objPPort['PARTITION'] = ""
-                            objPPort['SWC'] = ""
-                            objPPort['SINGLE'] = True
-                            objPPort['UNIQUE'] = True
-                            objPPort['CROSSED'] = False
-                            if elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
-                                root_s = elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
-                                objPPort['ROOT'] = root_s + '/' + root_p
-                            PPorts.append(objPPort)
-                        for elemPRP in PRPort:
-                            aswc = elemPRP.getparent().getparent().getchildren()[0].text
-                            root_p = elemPRP.getparent().getparent().getparent().getparent().getchildren()[0].text
-                            objPRPort = {}
-                            objPRPort['TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
-                            objPRPort['FULL-NAME'] = elemPRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                            if objPRPort['FULL-NAME'][:3] == "PRP":
-                                objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
-                            elif objPRPort['FULL-NAME'][:3] != "PRP":
-                                objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME']
-                            objPRPort['INTERFACE-TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
-                            objPRPort['PROVIDED-INTERFACE-TREF'] = elemPRP.find(
-                                "{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").text
-                            objPRPort['TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
-                            objPRPort['ASWC'] = aswc
-                            objPRPort['ROOT'] = root_p
-                            objPRPort['CORE'] = ""
-                            objPRPort['PARTITION'] = ""
-                            objPRPort['SWC'] = ""
-                            objPRPort['SINGLE'] = True
-                            objPRPort['UNIQUE'] = True
-                            objPRPort['CROSSED'] = False
-                            if elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
-                                root_s = elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
-                                objPRPort['ROOT'] = root_s + '/' + root_p
-                            PPorts.append(objPRPort)
-                        # build list of RPorts
-                        for elemRP in RPort:
-                            aswc = elemRP.getparent().getparent().getchildren()[0].text
-                            root_p = elemRP.getparent().getparent().getparent().getparent().getchildren()[0].text
-                            objRPort = {}
-                            objRPort['TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
-                            objRPort['FULL-NAME'] = elemRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                            if objRPort['FULL-NAME'][:2] == "RP":
-                                objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][3:]
-                            elif objRPort['FULL-NAME'][:2] != "RP":
-                                objRPort['SHORT-NAME'] = objRPort['FULL-NAME']
-                            objRPort['INTERFACE-TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
-                            objRPort['REQUIRED-INTERFACE-TREF'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").text
-                            objRPort['TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
-                            objRPort['ASWC'] = aswc
-                            objRPort['ROOT'] = root_p
-                            objRPort['CORE'] = ""
-                            objRPort['PARTITION'] = ""
-                            objRPort['SWC'] = ""
-                            objRPort['SINGLE'] = True
-                            objRPort['UNIQUE'] = True
-                            objRPort['CROSSED'] = False
-                            if elemRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
-                                root_s = elemRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
-                                objRPort['ROOT'] = root_s + '/' + root_p
-                            RPorts.append(objRPort)
-                        # build list of existing connectors
-                        for elemC in input_connector:
-                            objConn = {}
-                            objConn['NAME'] = elemC.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                            if elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-P-PORT-REF") is not None:
-                                objConn['PROVIDER'] = elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-P-PORT-REF").text
-                            if elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-PR-PORT-REF") is not None:
-                                objConn['PROVIDER'] = elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-PR-PORT-REF").text
-                            objConn['REQUESTER'] = elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-R-PORT-REF").text
-                            input_connectors.append(objConn)
-                        for elemSW in sw_compos:
-                            objSw = {}
-                            objSw['NAME'] = elemSW.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                            objSw['TYPE'] = elemSW.find("{http://autosar.org/schema/r4.0}TYPE-TREF").text
-                            temp = objSw['TYPE'].split('/')
-                            objSw['SWC'] = temp[-1]
-                            compos.append(objSw)
-        for each_path in simple_arxml:
-            for file in os.listdir(each_path):
-                if file.endswith('.arxml'):
-                    fullname = os.path.join(each_path, file)
-                    try:
-                        check_if_xml_is_wellformed(fullname)
-                        logger.info('The file: ' + fullname + ' is well-formed')
-                        info_no = info_no + 1
-                    except Exception as e:
-                        logger.error('The file: ' + fullname + ' is not well-formed: ' + str(e))
-                        print('Error: The file: ' + fullname + ' is not well-formed: ' + str(e))
-                        error_no = error_no + 1
-                    tree = etree.parse(fullname)
-                    if xmlschema_arxml.validate(tree) is not True:
-                        logger.warning('The file: ' + fullname + ' is NOT valid with the provided xsd schema')
-                        warning_no = warning_no + 1
+        for file in files_list:
+            if file.endswith('.arxml'):
+                try:
+                    check_if_xml_is_wellformed(file)
+                    logger.info('The file: ' + file + ' is well-formed')
+                    info_no = info_no + 1
+                except Exception as e:
+                    logger.error('The file: ' + file + ' is not well-formed: ' + str(e))
+                    print('Error: The file: ' + file + ' is not well-formed: ' + str(e))
+                    error_no = error_no + 1
+                tree = etree.parse(file)
+                root = tree.getroot()
+                PPort = root.findall(".//{http://autosar.org/schema/r4.0}P-PORT-PROTOTYPE")
+                PRPort = root.findall(".//{http://autosar.org/schema/r4.0}PR-PORT-PROTOTYPE")
+                RPort = root.findall(".//{http://autosar.org/schema/r4.0}R-PORT-PROTOTYPE")
+                input_connector = root.findall(".//{http://autosar.org/schema/r4.0}ASSEMBLY-SW-CONNECTOR")
+                sw_compos = root.findall(".//{http://autosar.org/schema/r4.0}SW-COMPONENT-PROTOTYPE")
+                # build list of PPorts
+                for elemPP in PPort:
+                    objPPort = {}
+                    aswc = elemPP.getparent().getparent().getchildren()[0].text
+                    root_p = elemPP.getparent().getparent().getparent().getparent().getchildren()[0].text
+                    objPPort['TYPE'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").attrib['DEST']
+                    objPPort['FULL-NAME'] = elemPP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
+                    if objPPort['FULL-NAME'][:3] == "PP_":
+                        objPPort['SHORT-NAME'] = objPPort['FULL-NAME'][3:]
+                    elif objPPort['FULL-NAME'][:4] == "MPP_":
+                        objPPort['SHORT-NAME'] = objPPort['FULL-NAME'][4:]
                     else:
-                        logger.info('The file: ' + fullname + ' is valid with the provided xsd schema')
-                        info_no = info_no + 1
-                    root = tree.getroot()
-                    PPort = root.findall(".//{http://autosar.org/schema/r4.0}P-PORT-PROTOTYPE")
-                    PRPort = root.findall(".//{http://autosar.org/schema/r4.0}PR-PORT-PROTOTYPE")
-                    RPort = root.findall(".//{http://autosar.org/schema/r4.0}R-PORT-PROTOTYPE")
-                    input_connector = root.findall(".//{http://autosar.org/schema/r4.0}ASSEMBLY-SW-CONNECTOR")
-                    sw_compos = root.findall(".//{http://autosar.org/schema/r4.0}SW-COMPONENT-PROTOTYPE")
-                    # build list of PPorts
-                    for elemPP in PPort:
-                        objPPort = {}
-                        aswc = elemPP.getparent().getparent().getchildren()[0].text
-                        root_p = elemPP.getparent().getparent().getparent().getparent().getchildren()[0].text
-                        objPPort['TYPE'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").attrib['DEST']
-                        objPPort['FULL-NAME'] = elemPP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                        if objPPort['FULL-NAME'][:2] == "PP":
-                            objPPort['SHORT-NAME'] = objPPort['FULL-NAME'][3:]
-                        elif objPPort['FULL-NAME'][:2] != "PP":
-                            objPPort['SHORT-NAME'] = objPPort['FULL-NAME']
-                        objPPort['INTERFACE-TYPE'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").attrib['DEST']
-                        objPPort['PROVIDED-INTERFACE-TREF'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").text
-                        objPPort['ASWC'] = aswc
-                        objPPort['ROOT'] = root_p
-                        objPPort['CORE'] = ""
-                        objPPort['PARTITION'] = ""
-                        objPPort['SWC'] = ""
-                        objPPort['SINGLE'] = True
-                        objPPort['UNIQUE'] = True
-                        objPPort['CROSSED'] = False
-                        if elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
-                            root_s = elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
-                            objPPort['ROOT'] = root_s + '/' + root_p
-                        PPorts.append(objPPort)
-                    for elemPRP in PRPort:
-                        aswc = elemPRP.getparent().getparent().getchildren()[0].text
-                        root_p = elemPRP.getparent().getparent().getparent().getparent().getchildren()[0].text
-                        objPRPort = {}
-                        objPRPort['TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
-                        objPRPort['FULL-NAME'] = elemPRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                        if objPRPort['FULL-NAME'][:3] == "PRP":
-                            objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
-                        elif objPRPort['FULL-NAME'][:3] != "PRP":
-                            objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME']
-                        # objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
-                        objPRPort['INTERFACE-TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
-                        objPRPort['PROVIDED-INTERFACE-TREF'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").text
-                        objPRPort['TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
-                        objPRPort['ASWC'] = aswc
-                        objPRPort['ROOT'] = root_p
-                        objPRPort['CORE'] = ""
-                        objPRPort['PARTITION'] = ""
-                        objPRPort['SWC'] = ""
-                        objPRPort['SINGLE'] = True
-                        objPRPort['UNIQUE'] = True
-                        objPRPort['CROSSED'] = False
-                        if elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
-                            root_s = elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
-                            objPRPort['ROOT'] = root_s + '/' + root_p
-                        PPorts.append(objPRPort)
-                    # build list of RPorts
-                    for elemRP in RPort:
-                        aswc = elemRP.getparent().getparent().getchildren()[0].text
-                        root_p = elemRP.getparent().getparent().getparent().getparent().getchildren()[0].text
-                        objRPort = {}
-                        objRPort['FULL-NAME'] = elemRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                        if objRPort['FULL-NAME'][:2] == "RP":
-                            objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][3:]
-                        elif objRPort['FULL-NAME'][:2] != "RP":
-                            objRPort['SHORT-NAME'] = objRPort['FULL-NAME']
-                        # objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][3:]
-                        objRPort['INTERFACE-TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
-                        objRPort['REQUIRED-INTERFACE-TREF'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").text
-                        objRPort['TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
-                        objRPort['ASWC'] = aswc
-                        objRPort['ROOT'] = root_p
-                        objRPort['CORE'] = ""
-                        objRPort['PARTITION'] = ""
-                        objRPort['SWC'] = ""
-                        objRPort['SINGLE'] = True
-                        objRPort['UNIQUE'] = True
-                        objRPort['CROSSED'] = False
-                        if elemRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
-                            root_s = elemRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
-                            objRPort['ROOT'] = root_s + '/' + root_p
-                        RPorts.append(objRPort)
-                    # build list of existing connectors
-                    for elemC in input_connector:
-                        objConn = {}
-                        objConn['NAME'] = elemC.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                        if elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-P-PORT-REF") is not None:
-                            objConn['PROVIDER'] = elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-P-PORT-REF").text
-                        if elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-PR-PORT-REF") is not None:
-                            objConn['PROVIDER'] = elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-PR-PORT-REF").text
-                        objConn['REQUESTER'] = elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-R-PORT-REF").text
-                        input_connectors.append(objConn)
-                    for elemSW in sw_compos:
-                        objSw = {}
-                        objSw['NAME'] = str(elemSW.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text)
-                        objSw['TYPE'] = elemSW.find("{http://autosar.org/schema/r4.0}TYPE-TREF").text
-                        temp = objSw['TYPE'].split('/')
-                        objSw['SWC'] = temp[-1]
-                        compos.append(objSw)
-        for each_path in recursive_swc:
-            for directory, directories, files in os.walk(each_path):
-                for file in files:
-                    if file.endswith('.xml'):
-                        fullname = os.path.join(directory, file)
-                        try:
-                            check_if_xml_is_wellformed(fullname)
-                            logger.info('The file: ' + fullname + ' is well-formed')
-                            info_no = info_no + 1
-                        except Exception as e:
-                            logger.error('The file: ' + fullname + ' is not well-formed: ' + str(e))
-                            print('Error: The file: ' + fullname + ' is not well-formed: ' + str(e))
-                            error_no = error_no + 1
-                        tree = etree.parse(fullname)
-                        root = tree.getroot()
-                        swc_allocations = root.findall(".//SWC-ALLOCATION")
-                        for elem in swc_allocations:
-                            objElem = {}
-                            objElem['SWC'] = elem.find("SWC-REF").text
-                            objElem['CORE'] = elem.find("CORE").text
-                            objElem['PARTITION'] = elem.find("PARTITION").text
-                            software_allocs.append(objElem)
-        for each_path in simple_swc:
-            for file in os.listdir(each_path):
-                if file.endswith('.xml'):
-                    fullname = os.path.join(each_path, file)
-                    try:
-                        check_if_xml_is_wellformed(fullname)
-                        logger.info('The file: ' + fullname + ' is well-formed')
-                        info_no = info_no + 1
-                    except Exception as e:
-                        logger.error('The file: ' + fullname + ' is not well-formed: ' + str(e))
-                        print('Error: The file: ' + fullname + ' is not well-formed: ' + str(e))
-                        error_no = error_no + 1
-                    tree = etree.parse(fullname)
-                    root = tree.getroot()
-                    swc_allocations = root.findall(".//SWC-ALLOCATION")
-                    for elem in swc_allocations:
-                        objElem = {}
-                        objElem['SWC'] = elem.find("SWC-REF").text
-                        objElem['CORE'] = elem.find("CORE").text
-                        objElem['PARTITION'] = elem.find("PARTITION").text
-                        software_allocs.append(objElem)
-        #################################
+                        objPPort['SHORT-NAME'] = objPPort['FULL-NAME']
+                    objPPort['INTERFACE-TYPE'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").attrib['DEST']
+                    objPPort['PROVIDED-INTERFACE-TREF'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").text
+                    objPPort['ASWC'] = aswc
+                    objPPort['ROOT'] = root_p
+                    objPPort['CORE'] = ""
+                    objPPort['PARTITION'] = ""
+                    objPPort['SWC'] = ""
+                    objPPort['SINGLE'] = True
+                    objPPort['UNIQUE'] = True
+                    objPPort['CROSSED'] = False
+                    objPPort['PTYPE'] = "PP"
+                    if elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
+                        root_s = elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
+                        objPPort['ROOT'] = root_s + '/' + root_p
+                    PPorts.append(objPPort)
+                for elemPRP in PRPort:
+                    aswc = elemPRP.getparent().getparent().getchildren()[0].text
+                    root_p = elemPRP.getparent().getparent().getparent().getparent().getchildren()[0].text
+                    objPRPort = {}
+                    objPRPort['TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
+                    objPRPort['FULL-NAME'] = elemPRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
+                    if objPRPort['FULL-NAME'][:3] == "PP_":
+                        objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][3:]
+                    if objPRPort['FULL-NAME'][:4] == "PRP_":
+                        objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
+                    elif objPRPort['FULL-NAME'][:5] == "MPRP_":
+                        objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][5:]
+                    else:
+                        objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME']
+                    objPRPort['INTERFACE-TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
+                    objPRPort['PROVIDED-INTERFACE-TREF'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").text
+                    objPRPort['TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
+                    objPRPort['ASWC'] = aswc
+                    objPRPort['ROOT'] = root_p
+                    objPRPort['CORE'] = ""
+                    objPRPort['PARTITION'] = ""
+                    objPRPort['SWC'] = ""
+                    objPRPort['SINGLE'] = True
+                    objPRPort['UNIQUE'] = True
+                    objPRPort['CROSSED'] = False
+                    objPRPort['PTYPE'] = "PRP"
+                    if elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
+                        root_s = elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
+                        objPRPort['ROOT'] = root_s + '/' + root_p
+                    PPorts.append(objPRPort)
+                # build list of RPorts
+                for elemRP in RPort:
+                    aswc = elemRP.getparent().getparent().getchildren()[0].text
+                    root_p = elemRP.getparent().getparent().getparent().getparent().getchildren()[0].text
+                    objRPort = {}
+                    objRPort['FULL-NAME'] = elemRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
+                    if objRPort['FULL-NAME'][:3] == "RP_":
+                        objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][3:]
+                    elif objRPort['FULL-NAME'][:4] == "MRP_":
+                        objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][4:]
+                    else:
+                        objRPort['SHORT-NAME'] = objRPort['FULL-NAME']
+                    objRPort['INTERFACE-TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
+                    objRPort['REQUIRED-INTERFACE-TREF'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").text
+                    objRPort['TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
+                    objRPort['ASWC'] = aswc
+                    objRPort['ROOT'] = root_p
+                    objRPort['CORE'] = ""
+                    objRPort['PARTITION'] = ""
+                    objRPort['SWC'] = ""
+                    objRPort['SINGLE'] = True
+                    objRPort['UNIQUE'] = True
+                    objRPort['CROSSED'] = False
+                    if elemRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
+                        root_s = elemRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
+                        objRPort['ROOT'] = root_s + '/' + root_p
+                    RPorts.append(objRPort)
+                # build list of existing connectors
+                for elemC in input_connector:
+                    objConn = {}
+                    objConn['NAME'] = elemC.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
+                    if elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-P-PORT-REF") is not None:
+                        objConn['PROVIDER'] = elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-P-PORT-REF").text
+                    if elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-PR-PORT-REF") is not None:
+                        objConn['PROVIDER'] = elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-PR-PORT-REF").text
+                    objConn['REQUESTER'] = elemC.find(".//{http://autosar.org/schema/r4.0}TARGET-R-PORT-REF").text
+                    input_connectors.append(objConn)
+                for elemSW in sw_compos:
+                    objSw = {}
+                    objSw['NAME'] = str(elemSW.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text)
+                    objSw['TYPE'] = elemSW.find("{http://autosar.org/schema/r4.0}TYPE-TREF").text
+                    temp = objSw['TYPE'].split('/')
+                    objSw['SWC'] = temp[-1]
+                    compos.append(objSw)
+            if file.endswith('.xml'):
+                try:
+                    check_if_xml_is_wellformed(file)
+                    logger.info('The file: ' + file + ' is well-formed')
+                    info_no = info_no + 1
+                except Exception as e:
+                    logger.error('The file: ' + file + ' is not well-formed: ' + str(e))
+                    print('Error: The file: ' + file + ' is not well-formed: ' + str(e))
+                    error_no = error_no + 1
+                tree = etree.parse(file)
+                root = tree.getroot()
+                swc_allocations = root.findall(".//SWC-ALLOCATION")
+                for elem in swc_allocations:
+                    objElem = {}
+                    objElem['SWC'] = elem.find("SWC-REF").text
+                    objElem['CORE'] = elem.find("CORE").text
+                    objElem['PARTITION'] = elem.find("PARTITION").text
+                    software_allocs.append(objElem)
         if error_no != 0:
             print("There is at least one blocking error! Check the generated log.")
             print("\nExecution stopped with: " + str(info_no) + " infos, " + str(warning_no) + " warnings, " + str(error_no) + " errors\n")
@@ -465,6 +352,11 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                 pass
             sys.exit(1)
 
+        # delete PPorts without instance -> them are not to be used
+        for elem in final_pports[:]:
+            if elem['SWC'] == "":
+                final_pports.remove(elem)
+
         # create list with CSI PPorts
         csi_pports = []
         for elem in final_pports[:]:
@@ -489,6 +381,11 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         RPorts[indexPort1]['UNIQUE'] = False
             final_rports.append(RPorts[indexPort1])
 
+        # delete RPorts without instance -> them are not to be used
+        for elem in final_rports[:]:
+            if elem['SWC'] == "":
+                final_rports.remove(elem)
+
         # create list with CSI RPorts
         csi_rports = []
         for elem in final_rports[:]:
@@ -506,7 +403,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         # create connector between Pport and Rport referencing a CLIENT-SERVER-INTERFACE
         for elemPP in csi_pports:
             for elemRP in csi_rports:
-                if elemRP['UNIQUE'] and elemPP['UNIQUE']:
+                if elemPP['UNIQUE']:
                     if elemPP['PROVIDED-INTERFACE-TREF'] == elemRP['REQUIRED-INTERFACE-TREF']:
                         if elemRP['CORE'] == elemPP['CORE'] and elemRP['PARTITION'] == elemPP['PARTITION']:
                             objConnector = {}
@@ -523,6 +420,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                             objConnector['ROOT-RPORT'] = elemRP['ROOT']
                             objConnector['SWC-PPORT'] = elemPP['SWC']
                             objConnector['SWC-RPORT'] = elemRP['SWC']
+                            objConnector['PTYPE'] = elemPP['PTYPE']
                             connectors.append(objConnector)
                             elemRP['SINGLE'] = False
                             elemPP['SINGLE'] = False
@@ -547,6 +445,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                                 objConnector['ROOT-RPORT'] = elemRP['ROOT']
                                 objConnector['SWC-PPORT'] = elemPP['SWC']
                                 objConnector['SWC-RPORT'] = elemRP['SWC']
+                                objConnector['PTYPE'] = elemPP['PTYPE']
                                 connectors.append(objConnector)
                                 elemRP['SINGLE'] = False
                                 elemPP['SINGLE'] = False
@@ -576,59 +475,20 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         objConnector['ROOT-RPORT'] = elemRP['ROOT']
                         objConnector['SWC-PPORT'] = elemPP['SWC']
                         objConnector['SWC-RPORT'] = elemRP['SWC']
+                        objConnector['PTYPE'] = elemPP['PTYPE']
                         connectors.append(objConnector)
                         elemRP['SINGLE'] = False
                         elemPP['SINGLE'] = False
                     else:
                         logger.warning("Not the same CORE or PARTITION for "+elemPP['FULL-NAME']+" and "+elemRP['FULL-NAME']+" referencing the interface "+elemRP['REQUIRED-INTERFACE-TREF'])
                         warning_no = warning_no + 1
-                    # if elemRP['CORE'] in elemPP['FULL-NAME'] and elemRP['PARTITION'] in elemPP['FULL-NAME']:
-                    #     if 'AppSwitchLocalPort' in elemPP['FULL-NAME'] or 'BswMSwitchLocalPort' in elemPP['FULL-NAME']:
-                    #         objConnector = {}
-                    #         objConnector['CONNECTOR'] = elemPP['ASWC'] + "_" + elemPP['FULL-NAME'] + "_to_" + elemRP['ASWC'] + "_" + elemRP['FULL-NAME']
-                    #         objConnector['NAME'] = elemRP['SHORT-NAME']
-                    #         objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
-                    #         objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
-                    #         objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
-                    #         objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
-                    #         objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
-                    #         objConnector['ASWC-PPORT'] = elemPP['ASWC']
-                    #         objConnector['ASWC-RPORT'] = elemRP['ASWC']
-                    #         objConnector['ROOT-PPORT'] = elemPP['ROOT']
-                    #         objConnector['ROOT-RPORT'] = elemRP['ROOT']
-                    #         objConnector['SWC-PPORT'] = elemPP['SWC']
-                    #         objConnector['SWC-RPORT'] = elemRP['SWC']
-                    #         connectors.append(objConnector)
-                    #         elemRP['SINGLE'] = False
-                    #         elemPP['SINGLE'] = False
-                    #     else:
-                    #         objConnector = {}
-                    #         objConnector['CONNECTOR'] = elemPP['ASWC'] + "_" + elemPP['FULL-NAME'] + "_to_" + elemRP['ASWC'] + "_" + elemRP['FULL-NAME']
-                    #         objConnector['NAME'] = elemRP['SHORT-NAME']
-                    #         objConnector['INTERFACE'] = elemRP['REQUIRED-INTERFACE-TREF']
-                    #         objConnector['SHORT-NAME-PP'] = elemPP['FULL-NAME']
-                    #         objConnector['PROVIDED-INTERFACE-TREF'] = elemPP['PROVIDED-INTERFACE-TREF']
-                    #         objConnector['SHORT-NAME-RP'] = elemRP['FULL-NAME']
-                    #         objConnector['REQUIRED-INTERFACE-TREF'] = elemRP['REQUIRED-INTERFACE-TREF']
-                    #         objConnector['ASWC-PPORT'] = elemPP['ASWC']
-                    #         objConnector['ASWC-RPORT'] = elemRP['ASWC']
-                    #         objConnector['ROOT-PPORT'] = elemPP['ROOT']
-                    #         objConnector['ROOT-RPORT'] = elemRP['ROOT']
-                    #         objConnector['SWC-PPORT'] = elemPP['SWC']
-                    #         objConnector['SWC-RPORT'] = elemRP['SWC']
-                    #         connectors.append(objConnector)
-                    #         elemRP['SINGLE'] = False
-                    #         elemPP['SINGLE'] = False
-                    # else:
-                    #     logger.warning("Not the same CORE or PARTITION for " + elemPP['FULL-NAME'] + " and " + elemRP['FULL-NAME'] + " referencing the interface " + elemRP['REQUIRED-INTERFACE-TREF'])
-                    #     warning_no = warning_no + 1
 
         # build list of remainig types of interface connectors
         for indexP in range(len(final_pports)):
             for indexR in range(len(final_rports)):
                 # implement TRS.CONNECTOR.FUNC.0005(0)
                 # check only interface because the PPort and the RPort are the only ports of their interface
-                if final_pports[indexP]['UNIQUE'] and final_rports[indexR]['UNIQUE']:
+                if final_pports[indexP]['UNIQUE']:
                     if final_rports[indexR]['REQUIRED-INTERFACE-TREF'] == final_pports[indexP]['PROVIDED-INTERFACE-TREF']:
                         objConnector = {}
                         objConnector['CONNECTOR'] = final_pports[indexP]['ASWC'] + "_" + final_pports[indexP]['FULL-NAME'] + "_to_" + final_rports[indexR]['ASWC'] + "_" + final_rports[indexR]['FULL-NAME']
@@ -644,6 +504,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                         objConnector['ROOT-RPORT'] = final_rports[indexR]['ROOT']
                         objConnector['SWC-PPORT'] = final_pports[indexP]['SWC']
                         objConnector['SWC-RPORT'] = final_rports[indexR]['SWC']
+                        objConnector['PTYPE'] = final_pports[indexP]['PTYPE']
                         connectors.append(objConnector)
                         final_rports[indexR]['SINGLE'] = False
                         final_pports[indexP]['SINGLE'] = False
@@ -666,6 +527,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
                             objConnector['ROOT-RPORT'] = final_rports[indexR]['ROOT']
                             objConnector['SWC-PPORT'] = final_pports[indexP]['SWC']
                             objConnector['SWC-RPORT'] = final_rports[indexR]['SWC']
+                            objConnector['PTYPE'] = final_pports[indexP]['PTYPE']
                             connectors.append(objConnector)
                             final_rports[indexR]['SINGLE'] = False
                             final_pports[indexP]['SINGLE'] = False
@@ -723,7 +585,7 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
             context_provider = etree.SubElement(provider, 'CONTEXT-COMPONENT-REF')
             context_provider.set('DEST', "SW-COMPONENT-PROTOTYPE")
             context_provider.text = '/RootP_Composition/Compo_VSM/' + con['SWC-PPORT']
-            if con['SHORT-NAME-PP'][:3] != "PRP":
+            if con['PTYPE'] != "PRP":
                 target_provided = etree.SubElement(provider, 'TARGET-P-PORT-REF')
                 target_provided.set('DEST', "P-PORT-PROTOTYPE")
                 target_provided.text = '/' + con['ROOT-PPORT'] + '/' + con['ASWC-PPORT'] + '/' + con['SHORT-NAME-PP']
@@ -741,12 +603,6 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
         pretty_xml = prettify_xml(rootConnectors)
         tree = etree.ElementTree(etree.fromstring(pretty_xml))
         tree.write(output_path + '/Connectors.arxml', encoding="UTF-8", xml_declaration=True, method="xml")
-        if xmlschema_arxml.validate(etree.parse(output_path + '/Connectors.arxml')) is not True:
-            logger.warning('The file: Connectors.arxml is NOT valid with the provided xsd schema')
-            warning_no = warning_no + 1
-        else:
-            logger.info('The file: Connectors.arxml is valid with the provided xsd schema')
-            info_no = info_no + 1
         #################################
         if error_no != 0:
             print("There is at least one blocking error! Check the generated log.")
@@ -769,8 +625,22 @@ def create_connectors(recursive_arxml, simple_arxml, recursive_swc, simple_swc, 
 
 
 def arg_parse(parser):
-    parser.add_argument("-config", action="store_const", const="-config")
-    parser.add_argument("input_configuration_file", help="configuration file location")
+    parser.add_argument('-in', '--inp', nargs='*', help="input path or file", required=True, default="")
+    parser.add_argument('-out', '--out', help="output path", required=False, default="")
+    parser.add_argument('-out_arxml', '--out_arxml', help="output path for configuration file(s)", required=False, default="")
+    parser.add_argument('-out_log', '--out_log', help="output path for log file", required=False, default="")
+
+
+def set_logger(path):
+    # logger creation and setting
+    logger = logging.getLogger('result')
+    hdlr = logging.FileHandler(path + '/result_ConDesc.log')
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    hdlr.setFormatter(formatter)
+    logger.addHandler(hdlr)
+    logger.setLevel(logging.INFO)
+    open(path + '/result_ConDesc.log', 'w').close()
+    return logger
 
 
 def prettify_xml(elem):
@@ -792,6 +662,7 @@ def unique_items(list_to_check):
         if item['CONNECTOR'] not in found:
             yield item
             found.add(item['CONNECTOR'])
+
 
 def find_between(s, first, last):
     try:

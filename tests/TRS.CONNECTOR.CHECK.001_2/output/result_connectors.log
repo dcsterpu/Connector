@@ -1,0 +1,6 @@
+2018-08-30 10:23:57,447 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_2\input\ASWC_M740.aswc.arxml is well-formed
+2018-08-30 10:23:57,451 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_2\input\ASWC_M741.aswc.arxml is well-formed
+2018-08-30 10:23:57,452 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_2\input\ASWC_M742.aswc.arxml is well-formed
+2018-08-30 10:23:57,453 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_2\input\SwcAllocation.xml is well-formed
+2018-08-30 10:23:57,455 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_2\input\TopLevel_Impl.arxml is well-formed
+2018-08-30 10:23:57,456 WARNING PRP_CS_VehicleSPeed is without connector

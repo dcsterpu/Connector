@@ -8,7 +8,7 @@
                     <SHORT-NAME>Compo_VSM</SHORT-NAME>
                     <CONNECTORS>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>ASSEMBLY_CONNECTOR_39F7A8_DFAE97_C97B94_403405</SHORT-NAME>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_008A98_D0E43D_9D1CC3_567394</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M743</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_M743/ASWC_M743/PP_CS_EtatBDE</TARGET-P-PORT-REF>
@@ -19,7 +19,7 @@
                             </REQUESTER-IREF>
                         </ASSEMBLY-SW-CONNECTOR>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>ASSEMBLY_CONNECTOR_CB2FFF_2E7CDF_118158_403405</SHORT-NAME>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_0A4520_B5BD12_1F4472_567394</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M743</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_M743/ASWC_M743/PP_CS_EtatBDE2</TARGET-P-PORT-REF>

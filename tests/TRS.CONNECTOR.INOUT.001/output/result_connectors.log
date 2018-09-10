@@ -1,0 +1,14 @@
+2018-08-30 10:24:06,833 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M740.aswc.arxml is well-formed
+2018-08-30 10:24:06,836 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M741.aswc.arxml is well-formed
+2018-08-30 10:24:06,838 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M742.aswc.arxml is well-formed
+2018-08-30 10:24:06,840 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M743.aswc.arxml is well-formed
+2018-08-30 10:24:06,842 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\BswM.arxml is well-formed
+2018-08-30 10:24:06,845 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\BswMMode.arxml is well-formed
+2018-08-30 10:24:06,846 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\SwcAllocation.xml is well-formed
+2018-08-30 10:24:06,848 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\TopLevel_Impl.arxml is well-formed
+2018-08-30 10:24:06,850 WARNING ModeRequestPort_SwcMode_ReqPort is without connector
+2018-08-30 10:24:06,850 WARNING PRP_SR_VitesseVehiculeCorro is without connector
+2018-08-30 10:24:06,850 WARNING RP_CS_EtatBDE is without connector
+2018-08-30 10:24:06,851 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_BswMSwitchLocalPort_Rte is without connector
+2018-08-30 10:24:06,851 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_AppSwitchLocalPort_Rte is without connector
+2018-08-30 10:24:06,851 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_BswMSwitchLocalPort_SlaveCore_Rte is without connector

@@ -1,0 +1,10 @@
+2018-08-30 10:24:02,197 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.0003_1\input\ASWC_M740.aswc.arxml is well-formed
+2018-08-30 10:24:02,199 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.0003_1\input\ASWC_M743.aswc.arxml is well-formed
+2018-08-30 10:24:02,202 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.0003_1\input\BswM.arxml is well-formed
+2018-08-30 10:24:02,204 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.0003_1\input\BswMMode.arxml is well-formed
+2018-08-30 10:24:02,206 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.0003_1\input\TopLevel_Impl.arxml is well-formed
+2018-08-30 10:24:02,207 WARNING ModeRequestPort_SwcMode_ReqPort is without connector
+2018-08-30 10:24:02,208 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_BswMSwitchLocalPort_Rte is without connector
+2018-08-30 10:24:02,208 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_AppSwitchLocalPort_Rte is without connector
+2018-08-30 10:24:02,208 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_BswMSwitchLocalPort_SlaveCore_Rte is without connector
+2018-08-30 10:24:02,208 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_AppSwitchLocalPort_Rte is without connector

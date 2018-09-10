@@ -7,10 +7,10 @@
                 <APPLICATION-SW-COMPONENT-TYPE>
                     <SHORT-NAME>ASWC_M743</SHORT-NAME>
                     <PORTS>
-						<P-PORT-PROTOTYPE>
-                            <SHORT-NAME>CS_EtatBDEtest</SHORT-NAME>
-                            <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS_Data/CS_EtatBDE</PROVIDED-INTERFACE-TREF>
-                        </P-PORT-PROTOTYPE>
+						<PR-PORT-PROTOTYPE>
+                            <SHORT-NAME>MPRP_CS_EtatBDEtest</SHORT-NAME>
+                            <PROVIDED-REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS_Data/CS_EtatBDE</PROVIDED-REQUIRED-INTERFACE-TREF>
+                        </PR-PORT-PROTOTYPE>
                     </PORTS>
                 </APPLICATION-SW-COMPONENT-TYPE>
             </ELEMENTS>

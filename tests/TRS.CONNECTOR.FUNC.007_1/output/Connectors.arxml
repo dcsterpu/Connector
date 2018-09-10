@@ -8,7 +8,7 @@
                     <SHORT-NAME>Compo_VSM</SHORT-NAME>
                     <CONNECTORS>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>ASSEMBLY_CONNECTOR_2EF554_13AF5D_D1D079_693479</SHORT-NAME>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_AEABFC_40D2F6_824336_930406</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_M741</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_M741/ASWC_M741/PP_CS_VehicleSpeed</TARGET-P-PORT-REF>
