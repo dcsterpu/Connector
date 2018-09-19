@@ -157,7 +157,9 @@ def create_connectors(files_list, output_path, logger):
                     objPRPort['FULL-NAME'] = elemPRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
                     if objPRPort['FULL-NAME'][:3] == "PP_":
                         objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][3:]
-                    if objPRPort['FULL-NAME'][:4] == "PRP_":
+                    elif objPRPort['FULL-NAME'][:4] == "MPP_":
+                        objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
+                    elif objPRPort['FULL-NAME'][:4] == "PRP_":
                         objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
                     elif objPRPort['FULL-NAME'][:5] == "MPRP_":
                         objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][5:]
