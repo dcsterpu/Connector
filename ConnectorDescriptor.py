@@ -315,13 +315,13 @@ def create_connectors(files_list, output_path, logger):
         # assign software allocation to each port and after delete ports without a valid software allocation
         for elemPort in PPorts:
             for elemC in software_allocs:
-                if elemPort['ROOT'] and elemPort['ASWC'] in elemC['SWC']:
+                if elemPort['ROOT'] and elemPort['ASWC'] in elemC['SWC'].split("/"):
                     elemPort['CORE'] = elemC['CORE']
                     elemPort['PARTITION'] = elemC['PARTITION']
                     break
         for elemPort in RPorts:
             for elemC in software_allocs:
-                if elemPort['ROOT'] and elemPort['ASWC'] in elemC['SWC']:
+                if elemPort['ROOT'] and elemPort['ASWC'] in elemC['SWC'].split("/"):
                     elemPort['CORE'] = elemC['CORE']
                     elemPort['PARTITION'] = elemC['PARTITION']
                     break
