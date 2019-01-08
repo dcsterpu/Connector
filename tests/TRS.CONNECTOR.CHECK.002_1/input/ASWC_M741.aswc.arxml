@@ -12,6 +12,9 @@
                             <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS_Data/CS_VehicleSPeed</PROVIDED-INTERFACE-TREF>
                         </P-PORT-PROTOTYPE>
                     </PORTS>
+				</APPLICATION-SW-COMPONENT-TYPE>
+				<APPLICATION-SW-COMPONENT-TYPE>
+                    <SHORT-NAME>ASWC_M7</SHORT-NAME>
 					<PORTS>
                         <P-PORT-PROTOTYPE UUID="e7aefcdb-6943-0cf9-2a24-2a0845220471">
                             <SHORT-NAME>PP_CS_VehicleSPeed</SHORT-NAME>
@@ -30,6 +33,12 @@
                         <SW-COMPONENT-PROTOTYPE>
                             <SHORT-NAME>Instance_ASWC_M6</SHORT-NAME>
                             <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/RootP_ASWC_M6/ASWC_M6</TYPE-TREF>
+                        </SW-COMPONENT-PROTOTYPE>
+                    </COMPONENTS>
+					<COMPONENTS>
+                        <SW-COMPONENT-PROTOTYPE>
+                            <SHORT-NAME>Instance_ASWC_M7</SHORT-NAME>
+                            <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/RootP_ASWC_M6/ASWC_M7</TYPE-TREF>
                         </SW-COMPONENT-PROTOTYPE>
                     </COMPONENTS>
                 </COMPOSITION-SW-COMPONENT-TYPE>

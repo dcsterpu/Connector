@@ -5,7 +5,7 @@ import logging                              # pragma: no cover
 from xml.sax.handler import ContentHandler  # pragma: no cover
 from xml.sax import make_parser             # pragma: no cover
 from xml.dom.minidom import parseString     # pragma: no cover
-from lxml import etree                      # pragma: no cover
+from lxml import etree, objectify           # pragma: no cover
 import uuid                                 # pragma: no cover
 import datetime
 
@@ -90,6 +90,14 @@ def main():
         sys.exit(1)
 
 
+def delete_prefix(full_name):
+    prefixes = ['RP_', 'PP_', 'PRP_', 'MPP_', 'MPRP_', 'MRP_']
+    for prefix in prefixes:
+        if full_name.startswith(prefix):
+            return full_name.replace(prefix, '', 1)
+    return full_name
+
+
 def create_connectors(files_list, output_path, logger):
     NSMAP = {None: 'http://autosar.org/schema/r4.0',
              "xsi": 'http://www.w3.org/2001/XMLSchema-instance'}
@@ -114,7 +122,8 @@ def create_connectors(files_list, output_path, logger):
                     logger.error('The file: ' + file + ' is not well-formed: ' + str(e))
                     print('Error: The file: ' + file + ' is not well-formed: ' + str(e))
                     error_no = error_no + 1
-                tree = etree.parse(file)
+                parser = etree.XMLParser(remove_comments=True)
+                tree = objectify.parse(file, parser=parser)
                 root = tree.getroot()
                 PPort = root.findall(".//{http://autosar.org/schema/r4.0}P-PORT-PROTOTYPE")
                 PRPort = root.findall(".//{http://autosar.org/schema/r4.0}PR-PORT-PROTOTYPE")
@@ -128,12 +137,7 @@ def create_connectors(files_list, output_path, logger):
                     root_p = elemPP.getparent().getparent().getparent().getparent().getchildren()[0].text
                     objPPort['TYPE'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").attrib['DEST']
                     objPPort['FULL-NAME'] = elemPP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                    if objPPort['FULL-NAME'][:3] == "PP_":
-                        objPPort['SHORT-NAME'] = objPPort['FULL-NAME'][3:]
-                    elif objPPort['FULL-NAME'][:4] == "MPP_":
-                        objPPort['SHORT-NAME'] = objPPort['FULL-NAME'][4:]
-                    else:
-                        objPPort['SHORT-NAME'] = objPPort['FULL-NAME']
+                    objPPort['SHORT-NAME'] = delete_prefix(objPPort['FULL-NAME'])
                     objPPort['INTERFACE-TYPE'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").attrib['DEST']
                     objPPort['PROVIDED-INTERFACE-TREF'] = elemPP.find("{http://autosar.org/schema/r4.0}PROVIDED-INTERFACE-TREF").text
                     objPPort['ASWC'] = aswc
@@ -144,6 +148,7 @@ def create_connectors(files_list, output_path, logger):
                     objPPort['SINGLE'] = True
                     objPPort['UNIQUE'] = True
                     objPPort['CROSSED'] = False
+                    objPPort['DELETE'] = False
                     objPPort['PTYPE'] = "PP"
                     if elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                         root_s = elemPP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
@@ -155,16 +160,7 @@ def create_connectors(files_list, output_path, logger):
                     objPRPort = {}
                     objPRPort['TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
                     objPRPort['FULL-NAME'] = elemPRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                    if objPRPort['FULL-NAME'][:3] == "PP_":
-                        objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][3:]
-                    elif objPRPort['FULL-NAME'][:4] == "MPP_":
-                        objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
-                    elif objPRPort['FULL-NAME'][:4] == "PRP_":
-                        objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][4:]
-                    elif objPRPort['FULL-NAME'][:5] == "MPRP_":
-                        objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME'][5:]
-                    else:
-                        objPRPort['SHORT-NAME'] = objPRPort['FULL-NAME']
+                    objPRPort['SHORT-NAME'] = delete_prefix(objPRPort['FULL-NAME'])
                     objPRPort['INTERFACE-TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
                     objPRPort['PROVIDED-INTERFACE-TREF'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").text
                     objPRPort['TYPE'] = elemPRP.find("{http://autosar.org/schema/r4.0}PROVIDED-REQUIRED-INTERFACE-TREF").attrib['DEST']
@@ -176,6 +172,7 @@ def create_connectors(files_list, output_path, logger):
                     objPRPort['SINGLE'] = True
                     objPRPort['UNIQUE'] = True
                     objPRPort['CROSSED'] = False
+                    objPRPort['DELETE'] = False
                     objPRPort['PTYPE'] = "PRP"
                     if elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                         root_s = elemPRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
@@ -187,12 +184,7 @@ def create_connectors(files_list, output_path, logger):
                     root_p = elemRP.getparent().getparent().getparent().getparent().getchildren()[0].text
                     objRPort = {}
                     objRPort['FULL-NAME'] = elemRP.find("{http://autosar.org/schema/r4.0}SHORT-NAME").text
-                    if objRPort['FULL-NAME'][:3] == "RP_":
-                        objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][3:]
-                    elif objRPort['FULL-NAME'][:4] == "MRP_":
-                        objRPort['SHORT-NAME'] = objRPort['FULL-NAME'][4:]
-                    else:
-                        objRPort['SHORT-NAME'] = objRPort['FULL-NAME']
+                    objRPort['SHORT-NAME'] = delete_prefix(objRPort['FULL-NAME'])
                     objRPort['INTERFACE-TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
                     objRPort['REQUIRED-INTERFACE-TREF'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").text
                     objRPort['TYPE'] = elemRP.find("{http://autosar.org/schema/r4.0}REQUIRED-INTERFACE-TREF").attrib['DEST']
@@ -204,6 +196,7 @@ def create_connectors(files_list, output_path, logger):
                     objRPort['SINGLE'] = True
                     objRPort['UNIQUE'] = True
                     objRPort['CROSSED'] = False
+                    objRPort['DELETE'] = False
                     if elemRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].tag == '{http://autosar.org/schema/r4.0}SHORT-NAME':
                         root_s = elemRP.getparent().getparent().getparent().getparent().getparent().getparent().getchildren()[0].text
                         objRPort['ROOT'] = root_s + '/' + root_p
@@ -234,7 +227,8 @@ def create_connectors(files_list, output_path, logger):
                     logger.error('The file: ' + file + ' is not well-formed: ' + str(e))
                     print('Error: The file: ' + file + ' is not well-formed: ' + str(e))
                     error_no = error_no + 1
-                tree = etree.parse(file)
+                parser = etree.XMLParser(remove_comments=True)
+                tree = objectify.parse(file, parser=parser)
                 root = tree.getroot()
                 swc_allocations = root.findall(".//SWC-ALLOCATION")
                 for elem in swc_allocations:
@@ -290,16 +284,57 @@ def create_connectors(files_list, output_path, logger):
             if elemPort['SWC'] == '':
                 RPorts.remove(elemPort)
 
+        # check if there are multiple instances of the same port
+        indexP1 = -1
+        for elemP1 in PPorts:
+            indexP1 = indexP1 + 1
+            indexP2 = -1
+            for elemP2 in PPorts:
+                indexP2 = indexP2 + 1
+                if indexP1 != indexP2:
+                    if elemP1['FULL-NAME'] == elemP2['FULL-NAME'] and elemP1['ASWC'] == elemP2['ASWC'] and elemP1['ROOT'] == elemP2['ROOT']:
+                        if indexP1 < indexP2:
+                            elemP2['DELETE'] = True
+        for elemP in PPorts[:]:
+            if elemP['DELETE']:
+                PPorts.remove(elemP)
+        indexP1 = -1
+        for elemP1 in RPorts:
+            indexP1 = indexP1 + 1
+            indexP2 = -1
+            for elemP2 in RPorts:
+                indexP2 = indexP2 + 1
+                if indexP1 != indexP2:
+                    if elemP1['FULL-NAME'] == elemP2['FULL-NAME'] and elemP1['ASWC'] == elemP2['ASWC'] and elemP1['ROOT'] == elemP2['ROOT']:
+                        if indexP1 < indexP2:
+                            elemP2['DELETE'] = True
+        for elemP in RPorts[:]:
+            if elemP['DELETE']:
+                RPorts.remove(elemP)
+
+        # assign software allocation to each port and after delete ports without a valid software allocation
         for elemPort in PPorts:
             for elemC in software_allocs:
-                if elemPort['ROOT'] in elemC['SWC'] and elemPort['ASWC'] in elemC['SWC']:
+                if elemPort['ROOT'] and elemPort['ASWC'] in elemC['SWC']:
                     elemPort['CORE'] = elemC['CORE']
                     elemPort['PARTITION'] = elemC['PARTITION']
+                    break
         for elemPort in RPorts:
             for elemC in software_allocs:
-                if elemPort['ROOT'] in elemC['SWC'] and elemPort['ASWC'] in elemC['SWC']:
+                if elemPort['ROOT'] and elemPort['ASWC'] in elemC['SWC']:
                     elemPort['CORE'] = elemC['CORE']
                     elemPort['PARTITION'] = elemC['PARTITION']
+                    break
+        for elemPort in PPorts[:]:
+            if not elemPort['CORE'] or not elemPort['PARTITION']:
+                PPorts.remove(elemPort)
+                logger.error("The port " + elemPort['FULL-NAME'] + " from ASWC " + elemPort['ASWC'] + " doesn't have a valid software allocation")
+                error_no = error_no + 1
+        for elemPort in RPorts[:]:
+            if not elemPort['CORE'] or not elemPort['PARTITION']:
+                RPorts.remove(elemPort)
+                logger.error("The port " + elemPort['FULL-NAME'] + " from ASWC " + elemPort['ASWC'] + " doesn't have a valid software allocation")
+                error_no = error_no + 1
 
         # check that the PPort is the only provided port of the interface
         for indexPort1 in range(len(PPorts)):
@@ -308,10 +343,8 @@ def create_connectors(files_list, output_path, logger):
                     if PPorts[indexPort1]["PROVIDED-INTERFACE-TREF"] == PPorts[indexPort2]["PROVIDED-INTERFACE-TREF"]:
                         PPorts[indexPort1]['UNIQUE'] = False
 
-        # implement TRS.CONNECTOR.FUNC.0003(0) & TRS.CONNECTOR.FUNC.0009(0)
+        # implement TRS.CONNECTOR.FUNC.0003
         # filter for multiple PPorts or PRPorts
-        # also, if there are several PPorts or PRPorts, and one of them is from <Aswc_IntDcm>, ignore it
-        # this creates a new list with valid PPorts to be further used in creating the connectors
         final_pports = []
         for indexPort1 in range(len(PPorts)):
             add = True
@@ -319,30 +352,20 @@ def create_connectors(files_list, output_path, logger):
                 for indexPort2 in range(len(PPorts)):
                     if indexPort1 != indexPort2:
                         if PPorts[indexPort1]['SHORT-NAME'] == PPorts[indexPort2]['SHORT-NAME'] and PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] == PPorts[indexPort2]['PROVIDED-INTERFACE-TREF'] and PPorts[indexPort1]['CORE'] == PPorts[indexPort2]['CORE'] and PPorts[indexPort1]['PARTITION'] == PPorts[indexPort2]['PARTITION']:
-                            if PPorts[indexPort1]['ASWC'] != "Aswc_IntDcm":
-                                if PPorts[indexPort2]['ASWC'] == "Aswc_IntDcm":
-                                    pass
-                                else:
-                                    logger.error('Multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] + ": " + PPorts[indexPort1]['FULL-NAME'] + "(ASWC " +PPorts[indexPort1]['ASWC'] + ", CORE " + PPorts[indexPort1]['CORE'] +  ", PARTITION " + PPorts[indexPort1]['PARTITION'] + ")")
-                                    print('Error: Multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] + ": " + PPorts[indexPort1]['FULL-NAME'] + "(ASWC " +PPorts[indexPort1]['ASWC'] + ", CORE " + PPorts[indexPort1]['CORE'] +  ", PARTITION " + PPorts[indexPort1]['PARTITION'] + ")")
-                                    error_no = error_no + 1
-                                    add = False
-                            else:
+                            if PPorts[indexPort1]['ASWC'] == PPorts[indexPort2]['ASWC'] or PPorts[indexPort1]['ROOT'] == PPorts[indexPort2]['ROOT']:
+                                logger.error('Multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] + ": " + PPorts[indexPort1]['FULL-NAME'] + "(ASWC " + PPorts[indexPort1]['ASWC'] + ", CORE " + PPorts[indexPort1]['CORE'] + ", PARTITION " + PPorts[indexPort1]['PARTITION'] + ")")
+                                print('Error: Multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] + ": " + PPorts[indexPort1]['FULL-NAME'] + "(ASWC " + PPorts[indexPort1]['ASWC'] + ", CORE " + PPorts[indexPort1]['CORE'] + ", PARTITION " + PPorts[indexPort1]['PARTITION'] + ")")
+                                error_no = error_no + 1
                                 add = False
             else:
                 for indexPort2 in range(len(PPorts)):
                     if indexPort1 != indexPort2:
                         if PPorts[indexPort1]['SHORT-NAME'] == PPorts[indexPort2]['SHORT-NAME'] and PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] == PPorts[indexPort2]['PROVIDED-INTERFACE-TREF']:
-                            if PPorts[indexPort1]['ASWC'] != "Aswc_IntDcm":
-                                if PPorts[indexPort2]['ASWC'] == "Aswc_IntDcm":
-                                    pass
-                                else:
-                                    logger.error('Multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] + ": " + PPorts[indexPort1]['FULL-NAME'] + "(ASWC " +PPorts[indexPort1]['ASWC'] + ")")
-                                    print('Error: Multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] + ": " + PPorts[indexPort1]['FULL-NAME'] + "(ASWC " +PPorts[indexPort1]['ASWC'] + ")")
-                                    error_no = error_no + 1
-                                    add = False
-                            else:
-                                add = False
+                            #if PPorts[indexPort1]['ASWC'] == PPorts[indexPort2]['ASWC'] or PPorts[indexPort1]['ROOT'] == PPorts[indexPort2]['ROOT']:
+                            logger.error('Multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] + ": " + PPorts[indexPort1]['FULL-NAME'])
+                            print('Error: Multiple PPorts for interface ' + PPorts[indexPort1]['PROVIDED-INTERFACE-TREF'] + ": " + PPorts[indexPort1]['FULL-NAME'])
+                            error_no = error_no + 1
+                            add = False
             if add:
                 final_pports.append(PPorts[indexPort1])
         if error_no != 0:
@@ -383,7 +406,7 @@ def create_connectors(files_list, output_path, logger):
                         RPorts[indexPort1]['UNIQUE'] = False
             final_rports.append(RPorts[indexPort1])
 
-        # delete RPorts without instance -> them are not to be used
+        # delete RPorts without instance -> they are not to be used
         for elem in final_rports[:]:
             if elem['SWC'] == "":
                 final_rports.remove(elem)
