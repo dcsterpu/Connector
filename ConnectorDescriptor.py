@@ -425,12 +425,29 @@ def create_connectors(files_list, output_path, logger):
                 msi_rports.append(elem)
                 final_rports.remove(elem)
 
+        # there can be multiple PPorts with the same names of interface type Client-Server only if each of them has a different software allocation
+        # the only exception to this rule where PPorts are allowed to exist on the same software allocation is when the matching RPort is of ASWC Dcm
+        for index1 in range(len(csi_pports)):
+            for index2 in range(len(csi_pports)):
+                if index1 != index2:
+                    if csi_pports[index1]['PROVIDED-INTERFACE-TREF'] == csi_pports[index2]['PROVIDED-INTERFACE-TREF'] and csi_pports[index1]['SHORT-NAME'] == csi_pports[index2]['SHORT-NAME']:
+                        if csi_pports[index1]['CORE'] == csi_pports[index2]['CORE'] and csi_pports[index1]['PARTITION'] == csi_pports[index2]['PARTITION']:
+                            for elemRP in csi_rports:
+                                if csi_pports[index1]['PROVIDED-INTERFACE-TREF'] == elemRP['REQUIRED-INTERFACE-TREF']:
+                                    if csi_pports[index1]['SHORT-NAME'] == elemRP['SHORT-NAME']:
+                                        if elemRP['ASWC'] == "Dcm":
+                                            pass
+                                        else:
+                                            logger.error('Multiple PPorts for interface ' + csi_pports[index1]['PROVIDED-INTERFACE-TREF'] + " with same software allocation: " + ", " + csi_pports[index1]['FULL-NAME'] + ": " + csi_pports[index1]['PARTITION'] + " " + csi_pports[index1]['CORE'] + " " + csi_pports[index1]['ASWC'] + " " + csi_pports[index2]['ASWC'])
+                                            print('Error: Multiple PPorts for interface ' + csi_pports[index1]['PROVIDED-INTERFACE-TREF'] + " with same software allocation: " + ", " + csi_pports[index1]['FULL-NAME'] + ": " + csi_pports[index1]['PARTITION'] + " " + csi_pports[index1]['CORE'])
+                                            error_no = error_no + 1
+
         # create connector between Pport and Rport referencing a CLIENT-SERVER-INTERFACE
         for elemPP in csi_pports:
             for elemRP in csi_rports:
                 if elemPP['UNIQUE']:
                     if elemPP['PROVIDED-INTERFACE-TREF'] == elemRP['REQUIRED-INTERFACE-TREF']:
-                        if elemRP['CORE'] == elemPP['CORE'] and elemRP['PARTITION'] == elemPP['PARTITION']:
+                        if (elemRP['CORE'] == elemPP['CORE'] and elemRP['PARTITION'] == elemPP['PARTITION']) or elemRP['ASWC'] == "Dcm":
                             objConnector = {}
                             objConnector['CONNECTOR'] = elemPP['ASWC'] + "_" + elemPP['FULL-NAME'] + "_to_" + elemRP['ASWC'] + "_" + elemRP['FULL-NAME']
                             objConnector['NAME'] = elemRP['SHORT-NAME']
@@ -454,7 +471,7 @@ def create_connectors(files_list, output_path, logger):
                             warning_no = warning_no + 1
                 else:
                     if elemPP['PROVIDED-INTERFACE-TREF'] == elemRP['REQUIRED-INTERFACE-TREF']:
-                        if elemRP['CORE'] == elemPP['CORE'] and elemRP['PARTITION'] == elemPP['PARTITION']:
+                        if elemRP['CORE'] == elemPP['CORE'] and elemRP['PARTITION'] == elemPP['PARTITION'] or elemRP['ASWC'] == "Dcm":
                             if elemPP['SHORT-NAME'] == elemRP['SHORT-NAME']:
                                 objConnector = {}
                                 objConnector['CONNECTOR'] = elemPP['ASWC'] + "_" + elemPP['FULL-NAME'] + "_to_" + elemRP['ASWC'] + "_" + elemRP['FULL-NAME']
@@ -604,7 +621,6 @@ def create_connectors(files_list, output_path, logger):
         for con in connectors:
             assembly = etree.SubElement(connector, 'ASSEMBLY-SW-CONNECTOR')
             short_name = etree.SubElement(assembly, 'SHORT-NAME')
-            # short_name.text = con['ASWC-PPORT'] + "_" + con['SHORT-NAME-PP'] + "_to_" + con['ASWC-RPORT'] + "_" + con['SHORT-NAME-RP']
             short_name.text = "ASSEMBLY_CONNECTOR_" + uuid.uuid4().hex[:6].upper() + "_" + uuid.uuid4().hex[:6].upper() + "_" + uuid.uuid4().hex[:6].upper() + "_" + str(datetime.datetime.now()).split(".")[-1]
             provider = etree.SubElement(assembly, 'PROVIDER-IREF')
             context_provider = etree.SubElement(provider, 'CONTEXT-COMPONENT-REF')

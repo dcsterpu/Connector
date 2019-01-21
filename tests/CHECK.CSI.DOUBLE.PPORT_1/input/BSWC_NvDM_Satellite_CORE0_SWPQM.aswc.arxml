@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-2-1.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>RootP_BSWC_NvDM_Satellite_CORE0_SWPQM</SHORT-NAME>
+            <ELEMENTS>
+                <APPLICATION-SW-COMPONENT-TYPE>
+                    <SHORT-NAME>BSWC_NvDM_Satellite_CORE0_SWPQM</SHORT-NAME>
+                    <ADMIN-DATA>
+                        <SDGS>
+                            <SDG GID="MBD_FALSE"/>
+                        </SDGS>
+                    </ADMIN-DATA>
+                    <PORTS>
+                        <!-- 2 write acces client-server interfaces -->
+                        <P-PORT-PROTOTYPE UUID="9b244296-80d5-f843-7591-f316ab37e5e8">
+                            <SHORT-NAME>PP_CS_NVDM_WR_APP</SHORT-NAME>
+                            <PROVIDED-COM-SPECS>
+                                <SERVER-COM-SPEC>
+                                    <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RootP_CS/CS_NVDM_WR_APP/NvDM_WrApp_Block</OPERATION-REF>
+                                    <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                                </SERVER-COM-SPEC>
+                            </PROVIDED-COM-SPECS>
+                            <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS/CS_NVDM_WR_APP</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="5df1c33d-22ae-51e5-8a22-7723d84c00c4">
+                            <SHORT-NAME>PP_CS_NVDM_WR_CFGVH</SHORT-NAME>
+                            <PROVIDED-COM-SPECS>
+                                <SERVER-COM-SPEC>
+                                    <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RootP_CS/CS_NVDM_WR_CFGVH/NvDM_WrCfgVh_Block</OPERATION-REF>
+                                    <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                                </SERVER-COM-SPEC>
+                            </PROVIDED-COM-SPECS>
+                            <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS/CS_NVDM_WR_CFGVH</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <!-- Required Port Mode Switch Event -->
+                        <R-PORT-PROTOTYPE UUID="b21364e2-1b6a-1552-2f27-08941e2638ab">
+                            <SHORT-NAME>BSWC_NvDM_Satellite_CORE0_SWPQM_MSI</SHORT-NAME>
+                            <REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/RootP_Mode/AppModeInterface</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                    </PORTS>
+                    <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR UUID="fbc172d6-dc71-0630-f4d7-4475b3b0c9a0">
+                            <SHORT-NAME>IB_BSWC_NvDM_Satellite_CORE0_SWPQM</SHORT-NAME>
+                            <DATA-TYPE-MAPPING-REFS>
+                                <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/RootP_Mode/ApplicationModeMapping</DATA-TYPE-MAPPING-REF>
+                            </DATA-TYPE-MAPPING-REFS>
+                            <AR-TYPED-PER-INSTANCE-MEMORYS />
+                            <EVENTS>
+                                <OPERATION-INVOKED-EVENT UUID="0da94f36-2f66-f4df-4a82-654cdd802ed6">
+                                    <SHORT-NAME>PP_CS_NVDM_WR_APP_NvDM_WrApp_Block_OIE</SHORT-NAME>
+                                    <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/RootP_BSWC_NvDM_Satellite_CORE0_SWPQM/BSWC_NvDM_Satellite_CORE0_SWPQM/IB_BSWC_NvDM_Satellite_CORE0_SWPQM/NvDM_WrApp_Block_CORE0_SWPQM</START-ON-EVENT-REF>
+                                    <OPERATION-IREF>
+                                        <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_BSWC_NvDM_Satellite_CORE0_SWPQM/BSWC_NvDM_Satellite_CORE0_SWPQM/PP_CS_NVDM_WR_APP</CONTEXT-P-PORT-REF>
+                                        <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RootP_CS/CS_NVDM_WR_APP/NvDM_WrApp_Block</TARGET-PROVIDED-OPERATION-REF>
+                                    </OPERATION-IREF>
+                                </OPERATION-INVOKED-EVENT>
+                                <OPERATION-INVOKED-EVENT UUID="91b0e0ef-4c5b-740e-511f-10329d4119d0">
+                                    <SHORT-NAME>PP_CS_NVDM_WR_CFGVH_NvDM_WrCfgVh_Block_OIE</SHORT-NAME>
+                                    <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/RootP_BSWC_NvDM_Satellite_CORE0_SWPQM/BSWC_NvDM_Satellite_CORE0_SWPQM/IB_BSWC_NvDM_Satellite_CORE0_SWPQM/NvDM_WrCfgVh_Block_CORE0_SWPQM</START-ON-EVENT-REF>
+                                    <OPERATION-IREF>
+                                        <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_BSWC_NvDM_Satellite_CORE0_SWPQM/BSWC_NvDM_Satellite_CORE0_SWPQM/PP_CS_NVDM_WR_CFGVH</CONTEXT-P-PORT-REF>
+                                        <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RootP_CS/CS_NVDM_WR_CFGVH/NvDM_WrCfgVh_Block</TARGET-PROVIDED-OPERATION-REF>
+                                    </OPERATION-IREF>
+                                </OPERATION-INVOKED-EVENT>
+                            </EVENTS>
+                            <EXPLICIT-INTER-RUNNABLE-VARIABLES />
+                            <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                            <IMPLICIT-INTER-RUNNABLE-VARIABLES />
+                            <RUNNABLES>
+                                <RUNNABLE-ENTITY UUID="c3dac6af-26e3-0bac-f576-f2d723ccaf37">
+                                    <SHORT-NAME>NvDM_WrApp_Block_CORE0_SWPQM</SHORT-NAME>
+                                    <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                                    <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                    <DATA-READ-ACCESSS />
+                                    <DATA-RECEIVE-POINT-BY-ARGUMENTS />
+                                    <DATA-RECEIVE-POINT-BY-VALUES />
+                                    <DATA-SEND-POINTS />
+                                    <DATA-WRITE-ACCESSS />
+                                <PARAMETER-ACCESSS />
+                                    <READ-LOCAL-VARIABLES />
+                                    <SERVER-CALL-POINTS />
+                                    <SYMBOL>NvDM_WrApp_Block_CORE0_SWPQM</SYMBOL>
+                                    <WRITTEN-LOCAL-VARIABLES />
+                                </RUNNABLE-ENTITY>
+                                <RUNNABLE-ENTITY UUID="539461bf-b8a9-5bb0-962a-2166230ee197">
+                                    <SHORT-NAME>NvDM_WrCfgVh_Block_CORE0_SWPQM</SHORT-NAME>
+                                    <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                                    <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                    <DATA-READ-ACCESSS />
+                                    <DATA-RECEIVE-POINT-BY-ARGUMENTS />
+                                    <DATA-RECEIVE-POINT-BY-VALUES />
+                                    <DATA-SEND-POINTS />
+                                    <DATA-WRITE-ACCESSS />
+                                <PARAMETER-ACCESSS />
+                                    <READ-LOCAL-VARIABLES />
+                                    <SERVER-CALL-POINTS />
+                                    <SYMBOL>NvDM_WrCfgVh_Block_CORE0_SWPQM</SYMBOL>
+                                    <WRITTEN-LOCAL-VARIABLES />
+                                </RUNNABLE-ENTITY>
+                            </RUNNABLES>
+                            <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                        </SWC-INTERNAL-BEHAVIOR>
+                    </INTERNAL-BEHAVIORS>
+                </APPLICATION-SW-COMPONENT-TYPE>
+            </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+            <SHORT-NAME>RootP_Implementation</SHORT-NAME>
+            <ELEMENTS>
+                <SWC-IMPLEMENTATION>
+                    <SHORT-NAME>Implementatation_BSWC_NvDM_Satellite_CORE0_SWPQM</SHORT-NAME>
+                    <CODE-DESCRIPTORS>
+                        <CODE>
+                            <SHORT-NAME>SRC</SHORT-NAME>
+                            <ARTIFACT-DESCRIPTORS>
+                                <AUTOSAR-ENGINEERING-OBJECT>
+                                    <SHORT-LABEL>EngObject</SHORT-LABEL>
+                                    <CATEGORY>SWSRC</CATEGORY>
+                                </AUTOSAR-ENGINEERING-OBJECT>
+                            </ARTIFACT-DESCRIPTORS>
+                        </CODE>
+                    </CODE-DESCRIPTORS>
+                    <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                    <RESOURCE-CONSUMPTION>
+                        <SHORT-NAME>Resources</SHORT-NAME>
+                        <MEMORY-SECTIONS>
+                            <MEMORY-SECTION>
+                                <SHORT-NAME>CODE</SHORT-NAME>
+                                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/RootP_Implementation/CODE_BSWC_NvDM_Satellite_CORE0_SWPQM</SW-ADDRMETHOD-REF>
+                            </MEMORY-SECTION>
+                        </MEMORY-SECTIONS>
+                    </RESOURCE-CONSUMPTION>
+                    <SW-VERSION>1.0.0</SW-VERSION>
+                    <USED-CODE-GENERATOR/>
+                    <VENDOR-ID>1</VENDOR-ID>
+                    <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/RootP_BSWC_NvDM_Satellite_CORE0_SWPQM/BSWC_NvDM_Satellite_CORE0_SWPQM/IB_BSWC_NvDM_Satellite_CORE0_SWPQM</BEHAVIOR-REF>
+                </SWC-IMPLEMENTATION>
+                <SW-ADDR-METHOD>
+                    <SHORT-NAME>CODE_BSWC_NvDM_Satellite_CORE0_SWPQM</SHORT-NAME>
+                    <MEMORY-ALLOCATION-KEYWORD-POLICY>ADDR-METHOD-SHORT-NAME-AND-ALIGNMENT</MEMORY-ALLOCATION-KEYWORD-POLICY>
+                    <SECTION-TYPE>CODE</SECTION-TYPE>
+                </SW-ADDR-METHOD>
+            </ELEMENTS>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>

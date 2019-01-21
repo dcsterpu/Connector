@@ -1,0 +1,8 @@
+2018-12-12 11:26:38,369 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\CHECK.DOUBLE.INCLUSION\input\ASWC_M740.aswc.arxml is well-formed
+2018-12-12 11:26:38,377 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\CHECK.DOUBLE.INCLUSION\input\ASWC_M741.aswc.arxml is well-formed
+2018-12-12 11:26:38,379 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\CHECK.DOUBLE.INCLUSION\input\SwcAllocation.xml is well-formed
+2018-12-12 11:26:38,381 INFO The file: C:\Users\Cristi\PycharmProjects\AssemblyConnector\tests\CHECK.DOUBLE.INCLUSION\input\TopLevel_Impl.arxml is well-formed
+2018-12-12 11:26:38,383 WARNING PP_SR_VehicleSPeed is without connector
+2018-12-12 11:26:38,383 WARNING PP_SR_VehicleSPeed2 is without connector
+2018-12-12 11:26:38,383 WARNING RP_CS_VehicleMovement2 is without connector
+2018-12-12 11:26:38,383 WARNING RP_CS_VehicleMovement is without connector

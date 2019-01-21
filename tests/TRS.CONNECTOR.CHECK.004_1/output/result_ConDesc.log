@@ -1,0 +1,5 @@
+2019-01-21 11:39:56,504 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.004_1\input\ASWC_M740.aswc.arxml is well-formed
+2019-01-21 11:39:56,504 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.004_1\input\ASWC_M743.aswc.arxml is well-formed
+2019-01-21 11:39:56,514 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.004_1\input\SwcAllocation.xml is well-formed
+2019-01-21 11:39:56,514 ERROR Multiple PPorts for interface /RootP_CS_Data/CS_EtatBDE with same software allocation: , PP_CS_EtatBDE: A APP_1 ASWC_M743 ASWC_M742
+2019-01-21 11:39:56,514 ERROR Multiple PPorts for interface /RootP_CS_Data/CS_EtatBDE with same software allocation: , PP_CS_EtatBDE: A APP_1 ASWC_M742 ASWC_M743

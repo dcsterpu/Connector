@@ -313,8 +313,8 @@ class ConnectorDescriptor(unittest.TestCase):
         current_path = os.path.realpath(__file__)
         head, tail = ntpath.split(current_path)
         os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\TRS.CONNECTOR.CHECK.004_1\input -out ' + head + '\\tests\TRS.CONNECTOR.CHECK.004_1\output')
-        self.assertTrue(FileCompare.isOutput(head + '\\tests\TRS.CONNECTOR.CHECK.004_1\output\Connectors.arxml'))
-        self.assertFalse(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.CHECK.004_1\output\\result_ConDesc.log', "ERROR", [" "]))
+        self.assertFalse(FileCompare.isOutput(head + '\\tests\TRS.CONNECTOR.CHECK.004_1\output\Connectors.arxml'))
+        self.assertTrue(FileCompare.checkError(head + '\\tests\TRS.CONNECTOR.CHECK.004_1\output\\result_ConDesc.log', "ERROR", [" "]))
 
     def test_TRS_CONNECTOR_CHECK_004_2(self):
         current_path = os.path.realpath(__file__)
@@ -328,6 +328,21 @@ class ConnectorDescriptor(unittest.TestCase):
         os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\CHECK.ARXML\input -out ' + head + '\\tests\CHECK.ARXML\output')
         self.assertFalse(FileCompare.isOutput(head + '\\tests\CHECK.ARXML\output\Connectors.arxml'))
         self.assertTrue(FileCompare.checkError(head + '\\tests\CHECK.ARXML\output\\result_ConDesc.log', "ERROR", ["mismatched tag"]))
+
+    def test_CHECK_CSI_DOUBLE_PPORT_1(self):
+        current_path = os.path.realpath(__file__)
+        head, tail = ntpath.split(current_path)
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\CHECK.CSI.DOUBLE.PPORT_1\input -out ' + head + '\\tests\CHECK.CSI.DOUBLE.PPORT_1\output')
+        self.assertTrue(FileCompare.isOutput(head + '\\tests\CHECK.CSI.DOUBLE.PPORT_1\output\Connectors.arxml'))
+        self.assertTrue(FileCompare.areSame(head + '\\tests\CHECK.CSI.DOUBLE.PPORT_1\output\Connectors.arxml', head + '\\tests\CHECK.CSI.DOUBLE.PPORT_1\Connectors.arxml'))
+
+
+    def test_CHECK_CSI_DOUBLE_PPORT_2(self):
+        current_path = os.path.realpath(__file__)
+        head, tail = ntpath.split(current_path)
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\CHECK.CSI.DOUBLE.PPORT_2\input -out ' + head + '\\tests\CHECK.CSI.DOUBLE.PPORT_2\output')
+        self.assertFalse(FileCompare.isOutput(head + '\\tests\CHECK.CSI.DOUBLE.PPORT_2\output\Connectors.arxml'))
+        self.assertTrue(FileCompare.checkError(head + '\\tests\CHECK.CSI.DOUBLE.PPORT_2\output\\result_ConDesc.log', "ERROR", ["Multiple PPorts for interface", "with same software allocation"]))
 
 
 suite = unittest.TestLoader().loadTestsFromTestCase(ConnectorDescriptor)

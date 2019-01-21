@@ -1,0 +1,6 @@
+2019-01-21 11:39:54,951 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_2\input\ASWC_M740.aswc.arxml is well-formed
+2019-01-21 11:39:54,963 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_2\input\ASWC_M742.aswc.arxml is well-formed
+2019-01-21 11:39:54,967 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_2\input\SwcAllocation.xml is well-formed
+2019-01-21 11:39:54,971 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_2\input\TopLevel_Impl.arxml is well-formed
+2019-01-21 11:39:54,971 ERROR Multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed: PRP_CS_VehicleSPeed(ASWC ASWC_M742, CORE APP_1, PARTITION A)
+2019-01-21 11:39:54,971 ERROR Multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed: PRP_CS_VehicleSPeed(ASWC ASWC_M743, CORE APP_1, PARTITION A)

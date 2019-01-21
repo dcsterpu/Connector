@@ -1,0 +1,11 @@
+2019-01-21 11:39:57,662 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.0002_1\input\ASWC_M740.aswc.arxml is well-formed
+2019-01-21 11:39:57,669 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.0002_1\input\ASWC_M743.aswc.arxml is well-formed
+2019-01-21 11:39:57,673 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.0002_1\input\BswM.arxml is well-formed
+2019-01-21 11:39:57,676 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.0002_1\input\BswMMode.arxml is well-formed
+2019-01-21 11:39:57,686 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.0002_1\input\SwcAllocation.xml is well-formed
+2019-01-21 11:39:57,690 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.0002_1\input\TopLevel_Impl.arxml is well-formed
+2019-01-21 11:39:57,697 WARNING ModeRequestPort_SwcMode_ReqPort is without connector
+2019-01-21 11:39:57,697 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_BswMSwitchLocalPort_Rte is without connector
+2019-01-21 11:39:57,698 WARNING BswM_ModeSwitchPort_OS_APP_CORE1_QM_AppSwitchLocalPort_Rte is without connector
+2019-01-21 11:39:57,699 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_BswMSwitchLocalPort_SlaveCore_Rte is without connector
+2019-01-21 11:39:57,699 WARNING BswM_ModeSwitchPort_OS_APP_APP_1_QM_AppSwitchLocalPort_Rte is without connector

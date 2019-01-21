@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2_STRICT_COMPACT.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>RootP_Composition</SHORT-NAME>
+            <ELEMENTS>
+                <COMPOSITION-SW-COMPONENT-TYPE>
+                    <SHORT-NAME>Compo_VSM</SHORT-NAME>
+                    <CONNECTORS>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_AD3922_9CEDE5_152C15_260754</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_SATELLITE_CORE0_SWPQM</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_SATELLITE_CORE0_SWPQM/ASWC_SATELLITE_CORE0_SWPQM/PP_CS_NVDM_WR_APP</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_Dcm</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/Dcm/Dcm/RP_CS_NVDM_WR_APP</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                        <ASSEMBLY-SW-CONNECTOR>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_F29701_4CC87F_495BA7_260754</SHORT-NAME>
+                            <PROVIDER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_BSWC_NvDM_Satellite_CORE0_SWPQM</CONTEXT-COMPONENT-REF>
+                                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_BSWC_NvDM_Satellite_CORE0_SWPQM/BSWC_NvDM_Satellite_CORE0_SWPQM/PP_CS_NVDM_WR_APP</TARGET-P-PORT-REF>
+                            </PROVIDER-IREF>
+                            <REQUESTER-IREF>
+                                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_Dcm</CONTEXT-COMPONENT-REF>
+                                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/Dcm/Dcm/RP_CS_NVDM_WR_APP</TARGET-R-PORT-REF>
+                            </REQUESTER-IREF>
+                        </ASSEMBLY-SW-CONNECTOR>
+                    </CONNECTORS>
+                </COMPOSITION-SW-COMPONENT-TYPE>
+            </ELEMENTS>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>

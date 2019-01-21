@@ -1,0 +1,6 @@
+2019-01-21 11:39:53,260 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_2\input\ASWC_M740.aswc.arxml is well-formed
+2019-01-21 11:39:53,270 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_2\input\ASWC_M741.aswc.arxml is well-formed
+2019-01-21 11:39:53,270 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_2\input\ASWC_M742.aswc.arxml is well-formed
+2019-01-21 11:39:53,270 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_2\input\SwcAllocation.xml is well-formed
+2019-01-21 11:39:53,270 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_2\input\TopLevel_Impl.arxml is well-formed
+2019-01-21 11:39:53,270 WARNING PRP_CS_VehicleSPeed is without connector

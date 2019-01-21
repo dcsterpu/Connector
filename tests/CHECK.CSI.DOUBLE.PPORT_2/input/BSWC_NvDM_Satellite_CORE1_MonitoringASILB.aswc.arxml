@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-2-1.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>RootP_BSWC_NvDM_Satellite_CORE1_MonitoringASILB</SHORT-NAME>
+            <ELEMENTS>
+                <APPLICATION-SW-COMPONENT-TYPE>
+                    <SHORT-NAME>BSWC_NvDM_Satellite_CORE1_MonitoringASILB</SHORT-NAME>
+                    <ADMIN-DATA>
+                        <SDGS>
+                            <SDG GID="MBD_FALSE"/>
+                        </SDGS>
+                    </ADMIN-DATA>
+                    <PORTS>
+                        <!-- 2 write acces client-server interfaces -->
+                        <P-PORT-PROTOTYPE UUID="381cdab3-cc0f-292f-22df-25ba6018ca67">
+                            <SHORT-NAME>PP_CS_NVDM_WR_APP</SHORT-NAME>
+                            <PROVIDED-COM-SPECS>
+                                <SERVER-COM-SPEC>
+                                    <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RootP_CS/CS_NVDM_WR_APP/NvDM_WrApp_Block</OPERATION-REF>
+                                    <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                                </SERVER-COM-SPEC>
+                            </PROVIDED-COM-SPECS>
+                            <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS/CS_NVDM_WR_APP</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE UUID="8fd7fc42-0a00-8a3d-088e-44ad6fe2dc39">
+                            <SHORT-NAME>PP_CS_NVDM_WR_CFGVH</SHORT-NAME>
+                            <PROVIDED-COM-SPECS>
+                                <SERVER-COM-SPEC>
+                                    <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RootP_CS/CS_NVDM_WR_CFGVH/NvDM_WrCfgVh_Block</OPERATION-REF>
+                                    <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                                </SERVER-COM-SPEC>
+                            </PROVIDED-COM-SPECS>
+                            <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS/CS_NVDM_WR_CFGVH</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <!-- Required Port Mode Switch Event -->
+                        <R-PORT-PROTOTYPE UUID="3cbac0b4-ee10-3892-807b-6f356ab1a9d4">
+                            <SHORT-NAME>BSWC_NvDM_Satellite_CORE1_MonitoringASILB_MSI</SHORT-NAME>
+                            <REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/RootP_Mode/AppModeInterface</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                    </PORTS>
+                    <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR UUID="7fed0e3b-ede0-2a90-3c7e-3a1979ae8b80">
+                            <SHORT-NAME>IB_BSWC_NvDM_Satellite_CORE1_MonitoringASILB</SHORT-NAME>
+                            <DATA-TYPE-MAPPING-REFS>
+                                <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/RootP_Mode/ApplicationModeMapping</DATA-TYPE-MAPPING-REF>
+                            </DATA-TYPE-MAPPING-REFS>
+                            <AR-TYPED-PER-INSTANCE-MEMORYS />
+                            <EVENTS>
+                                <OPERATION-INVOKED-EVENT UUID="7f098cae-fcc3-be14-01a3-a30d40165030">
+                                    <SHORT-NAME>PP_CS_NVDM_WR_APP_NvDM_WrApp_Block_OIE</SHORT-NAME>
+                                    <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/RootP_BSWC_NvDM_Satellite_CORE1_MonitoringASILB/BSWC_NvDM_Satellite_CORE1_MonitoringASILB/IB_BSWC_NvDM_Satellite_CORE1_MonitoringASILB/NvDM_WrApp_Block_CORE1_MonitoringASILB</START-ON-EVENT-REF>
+                                    <OPERATION-IREF>
+                                        <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_BSWC_NvDM_Satellite_CORE1_MonitoringASILB/BSWC_NvDM_Satellite_CORE1_MonitoringASILB/PP_CS_NVDM_WR_APP</CONTEXT-P-PORT-REF>
+                                        <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RootP_CS/CS_NVDM_WR_APP/NvDM_WrApp_Block</TARGET-PROVIDED-OPERATION-REF>
+                                    </OPERATION-IREF>
+                                </OPERATION-INVOKED-EVENT>
+                                <OPERATION-INVOKED-EVENT UUID="b0d216e1-db66-bdfe-bfb9-79752f11ff32">
+                                    <SHORT-NAME>PP_CS_NVDM_WR_CFGVH_NvDM_WrCfgVh_Block_OIE</SHORT-NAME>
+                                    <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/RootP_BSWC_NvDM_Satellite_CORE1_MonitoringASILB/BSWC_NvDM_Satellite_CORE1_MonitoringASILB/IB_BSWC_NvDM_Satellite_CORE1_MonitoringASILB/NvDM_WrCfgVh_Block_CORE1_MonitoringASILB</START-ON-EVENT-REF>
+                                    <OPERATION-IREF>
+                                        <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_BSWC_NvDM_Satellite_CORE1_MonitoringASILB/BSWC_NvDM_Satellite_CORE1_MonitoringASILB/PP_CS_NVDM_WR_CFGVH</CONTEXT-P-PORT-REF>
+                                        <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RootP_CS/CS_NVDM_WR_CFGVH/NvDM_WrCfgVh_Block</TARGET-PROVIDED-OPERATION-REF>
+                                    </OPERATION-IREF>
+                                </OPERATION-INVOKED-EVENT>
+                            </EVENTS>
+                            <EXPLICIT-INTER-RUNNABLE-VARIABLES />
+                            <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                            <IMPLICIT-INTER-RUNNABLE-VARIABLES />
+                            <RUNNABLES>
+                                <RUNNABLE-ENTITY UUID="c1520320-6663-f5d1-f95b-917e749b3502">
+                                    <SHORT-NAME>NvDM_WrApp_Block_CORE1_MonitoringASILB</SHORT-NAME>
+                                    <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                                    <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                    <DATA-READ-ACCESSS />
+                                    <DATA-RECEIVE-POINT-BY-ARGUMENTS />
+                                    <DATA-RECEIVE-POINT-BY-VALUES />
+                                    <DATA-SEND-POINTS />
+                                    <DATA-WRITE-ACCESSS />
+                                <PARAMETER-ACCESSS />
+                                    <READ-LOCAL-VARIABLES />
+                                    <SERVER-CALL-POINTS />
+                                    <SYMBOL>NvDM_WrApp_Block_CORE1_MonitoringASILB</SYMBOL>
+                                    <WRITTEN-LOCAL-VARIABLES />
+                                </RUNNABLE-ENTITY>
+                                <RUNNABLE-ENTITY UUID="b570079a-5edf-02c4-11f0-81cdb6a2300c">
+                                    <SHORT-NAME>NvDM_WrCfgVh_Block_CORE1_MonitoringASILB</SHORT-NAME>
+                                    <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                                    <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                                    <DATA-READ-ACCESSS />
+                                    <DATA-RECEIVE-POINT-BY-ARGUMENTS />
+                                    <DATA-RECEIVE-POINT-BY-VALUES />
+                                    <DATA-SEND-POINTS />
+                                    <DATA-WRITE-ACCESSS />
+                                <PARAMETER-ACCESSS />
+                                    <READ-LOCAL-VARIABLES />
+                                    <SERVER-CALL-POINTS />
+                                    <SYMBOL>NvDM_WrCfgVh_Block_CORE1_MonitoringASILB</SYMBOL>
+                                    <WRITTEN-LOCAL-VARIABLES />
+                                </RUNNABLE-ENTITY>
+                            </RUNNABLES>
+                            <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                        </SWC-INTERNAL-BEHAVIOR>
+                    </INTERNAL-BEHAVIORS>
+                </APPLICATION-SW-COMPONENT-TYPE>
+            </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+            <SHORT-NAME>RootP_Implementation</SHORT-NAME>
+            <ELEMENTS>
+                <SWC-IMPLEMENTATION>
+                    <SHORT-NAME>Implementatation_BSWC_NvDM_Satellite_CORE1_MonitoringASILB</SHORT-NAME>
+                    <CODE-DESCRIPTORS>
+                        <CODE>
+                            <SHORT-NAME>SRC</SHORT-NAME>
+                            <ARTIFACT-DESCRIPTORS>
+                                <AUTOSAR-ENGINEERING-OBJECT>
+                                    <SHORT-LABEL>EngObject</SHORT-LABEL>
+                                    <CATEGORY>SWSRC</CATEGORY>
+                                </AUTOSAR-ENGINEERING-OBJECT>
+                            </ARTIFACT-DESCRIPTORS>
+                        </CODE>
+                    </CODE-DESCRIPTORS>
+                    <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                    <RESOURCE-CONSUMPTION>
+                        <SHORT-NAME>Resources</SHORT-NAME>
+                        <MEMORY-SECTIONS>
+                            <MEMORY-SECTION>
+                                <SHORT-NAME>CODE</SHORT-NAME>
+                                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/RootP_Implementation/CODE_BSWC_NvDM_Satellite_CORE1_MonitoringASILB</SW-ADDRMETHOD-REF>
+                            </MEMORY-SECTION>
+                        </MEMORY-SECTIONS>
+                    </RESOURCE-CONSUMPTION>
+                    <SW-VERSION>1.0.0</SW-VERSION>
+                    <USED-CODE-GENERATOR/>
+                    <VENDOR-ID>1</VENDOR-ID>
+                    <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/RootP_BSWC_NvDM_Satellite_CORE1_MonitoringASILB/BSWC_NvDM_Satellite_CORE1_MonitoringASILB/IB_BSWC_NvDM_Satellite_CORE1_MonitoringASILB</BEHAVIOR-REF>
+                </SWC-IMPLEMENTATION>
+                <SW-ADDR-METHOD>
+                    <SHORT-NAME>CODE_BSWC_NvDM_Satellite_CORE1_MonitoringASILB</SHORT-NAME>
+                    <MEMORY-ALLOCATION-KEYWORD-POLICY>ADDR-METHOD-SHORT-NAME-AND-ALIGNMENT</MEMORY-ALLOCATION-KEYWORD-POLICY>
+                    <SECTION-TYPE>CODE</SECTION-TYPE>
+                </SW-ADDR-METHOD>
+            </ELEMENTS>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>
