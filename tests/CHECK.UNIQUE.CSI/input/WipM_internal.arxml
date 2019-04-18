@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3_STRICT_COMPACT.xsd">
+	<AR-PACKAGES>
+		<AR-PACKAGE>
+			<SHORT-NAME>WipM</SHORT-NAME>
+			<DESC>
+						<L-2 L="FR"/>
+			</DESC>
+			<ELEMENTS>
+				<APPLICATION-SW-COMPONENT-TYPE>
+					<SHORT-NAME>WipM</SHORT-NAME>
+					<PORTS>
+						<P-PORT-PROTOTYPE>
+							<SHORT-NAME>PP_WiperR_Drive</SHORT-NAME>
+							<PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS/CS_WiperR_Drive</PROVIDED-INTERFACE-TREF>
+						</P-PORT-PROTOTYPE>
+						<P-PORT-PROTOTYPE>
+							<SHORT-NAME>PP_WiperF_Drive</SHORT-NAME>
+							<PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RootP_CS/CS_WiperF_Drive</PROVIDED-INTERFACE-TREF>
+						</P-PORT-PROTOTYPE>
+					</PORTS>
+               <INTERNAL-BEHAVIORS>
+                  <SWC-INTERNAL-BEHAVIOR>
+                     <SHORT-NAME>IB_WipM</SHORT-NAME>
+                     <EVENTS>
+                        <OPERATION-INVOKED-EVENT>
+                           <SHORT-NAME>OIE_WiperR_Drive</SHORT-NAME>
+                           <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/WipM/WipM/IB_WipM/IohWiper_SetRearWiperMode</START-ON-EVENT-REF>
+                           <OPERATION-IREF>
+                              <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/WipM/WipM/PP_WiperR_Drive</CONTEXT-P-PORT-REF>
+                              <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RootP_CS/CS_WiperR_Drive/OP_SET</TARGET-PROVIDED-OPERATION-REF>
+                           </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                        <OPERATION-INVOKED-EVENT>
+                           <SHORT-NAME>OIE_WiperF_Drive</SHORT-NAME>
+                           <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/WipM/WipM/IB_WipM/IohWiper_SetFrontWiperMode</START-ON-EVENT-REF>
+                           <OPERATION-IREF>
+                              <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/WipM/WipM/PP_WiperF_Drive</CONTEXT-P-PORT-REF>
+                              <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RootP_CS/CS_WiperF_Drive/OP_SET</TARGET-PROVIDED-OPERATION-REF>
+                           </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                     </EVENTS>
+					 <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                     <RUNNABLES>
+                        <RUNNABLE-ENTITY>
+                           <SHORT-NAME>IohWiper_SetRearWiperMode</SHORT-NAME>
+						   <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                           <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+						   <SYMBOL>IohWiper_SetRearWiperMode</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                        <RUNNABLE-ENTITY>
+                           <SHORT-NAME>IohWiper_SetFrontWiperMode</SHORT-NAME>
+						   <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                           <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+						   <SYMBOL>IohWiper_SetFrontWiperMode</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                     </RUNNABLES>
+					 <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                  </SWC-INTERNAL-BEHAVIOR>
+					</INTERNAL-BEHAVIORS>
+				</APPLICATION-SW-COMPONENT-TYPE>
+			</ELEMENTS>
+		</AR-PACKAGE>
+		<!-- GCH missing field Implementation -->
+        <AR-PACKAGE>
+            <SHORT-NAME>RootP_Implementation</SHORT-NAME>
+            <ELEMENTS>
+                <SWC-IMPLEMENTATION>
+                    <SHORT-NAME>Implementation_WipM</SHORT-NAME>
+                    <CODE-DESCRIPTORS>
+                        <CODE>
+                            <SHORT-NAME>SRC</SHORT-NAME>
+                            <ARTIFACT-DESCRIPTORS>
+                                <AUTOSAR-ENGINEERING-OBJECT>
+                                    <SHORT-LABEL>EngObject</SHORT-LABEL>
+                                    <CATEGORY>SWSRC</CATEGORY>
+                                </AUTOSAR-ENGINEERING-OBJECT>
+                            </ARTIFACT-DESCRIPTORS>
+                        </CODE>
+                    </CODE-DESCRIPTORS>
+                    <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                    <RESOURCE-CONSUMPTION>
+                        <SHORT-NAME>Resources</SHORT-NAME>
+                    </RESOURCE-CONSUMPTION>
+                    <SW-VERSION>1.0.0</SW-VERSION>
+                    <USED-CODE-GENERATOR/>
+                    <VENDOR-ID>1</VENDOR-ID>
+                    <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/WipM/WipM/IB_WipM</BEHAVIOR-REF>
+                </SWC-IMPLEMENTATION>
+            </ELEMENTS>
+        </AR-PACKAGE>
+		<!-- END GCH -->
+	</AR-PACKAGES>
+</AUTOSAR>

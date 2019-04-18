@@ -1,0 +1,144 @@
+2019-04-18 16:28:57,540 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\ASWC.alloc.config.xml is well-formed
+2019-04-18 16:28:57,572 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\ASWC_DISPATCH_CORE0_SWPQM.arxml is well-formed
+2019-04-18 16:28:57,582 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\ASWC_DISPATCH_CORE1_AppASILA.arxml is well-formed
+2019-04-18 16:28:57,582 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\ASWC_DISPATCH_CORE1_AppASILB.arxml is well-formed
+2019-04-18 16:28:57,666 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\ASWC_M302.aswc.arxml is well-formed
+2019-04-18 16:28:57,708 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\ASWC_SATELLITE_CORE0_SWPQM.arxml is well-formed
+2019-04-18 16:28:57,719 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\ASWC_SATELLITE_CORE1_AppASILA.arxml is well-formed
+2019-04-18 16:28:57,729 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\ASWC_SATELLITE_CORE1_AppASILB.arxml is well-formed
+2019-04-18 16:28:57,729 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\ASWC_SATELLITE_CORE1_MonitoringASILB.arxml is well-formed
+2019-04-18 16:28:57,740 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\output.alloc.config.xml is well-formed
+2019-04-18 16:29:04,673 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\SoftwareDescriptionGenerated.arxml is well-formed
+2019-04-18 16:29:05,783 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\SWPAllocation.alloc.config.xml is well-formed
+2019-04-18 16:29:07,018 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\SystemGenerated_Step2.arxml is well-formed
+2019-04-18 16:29:07,261 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\WipM_interface.arxml is well-formed
+2019-04-18 16:29:07,261 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.UNIQUE.CSI\input\WipM_internal.arxml is well-formed
+2019-04-18 16:29:07,746 WARNING Not the same CORE or PARTITION for PP_CS_AlerteIHM and RP_CS_AlerteIHM referencing the interface /RootP_CS/CS_AlerteIHM
+2019-04-18 16:29:07,746 WARNING Not the same CORE or PARTITION for PP_CS_AlerteIHM and RP_CS_AlerteIHM referencing the interface /RootP_CS/CS_AlerteIHM
+2019-04-18 16:29:07,746 WARNING Not the same CORE or PARTITION for PP_CS_Resources and RP_CS_Resources referencing the interface /RootP_CS/CS_Resources
+2019-04-18 16:29:07,746 WARNING Not the same CORE or PARTITION for PP_CS_Resources and RP_CS_Resources referencing the interface /RootP_CS/CS_Resources
+2019-04-18 16:29:07,746 WARNING Not the same CORE or PARTITION for PP_CS_VoyantService and RP_CS_VoyantService referencing the interface /RootP_CS/CS_VoyantService
+2019-04-18 16:29:07,746 WARNING Not the same CORE or PARTITION for PP_CS_VoyantService and RP_CS_VoyantService referencing the interface /RootP_CS/CS_VoyantService
+2019-04-18 16:29:07,746 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
+2019-04-18 16:29:07,746 WARNING Not the same CORE or PARTITION for PP_CS_Resources and RP_CS_Resources referencing the interface /RootP_CS/CS_Resources
+2019-04-18 16:29:07,756 WARNING Not the same CORE or PARTITION for PP_CS_SPWM and RP_CS_SPWM referencing the interface /RootP_CS/CS_SPWM
+2019-04-18 16:29:07,756 WARNING Not the same CORE or PARTITION for PP_CS_VoyantService and RP_CS_VoyantService referencing the interface /RootP_CS/CS_VoyantService
+2019-04-18 16:29:07,756 WARNING Not the same CORE or PARTITION for PP_CS_VoyantStop and RP_CS_VoyantStop referencing the interface /RootP_CS/CS_VoyantStop
+2019-04-18 16:29:07,756 WARNING Not the same CORE or PARTITION for PP_CS_WiperF_Drive and RP_CS_WiperF_Drive referencing the interface /RootP_CS/CS_WiperF_Drive
+2019-04-18 16:29:07,756 WARNING Not the same CORE or PARTITION for PP_CS_WiperR_Drive and RP_CS_WiperR_Drive referencing the interface /RootP_CS/CS_WiperR_Drive
+2019-04-18 16:29:07,756 WARNING Not the same CORE or PARTITION for PP_CS_AlerteIHM and RP_CS_AlerteIHM referencing the interface /RootP_CS/CS_AlerteIHM
+2019-04-18 16:29:07,756 WARNING Not the same CORE or PARTITION for PP_CS_AlerteIHM and RP_CS_AlerteIHM referencing the interface /RootP_CS/CS_AlerteIHM
+2019-04-18 16:29:07,756 WARNING Not the same CORE or PARTITION for PP_CS_DdeSon and RP_CS_DdeSon referencing the interface /RootP_CS/CS_DdeSon
+2019-04-18 16:29:07,756 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
+2019-04-18 16:29:07,756 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
+2019-04-18 16:29:07,766 WARNING Not the same CORE or PARTITION for PP_CS_SPWM and RP_CS_SPWM referencing the interface /RootP_CS/CS_SPWM
+2019-04-18 16:29:07,766 WARNING Not the same CORE or PARTITION for PP_CS_SPWM and RP_CS_SPWM referencing the interface /RootP_CS/CS_SPWM
+2019-04-18 16:29:07,766 WARNING Not the same CORE or PARTITION for PP_WiperR_Drive and RP_CS_WiperR_Drive referencing the interface /RootP_CS/CS_WiperR_Drive
+2019-04-18 16:29:07,766 WARNING Not the same CORE or PARTITION for PP_WiperF_Drive and RP_CS_WiperF_Drive referencing the interface /RootP_CS/CS_WiperF_Drive
+2019-04-18 16:29:07,786 WARNING RP_SR_CfgAlertWasherFluidLowLevel is without connector
+2019-04-18 16:29:07,786 WARNING RP_SR_CFG_PRESENCE_FARC is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_CFG_PRESENCE_LVVRVV is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_CfgRainSensor is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_CfgSweepingCourtesy is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_CfgTypeFrontWiper is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_CfgTypeRearWiper is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_CfgWashingOption is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_CM302_FrontSweepingCourtesy is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_CM302_IntermittentCycleConfirmed is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_CM302_RearSweepingCourtesy is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_CM302_SweepNumber is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_CM302_SweepNumberEco is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_DiagEssvAR is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_DiagEsvAv_OnOff is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_DiagEsvAv_PvGv is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_DiagPompeLgArDeBSI is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_DiagPompeLgAvDeBSI is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_ED_QteLaveGlace is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_EtatPrincipalSEV is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_FrontWashingCmd_VSM_IoFromDcm is without connector
+2019-04-18 16:29:07,796 WARNING RP_SR_FrontWiperPosition is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_FrontWipingCmd_VSM_IoFromDcm is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_NetState_CanPwt is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_PositionShuntParc is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_RearWashingCmd_VSM_IoFromDcm is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_RearWiperCmd_VSM_IoFromDcm is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_RearWiperPosition is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_S04_DEF_ESSUYAGE_COND is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_S04_E_ESV is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_S05_VITESSE_BALAYAGE is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_S099_E_EAU_LV is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_S099_E_POS_AF_AV is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_S11C_VITESSE_BALAYAGE is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_SAV_EtatReseauElectrique is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_SortieAccessoire is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_TM302_BoostRequest is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_TM302_ContinuousWiping is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_TM302_Filtrage_ACC is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_TM302_FrontPumpOffset is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_TM302_FrontSweepingCourtesy is without connector
+2019-04-18 16:29:07,806 WARNING RP_SR_TM302_FrontWiperProtection is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_FrontWipingHighSpeedConfirmed is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_FrontWipingIntermittentConfirmed is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_FrontWipingLowSpeedConfirmed is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_FrontWipingOngoing is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_FrontWipingStopConfirmed is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_GradualWiping is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_HighSpeedDefect is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_LaunchRearWipingCycle is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_LowSpeedDefect is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_MaintenanceDuration is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_RearPumpOffset is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_RearPumpOffsetSpecific is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_RearSweepingCourtesy is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_RearWashingTimeMin is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_RearWashingTimeMinSpecific is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_RearWiperProtection is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_ReverseWashPump is without connector
+2019-04-18 16:29:07,816 WARNING RP_SR_TM302_SweepingOnWashConfirmed is without connector
+2019-04-18 16:29:07,826 WARNING RP_SR_TM302_ThresholdMaxFrontWash is without connector
+2019-04-18 16:29:07,826 WARNING RP_SR_TM302_ThresholdMaxRearWash is without connector
+2019-04-18 16:29:07,826 WARNING RP_SR_TM302_ThresholdMinFrontWash is without connector
+2019-04-18 16:29:07,826 WARNING RP_SR_TM302_ThresholdMinFrontWashEco is without connector
+2019-04-18 16:29:07,826 WARNING RP_SR_TM302_ThresholdMinSweep is without connector
+2019-04-18 16:29:07,826 WARNING RP_SR_TM310_MinimalTemperatureDefrost is without connector
+2019-04-18 16:29:07,826 WARNING RP_SR_WipingWashingMode is without connector
+2019-04-18 16:29:07,826 WARNING RP_SR_WipingWashingMode_SAV is without connector
+2019-04-18 16:29:07,826 WARNING RP_SR_SURV_HS1_CAR_INFOS_CMF_5F2 is without connector
+2019-04-18 16:29:07,826 WARNING RP_SR_SURV_NEA_ETAT_FRONT_WIPING is without connector
+2019-04-18 16:29:07,826 WARNING PRP_SR_ComAlimEsv is without connector
+2019-04-18 16:29:07,826 WARNING PRP_SR_ComAlimEVARDouble is without connector
+2019-04-18 16:29:07,826 WARNING PRP_SR_DdeVoySignalisationLgVide is without connector
+2019-04-18 16:29:07,826 WARNING PRP_SR_FrontWashingCmd_IO_CTRL is without connector
+2019-04-18 16:29:07,826 WARNING PRP_SR_FrontWashingCmd_VSM is without connector
+2019-04-18 16:29:07,826 WARNING PRP_SR_FrontWiperCmd_EVAV is without connector
+2019-04-18 16:29:07,836 WARNING PRP_SR_FrontWiperFailure is without connector
+2019-04-18 16:29:07,836 WARNING PRP_SR_FrontWiperPositionPark is without connector
+2019-04-18 16:29:07,836 WARNING PRP_SR_FrontWiperStatus is without connector
+2019-04-18 16:29:07,836 WARNING PRP_SR_FrontWipingCmd_IO_CTRL is without connector
+2019-04-18 16:29:07,836 WARNING PRP_SR_FrontWipingCmd_VSM is without connector
+2019-04-18 16:29:07,836 WARNING PRP_SR_RearWashingCmd_IO_CTRL is without connector
+2019-04-18 16:29:07,836 WARNING PRP_SR_RearWashingCmd_VSM is without connector
+2019-04-18 16:29:07,836 WARNING PRP_SR_RearWiperCmd_VSM is without connector
+2019-04-18 16:29:07,836 WARNING PRP_SR_RearWiperFailure is without connector
+2019-04-18 16:29:07,836 WARNING PRP_SR_WasherStatus is without connector
+2019-04-18 16:29:07,836 WARNING RP_CS_NVDM_WR_APP is without connector
+2019-04-18 16:29:07,836 WARNING RP_CS_SPWM is without connector
+2019-04-18 16:29:07,836 WARNING RP_CS_AlerteIHM is without connector
+2019-04-18 16:29:07,836 WARNING RP_CS_DdeSon is without connector
+2019-04-18 16:29:07,836 WARNING RP_CS_Resources is without connector
+2019-04-18 16:29:07,836 WARNING RP_CS_VoyantService is without connector
+2019-04-18 16:29:07,836 WARNING RP_CS_VoyantStop is without connector
+2019-04-18 16:29:07,846 WARNING RP_CS_AlerteIHM is without connector
+2019-04-18 16:29:07,846 WARNING RP_CS_GeneralDiagnosticMonitor is without connector
+2019-04-18 16:29:07,846 WARNING RP_CS_GetFctNetworkStatus is without connector
+2019-04-18 16:29:07,846 WARNING PP_CS_AlerteIHM is without connector
+2019-04-18 16:29:07,846 WARNING PP_CS_Resources is without connector
+2019-04-18 16:29:07,846 WARNING PP_CS_VoyantService is without connector
+2019-04-18 16:29:07,846 WARNING PP_CS_SPWM is without connector
+2019-04-18 16:29:07,846 WARNING PP_CS_VoyantStop is without connector
+2019-04-18 16:29:07,846 WARNING PP_CS_AlerteIHM is without connector
+2019-04-18 16:29:07,846 WARNING PP_CS_DdeSon is without connector
+2019-04-18 16:29:07,846 WARNING PP_CS_NVDM_WR_APP is without connector
+2019-04-18 16:29:07,846 WARNING PP_CS_SPWM is without connector
+2019-04-18 16:29:07,846 WARNING PP_CS_SPWM is without connector
+2019-04-18 16:29:07,846 WARNING ASWC_M302_MSI is without connector

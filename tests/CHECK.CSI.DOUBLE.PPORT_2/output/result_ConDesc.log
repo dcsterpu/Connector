@@ -1,188 +1,188 @@
-2019-01-21 11:39:50,143 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\ASWC_M137.aswc.arxml is well-formed
-2019-01-21 11:39:50,163 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\ASWC_SATELLITE_CORE0_SWPQM.arxml is well-formed
-2019-01-21 11:39:50,163 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\ASWC_SATELLITE_CORE1_AppASILA.arxml is well-formed
-2019-01-21 11:39:50,163 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\ASWC_SATELLITE_CORE1_AppASILB.arxml is well-formed
-2019-01-21 11:39:50,173 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\ASWC_SATELLITE_CORE1_MonitoringASILB.arxml is well-formed
-2019-01-21 11:39:50,173 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\AUTOSAR_Datatypes.arxml is well-formed
-2019-01-21 11:39:50,173 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BSWC_NvDM.aswc.arxml is well-formed
-2019-01-21 11:39:50,173 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BSWC_NvDM_Satellite_CORE0_MonitoringASILB.aswc.arxml is well-formed
-2019-01-21 11:39:50,183 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BSWC_NvDM_Satellite_CORE0_SWPQM.aswc.arxml is well-formed
-2019-01-21 11:39:50,183 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BSWC_NvDM_Satellite_CORE1_APPASILA.aswc.arxml is well-formed
-2019-01-21 11:39:50,183 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BSWC_NvDM_Satellite_CORE1_APPASILB.aswc.arxml is well-formed
-2019-01-21 11:39:50,183 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BSWC_NvDM_Satellite_CORE1_MonitoringASILB.aswc.arxml is well-formed
-2019-01-21 11:39:50,193 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BswMMode.arxml is well-formed
-2019-01-21 11:39:50,193 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\output.alloc.config.xml is well-formed
-2019-01-21 11:39:51,445 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SoftwareDescriptionGenerated.arxml is well-formed
-2019-01-21 11:39:51,685 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\STUB_BSWM_CORE0_MonitoringASILB.aswc.arxml is well-formed
-2019-01-21 11:39:51,735 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\STUB_BSWM_CORE1_AppASILA.aswc.arxml is well-formed
-2019-01-21 11:39:51,746 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\STUB_BSWM_CORE1_AppASILB.aswc.arxml is well-formed
-2019-01-21 11:39:51,746 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\STUB_BSWM_CORE1_MonitoringASILB.aswc.arxml is well-formed
-2019-01-21 11:39:51,746 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\Swc.alloc.config.xml is well-formed
-2019-01-21 11:39:51,756 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SwcAllocation.alloc1.config.xml is well-formed
-2019-01-21 11:39:51,756 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SwcAllocation.alloc2.config.xml is well-formed
-2019-01-21 11:39:51,756 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SwcAllocation.alloc3.config.xml is well-formed
-2019-01-21 11:39:51,766 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SwcAllocation.alloc4.config.xml is well-formed
-2019-01-21 11:39:51,766 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SWPAllocation.alloc.config.xml is well-formed
-2019-01-21 11:39:52,066 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SystemGenerated_Step2.arxml is well-formed
-2019-01-21 11:39:52,132 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\VSM_Types.arxml is well-formed
-2019-01-21 11:39:52,302 ERROR Multiple PPorts for interface /RootP_CS/CS_NVDM_WR_APP with same software allocation: , PP_CS_NVDM_WR_APP: SWPQM CORE0 ASWC_SATELLITE_CORE0_SWPQM BSWC_NvDM_Satellite_CORE0_SWPQM
-2019-01-21 11:39:52,302 ERROR Multiple PPorts for interface /RootP_CS/CS_NVDM_WR_APP with same software allocation: , PP_CS_NVDM_WR_APP: SWPQM CORE0 BSWC_NvDM_Satellite_CORE0_SWPQM ASWC_SATELLITE_CORE0_SWPQM
-2019-01-21 11:39:52,302 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
-2019-01-21 11:39:52,302 WARNING Not the same CORE or PARTITION for PP_CS_AlerteIHM and RP_CS_AlerteIHM referencing the interface /RootP_CS/CS_AlerteIHM
-2019-01-21 11:39:52,302 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
-2019-01-21 11:39:52,302 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
-2019-01-21 11:39:52,312 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
-2019-01-21 11:39:52,312 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
-2019-01-21 11:39:52,312 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
-2019-01-21 11:39:52,312 WARNING RP_SR_ApprentissageCleEnCours is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_AuthentificatedDeviceNum is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_AuthentResult is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_BluetoothRequest is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_BSIDeverrouillee is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_BSI_VIERGE is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_GEN_ISK16 is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_IdentPlip is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_IdentTrsp is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_LEVIER_BV is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_NbPlipAppris is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_NbTrspAppris is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_NumBadge is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_OPTION_NFC is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_OPTION_WLC is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_SMARTDEVICE_BY_SDCM is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_TYPE_CHAINE_TRACTION is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_TYPE_CLE is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CFG_TYPE_STT is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CidStatus is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVCOM_DUREE_ANTISCAN_CODE_BSI is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVCOM_TMCF_AES is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLAPPTRSP_NB_ESSAIS_IDENT_BU is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_ABSENCE_REP_APP_BADGE_SDCM is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_BYPASS_AUTHENT_VIA_SDBT is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_DELAY_LAUNCH_NFC_REQ is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_DUREE_ALERTE_PERTE_IDENT is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_DUREE_RELANCE_AUTH_ML is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_NB_ESSAIS_AUTHENT_BU is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_SDCM_TMAX_AUTH_ML_BU is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_SEUIL_VIT_RELANCE_AUTHENT is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_TEMPO_ATTENTE_UID_NFC is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_TEMPO_CALAGE is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_TEMPO_RELANCE_AUTHENT is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_TEMPO_REQ_AUTHENT is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_TEMPO_VALIDITE_AUTHENT is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_TEMPO_VALIDITY_NOTIF is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_TIMEOUT_POLLING_AUTHENT_ML is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_TMAX_AUTH_CID is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_TMAX_AUTH_NFC_CARD is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_TMAX_AUTH_SD_BT is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_WASH_MODE_ACTIV_AUTHENT is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_WASH_MODE_NB_RETRY is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CINVVMLSDCM_WASH_MODE_POLLING_TIMEOUT is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CodeADC is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CodeVIN_15 is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CodeVIN_16 is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_CodeVIN_17 is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_ConducteurAuthDsHAB is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_DisplaySdStartingAutorIcon is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_DmdAppuiPush is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_DmdAuthentTrspDiag is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_DysfVitesseVehicule is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_EtatGMP is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_EtatMenuINV_ADSD is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_EtatPrincipalSEV is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_HfResultatLocIDMLIntFull is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_InterMemoDefauts is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_LncDdeAuthentML is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_LocalisationStatus is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_NotifyRxSdcm is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_PhaseVieLS is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_ReqLearnUIDTableToSDCM is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_SAV_CondaRealisee is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_SAV_EtatOuvrants is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_SdcmAuthorisation is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_SDCMBlacklistingTask is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_SDCMCodeAppairRes is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_SEC_ConfigSEV is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_SecuApprData is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_SessionDiagEncours is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_SEVDem is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_ToggleReqAuthentForLoc is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_TypeCondaMux is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_VehWshngSeqRawReq is without connector
-2019-01-21 11:39:52,322 WARNING RP_SR_VitesseVehicule is without connector
-2019-01-21 11:39:52,322 WARNING PRP_SR_AnimationPushDem is without connector
-2019-01-21 11:39:52,322 WARNING PRP_SR_AppuiPushTraite is without connector
-2019-01-21 11:39:52,322 WARNING PRP_SR_AuthentBUDemandee is without connector
-2019-01-21 11:39:52,322 WARNING PRP_SR_AuthentificationBU is without connector
-2019-01-21 11:39:52,322 WARNING PRP_SR_AuthentificationBUMux is without connector
-2019-01-21 11:39:52,322 WARNING PRP_SR_AuthentificationML is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_AuthentificationMLnonSDF is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_AuthentMLDemandee is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_DmdAffIHMAuthent is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_DmdAuthentBU is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_DmdIdentBU is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_EtatLocalisationML is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_HfResultatAuthentML is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_IdentBUDemandee is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_IdentTrspBU is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_LastIdUsedToStart is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_NbNFCUidAppris is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_NFCUidLearningEcuState is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_NoIMLAuthentOnStartRequest is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_PresenceClefAppriseBU is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_ReqAuthentBTSD is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_ReqAuthentCID is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_ReqAuthentNFCCard is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_ReqAuthentNFCSD is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_ReqLearnUIDTableBSI is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_SDCMBlacklistingRq is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_SDCMProg is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_SDCMUnblacklistingRq is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_SmartDeviceActivation is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_StatutApprNFCUid is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_ToggleAuthentBU is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_ToggleErrorBU is without connector
-2019-01-21 11:39:52,332 WARNING PRP_SR_ToggleIdentBU is without connector
-2019-01-21 11:39:52,332 WARNING RP_CS_GetFctNetworkStatus is without connector
-2019-01-21 11:39:52,332 WARNING RP_CS_INVIO_BU_Notification is without connector
-2019-01-21 11:39:52,332 WARNING RP_CS_ISOTP_MSGSEG is without connector
-2019-01-21 11:39:52,332 WARNING RP_CS_ResAuthentDiag is without connector
-2019-01-21 11:39:52,332 WARNING RP_CS_TRP_Command is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_INVIO_BU_Command is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_INVIO_MSGSEG is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_INVIO_Services is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_TRP_Notification is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_Resources is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_VoyantService is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_NVDM_WR_APP is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_Resources is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_SPWM is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_VoyantService is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_VoyantStop is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_Wiper_Drive is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_AlerteIHM is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_DdeSon is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_NVDM_WR_APP is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_NVDM_WR_CFGVH is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_SPWM is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_SPWM is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_NVDM_WR_APP is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_NVDM_WR_CFGVH is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_NVDM_WR_CFGVH is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_NVDM_WR_APP is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_NVDM_WR_CFGVH is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_NVDM_WR_APP is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_NVDM_WR_CFGVH is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_NVDM_WR_APP is without connector
-2019-01-21 11:39:52,332 WARNING PP_CS_NVDM_WR_CFGVH is without connector
-2019-01-21 11:39:52,332 WARNING ASWC_M137_MSI is without connector
-2019-01-21 11:39:52,332 WARNING BSWC_NvDM_MSI is without connector
-2019-01-21 11:39:52,332 WARNING BSWC_NvDM_Satellite_CORE0_MonitoringASILB_MSI is without connector
-2019-01-21 11:39:52,332 WARNING BSWC_NvDM_Satellite_CORE0_SWPQM_MSI is without connector
-2019-01-21 11:39:52,332 WARNING BSWC_NvDM_Satellite_CORE1_APPASILA_MSI is without connector
-2019-01-21 11:39:52,332 WARNING BSWC_NvDM_Satellite_CORE1_APPASILB_MSI is without connector
-2019-01-21 11:39:52,332 WARNING BSWC_NvDM_Satellite_CORE1_MonitoringASILB_MSI is without connector
-2019-01-21 11:39:52,332 WARNING STUB_BSWM_CORE0_MonitoringASILB_MSI is without connector
-2019-01-21 11:39:52,332 WARNING STUB_BSWM_CORE1_AppASILA_MSI is without connector
-2019-01-21 11:39:52,332 WARNING STUB_BSWM_CORE1_AppASILB_MSI is without connector
-2019-01-21 11:39:52,332 WARNING STUB_BSWM_CORE1_MonitoringASILB_MSI is without connector
+2019-04-18 16:28:47,575 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\ASWC_M137.aswc.arxml is well-formed
+2019-04-18 16:28:47,659 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\ASWC_SATELLITE_CORE0_SWPQM.arxml is well-formed
+2019-04-18 16:28:47,669 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\ASWC_SATELLITE_CORE1_AppASILA.arxml is well-formed
+2019-04-18 16:28:47,679 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\ASWC_SATELLITE_CORE1_AppASILB.arxml is well-formed
+2019-04-18 16:28:47,689 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\ASWC_SATELLITE_CORE1_MonitoringASILB.arxml is well-formed
+2019-04-18 16:28:47,709 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\AUTOSAR_Datatypes.arxml is well-formed
+2019-04-18 16:28:47,729 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BSWC_NvDM.aswc.arxml is well-formed
+2019-04-18 16:28:47,739 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BSWC_NvDM_Satellite_CORE0_MonitoringASILB.aswc.arxml is well-formed
+2019-04-18 16:28:47,749 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BSWC_NvDM_Satellite_CORE0_SWPQM.aswc.arxml is well-formed
+2019-04-18 16:28:47,759 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BSWC_NvDM_Satellite_CORE1_APPASILA.aswc.arxml is well-formed
+2019-04-18 16:28:47,769 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BSWC_NvDM_Satellite_CORE1_APPASILB.aswc.arxml is well-formed
+2019-04-18 16:28:47,780 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BSWC_NvDM_Satellite_CORE1_MonitoringASILB.aswc.arxml is well-formed
+2019-04-18 16:28:47,790 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\BswMMode.arxml is well-formed
+2019-04-18 16:28:47,801 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\output.alloc.config.xml is well-formed
+2019-04-18 16:28:52,737 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SoftwareDescriptionGenerated.arxml is well-formed
+2019-04-18 16:28:53,672 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\STUB_BSWM_CORE0_MonitoringASILB.aswc.arxml is well-formed
+2019-04-18 16:28:53,837 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\STUB_BSWM_CORE1_AppASILA.aswc.arxml is well-formed
+2019-04-18 16:28:53,847 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\STUB_BSWM_CORE1_AppASILB.aswc.arxml is well-formed
+2019-04-18 16:28:53,857 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\STUB_BSWM_CORE1_MonitoringASILB.aswc.arxml is well-formed
+2019-04-18 16:28:53,887 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\Swc.alloc.config.xml is well-formed
+2019-04-18 16:28:53,917 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SwcAllocation.alloc1.config.xml is well-formed
+2019-04-18 16:28:53,917 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SwcAllocation.alloc2.config.xml is well-formed
+2019-04-18 16:28:53,927 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SwcAllocation.alloc3.config.xml is well-formed
+2019-04-18 16:28:53,927 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SwcAllocation.alloc4.config.xml is well-formed
+2019-04-18 16:28:53,937 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SWPAllocation.alloc.config.xml is well-formed
+2019-04-18 16:28:55,047 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\SystemGenerated_Step2.arxml is well-formed
+2019-04-18 16:28:55,350 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_2\input\VSM_Types.arxml is well-formed
+2019-04-18 16:28:55,950 ERROR Multiple PPorts for interface /RootP_CS/CS_NVDM_WR_APP with same software allocation: , PP_CS_NVDM_WR_APP: SWPQM CORE0 ASWC_SATELLITE_CORE0_SWPQM BSWC_NvDM_Satellite_CORE0_SWPQM
+2019-04-18 16:28:55,950 ERROR Multiple PPorts for interface /RootP_CS/CS_NVDM_WR_APP with same software allocation: , PP_CS_NVDM_WR_APP: SWPQM CORE0 BSWC_NvDM_Satellite_CORE0_SWPQM ASWC_SATELLITE_CORE0_SWPQM
+2019-04-18 16:28:55,962 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
+2019-04-18 16:28:55,962 WARNING Not the same CORE or PARTITION for PP_CS_AlerteIHM and RP_CS_AlerteIHM referencing the interface /RootP_CS/CS_AlerteIHM
+2019-04-18 16:28:55,962 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
+2019-04-18 16:28:55,962 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
+2019-04-18 16:28:55,962 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
+2019-04-18 16:28:55,962 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
+2019-04-18 16:28:55,962 WARNING Not the same CORE or PARTITION for PP_CS_NVDM_WR_APP and RP_CS_NVDM_WR_APP referencing the interface /RootP_CS/CS_NVDM_WR_APP
+2019-04-18 16:28:56,006 WARNING RP_SR_ApprentissageCleEnCours is without connector
+2019-04-18 16:28:56,006 WARNING RP_SR_AuthentificatedDeviceNum is without connector
+2019-04-18 16:28:56,006 WARNING RP_SR_AuthentResult is without connector
+2019-04-18 16:28:56,006 WARNING RP_SR_BluetoothRequest is without connector
+2019-04-18 16:28:56,006 WARNING RP_SR_BSIDeverrouillee is without connector
+2019-04-18 16:28:56,006 WARNING RP_SR_CFG_BSI_VIERGE is without connector
+2019-04-18 16:28:56,006 WARNING RP_SR_CFG_GEN_ISK16 is without connector
+2019-04-18 16:28:56,006 WARNING RP_SR_CFG_IdentPlip is without connector
+2019-04-18 16:28:56,006 WARNING RP_SR_CFG_IdentTrsp is without connector
+2019-04-18 16:28:56,006 WARNING RP_SR_CFG_LEVIER_BV is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CFG_NbPlipAppris is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CFG_NbTrspAppris is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CFG_NumBadge is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CFG_OPTION_NFC is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CFG_OPTION_WLC is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CFG_SMARTDEVICE_BY_SDCM is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CFG_TYPE_CHAINE_TRACTION is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CFG_TYPE_CLE is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CFG_TYPE_STT is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CidStatus is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CINVCOM_DUREE_ANTISCAN_CODE_BSI is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CINVCOM_TMCF_AES is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CINVVMLAPPTRSP_NB_ESSAIS_IDENT_BU is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CINVVMLSDCM_ABSENCE_REP_APP_BADGE_SDCM is without connector
+2019-04-18 16:28:56,016 WARNING RP_SR_CINVVMLSDCM_BYPASS_AUTHENT_VIA_SDBT is without connector
+2019-04-18 16:28:56,026 WARNING RP_SR_CINVVMLSDCM_DELAY_LAUNCH_NFC_REQ is without connector
+2019-04-18 16:28:56,027 WARNING RP_SR_CINVVMLSDCM_DUREE_ALERTE_PERTE_IDENT is without connector
+2019-04-18 16:28:56,027 WARNING RP_SR_CINVVMLSDCM_DUREE_RELANCE_AUTH_ML is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_NB_ESSAIS_AUTHENT_BU is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_SDCM_TMAX_AUTH_ML_BU is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_SEUIL_VIT_RELANCE_AUTHENT is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_TEMPO_ATTENTE_UID_NFC is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_TEMPO_CALAGE is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_TEMPO_RELANCE_AUTHENT is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_TEMPO_REQ_AUTHENT is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_TEMPO_VALIDITE_AUTHENT is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_TEMPO_VALIDITY_NOTIF is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_TIMEOUT_POLLING_AUTHENT_ML is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_TMAX_AUTH_CID is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_TMAX_AUTH_NFC_CARD is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_TMAX_AUTH_SD_BT is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_WASH_MODE_ACTIV_AUTHENT is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_WASH_MODE_NB_RETRY is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CINVVMLSDCM_WASH_MODE_POLLING_TIMEOUT is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CodeADC is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CodeVIN_15 is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CodeVIN_16 is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_CodeVIN_17 is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_ConducteurAuthDsHAB is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_DisplaySdStartingAutorIcon is without connector
+2019-04-18 16:28:56,028 WARNING RP_SR_DmdAppuiPush is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_DmdAuthentTrspDiag is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_DysfVitesseVehicule is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_EtatGMP is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_EtatMenuINV_ADSD is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_EtatPrincipalSEV is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_HfResultatLocIDMLIntFull is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_InterMemoDefauts is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_LncDdeAuthentML is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_LocalisationStatus is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_NotifyRxSdcm is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_PhaseVieLS is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_ReqLearnUIDTableToSDCM is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_SAV_CondaRealisee is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_SAV_EtatOuvrants is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_SdcmAuthorisation is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_SDCMBlacklistingTask is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_SDCMCodeAppairRes is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_SEC_ConfigSEV is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_SecuApprData is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_SessionDiagEncours is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_SEVDem is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_ToggleReqAuthentForLoc is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_TypeCondaMux is without connector
+2019-04-18 16:28:56,038 WARNING RP_SR_VehWshngSeqRawReq is without connector
+2019-04-18 16:28:56,048 WARNING RP_SR_VitesseVehicule is without connector
+2019-04-18 16:28:56,049 WARNING PRP_SR_AnimationPushDem is without connector
+2019-04-18 16:28:56,049 WARNING PRP_SR_AppuiPushTraite is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_AuthentBUDemandee is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_AuthentificationBU is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_AuthentificationBUMux is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_AuthentificationML is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_AuthentificationMLnonSDF is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_AuthentMLDemandee is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_DmdAffIHMAuthent is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_DmdAuthentBU is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_DmdIdentBU is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_EtatLocalisationML is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_HfResultatAuthentML is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_IdentBUDemandee is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_IdentTrspBU is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_LastIdUsedToStart is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_NbNFCUidAppris is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_NFCUidLearningEcuState is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_NoIMLAuthentOnStartRequest is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_PresenceClefAppriseBU is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_ReqAuthentBTSD is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_ReqAuthentCID is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_ReqAuthentNFCCard is without connector
+2019-04-18 16:28:56,050 WARNING PRP_SR_ReqAuthentNFCSD is without connector
+2019-04-18 16:28:56,060 WARNING PRP_SR_ReqLearnUIDTableBSI is without connector
+2019-04-18 16:28:56,060 WARNING PRP_SR_SDCMBlacklistingRq is without connector
+2019-04-18 16:28:56,060 WARNING PRP_SR_SDCMProg is without connector
+2019-04-18 16:28:56,060 WARNING PRP_SR_SDCMUnblacklistingRq is without connector
+2019-04-18 16:28:56,060 WARNING PRP_SR_SmartDeviceActivation is without connector
+2019-04-18 16:28:56,060 WARNING PRP_SR_StatutApprNFCUid is without connector
+2019-04-18 16:28:56,060 WARNING PRP_SR_ToggleAuthentBU is without connector
+2019-04-18 16:28:56,060 WARNING PRP_SR_ToggleErrorBU is without connector
+2019-04-18 16:28:56,060 WARNING PRP_SR_ToggleIdentBU is without connector
+2019-04-18 16:28:56,060 WARNING RP_CS_GetFctNetworkStatus is without connector
+2019-04-18 16:28:56,060 WARNING RP_CS_INVIO_BU_Notification is without connector
+2019-04-18 16:28:56,060 WARNING RP_CS_ISOTP_MSGSEG is without connector
+2019-04-18 16:28:56,060 WARNING RP_CS_ResAuthentDiag is without connector
+2019-04-18 16:28:56,060 WARNING RP_CS_TRP_Command is without connector
+2019-04-18 16:28:56,070 WARNING PP_CS_INVIO_BU_Command is without connector
+2019-04-18 16:28:56,071 WARNING PP_CS_INVIO_MSGSEG is without connector
+2019-04-18 16:28:56,071 WARNING PP_CS_INVIO_Services is without connector
+2019-04-18 16:28:56,071 WARNING PP_CS_TRP_Notification is without connector
+2019-04-18 16:28:56,072 WARNING PP_CS_Resources is without connector
+2019-04-18 16:28:56,072 WARNING PP_CS_VoyantService is without connector
+2019-04-18 16:28:56,073 WARNING PP_CS_NVDM_WR_APP is without connector
+2019-04-18 16:28:56,073 WARNING PP_CS_Resources is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_SPWM is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_VoyantService is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_VoyantStop is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_Wiper_Drive is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_AlerteIHM is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_DdeSon is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_NVDM_WR_APP is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_NVDM_WR_CFGVH is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_SPWM is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_SPWM is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_NVDM_WR_APP is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_NVDM_WR_CFGVH is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_NVDM_WR_CFGVH is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_NVDM_WR_APP is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_NVDM_WR_CFGVH is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_NVDM_WR_APP is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_NVDM_WR_CFGVH is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_NVDM_WR_APP is without connector
+2019-04-18 16:28:56,074 WARNING PP_CS_NVDM_WR_CFGVH is without connector
+2019-04-18 16:28:56,074 WARNING ASWC_M137_MSI is without connector
+2019-04-18 16:28:56,074 WARNING BSWC_NvDM_MSI is without connector
+2019-04-18 16:28:56,074 WARNING BSWC_NvDM_Satellite_CORE0_MonitoringASILB_MSI is without connector
+2019-04-18 16:28:56,074 WARNING BSWC_NvDM_Satellite_CORE0_SWPQM_MSI is without connector
+2019-04-18 16:28:56,084 WARNING BSWC_NvDM_Satellite_CORE1_APPASILA_MSI is without connector
+2019-04-18 16:28:56,084 WARNING BSWC_NvDM_Satellite_CORE1_APPASILB_MSI is without connector
+2019-04-18 16:28:56,084 WARNING BSWC_NvDM_Satellite_CORE1_MonitoringASILB_MSI is without connector
+2019-04-18 16:28:56,084 WARNING STUB_BSWM_CORE0_MonitoringASILB_MSI is without connector
+2019-04-18 16:28:56,084 WARNING STUB_BSWM_CORE1_AppASILA_MSI is without connector
+2019-04-18 16:28:56,084 WARNING STUB_BSWM_CORE1_AppASILB_MSI is without connector
+2019-04-18 16:28:56,084 WARNING STUB_BSWM_CORE1_MonitoringASILB_MSI is without connector

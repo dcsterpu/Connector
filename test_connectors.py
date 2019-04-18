@@ -344,6 +344,12 @@ class ConnectorDescriptor(unittest.TestCase):
         self.assertFalse(FileCompare.isOutput(head + '\\tests\CHECK.CSI.DOUBLE.PPORT_2\output\Connectors.arxml'))
         self.assertTrue(FileCompare.checkError(head + '\\tests\CHECK.CSI.DOUBLE.PPORT_2\output\\result_ConDesc.log', "ERROR", ["Multiple PPorts for interface", "with same software allocation"]))
 
+    def test_CHECK_UNIQUE_CSI(self):
+        current_path = os.path.realpath(__file__)
+        head, tail = ntpath.split(current_path)
+        os.system('coverage run ConnectorDescriptor.py -in ' + head + '\\tests\\CHECK.UNIQUE.CSI\\input -out ' + head + '\\tests\\CHECK.UNIQUE.CSI\output')
+        self.assertTrue(FileCompare.areSame(head + '\\tests\\CHECK.UNIQUE.CSI\output\Connectors.arxml', head + '\\tests\\CHECK.UNIQUE.CSI\Connectors.arxml'))
+
 
 suite = unittest.TestLoader().loadTestsFromTestCase(ConnectorDescriptor)
 unittest.TextTestRunner(verbosity=2).run(suite)

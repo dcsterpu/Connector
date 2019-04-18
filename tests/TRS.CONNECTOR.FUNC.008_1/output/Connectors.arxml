@@ -8,7 +8,7 @@
                     <SHORT-NAME>Compo_VSM</SHORT-NAME>
                     <CONNECTORS>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>ASSEMBLY_CONNECTOR_5841BB_84835B_BD03C0_130604</SHORT-NAME>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_687F53_10DFCE_90D41F_518058</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Inst_BswM</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/AUTOSAR_BswM/SwComponentTypes_OsApp_CORE0_PARTITION0/BswM_OsApp_CORE0_PARTITION0/BswM_ModeSwitchPort_OsApp_AppSwitchLocalPort_Switch_Rte_CORE0_PARTITION0</TARGET-P-PORT-REF>

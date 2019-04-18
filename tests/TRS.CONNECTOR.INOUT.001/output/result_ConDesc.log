@@ -1,10 +1,10 @@
-2019-01-21 11:40:05,169 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M740.aswc.arxml is well-formed
-2019-01-21 11:40:05,169 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M741.aswc.arxml is well-formed
-2019-01-21 11:40:05,179 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M742.aswc.arxml is well-formed
-2019-01-21 11:40:05,179 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M743.aswc.arxml is well-formed
-2019-01-21 11:40:05,179 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\BswM.arxml is well-formed
-2019-01-21 11:40:05,179 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\BswMMode.arxml is well-formed
-2019-01-21 11:40:05,179 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\SwcAllocation.xml is well-formed
-2019-01-21 11:40:05,189 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\TopLevel_Impl.arxml is well-formed
-2019-01-21 11:40:05,189 ERROR Multiple PPorts for interface /RootP_SR_Data/SR_VitesseVehiculeCorro: PP_SR_VitesseVehiculeCorro
-2019-01-21 11:40:05,189 ERROR Multiple PPorts for interface /RootP_SR_Data/SR_VitesseVehiculeCorro: PRP_SR_VitesseVehiculeCorro
+2019-04-18 16:29:44,302 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M740.aswc.arxml is well-formed
+2019-04-18 16:29:44,312 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M741.aswc.arxml is well-formed
+2019-04-18 16:29:44,323 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M742.aswc.arxml is well-formed
+2019-04-18 16:29:44,323 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\ASWC_M743.aswc.arxml is well-formed
+2019-04-18 16:29:44,333 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\BswM.arxml is well-formed
+2019-04-18 16:29:44,344 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\BswMMode.arxml is well-formed
+2019-04-18 16:29:44,354 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\SwcAllocation.xml is well-formed
+2019-04-18 16:29:44,354 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.INOUT.001\input\TopLevel_Impl.arxml is well-formed
+2019-04-18 16:29:44,365 ERROR Multiple PPorts for interface /RootP_SR_Data/SR_VitesseVehiculeCorro: PP_SR_VitesseVehiculeCorro
+2019-04-18 16:29:44,365 ERROR Multiple PPorts for interface /RootP_SR_Data/SR_VitesseVehiculeCorro: PRP_SR_VitesseVehiculeCorro

@@ -340,7 +340,7 @@ def create_connectors(files_list, output_path, logger):
         for indexPort1 in range(len(PPorts)):
             for indexPort2 in range(len(PPorts)):
                 if indexPort1 != indexPort2:
-                    if PPorts[indexPort1]["PROVIDED-INTERFACE-TREF"] == PPorts[indexPort2]["PROVIDED-INTERFACE-TREF"]:
+                    if PPorts[indexPort1]["PROVIDED-INTERFACE-TREF"] == PPorts[indexPort2]["PROVIDED-INTERFACE-TREF"] and PPorts[indexPort1]["ASWC"] == PPorts[indexPort2]["ASWC"] and PPorts[indexPort1]["ROOT"] == PPorts[indexPort2]["ROOT"]:
                         PPorts[indexPort1]['UNIQUE'] = False
 
         # implement TRS.CONNECTOR.FUNC.0003

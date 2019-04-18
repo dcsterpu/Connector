@@ -8,7 +8,7 @@
                     <SHORT-NAME>Compo_VSM</SHORT-NAME>
                     <CONNECTORS>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>ASSEMBLY_CONNECTOR_5C4394_0E2F9D_BB3881_684384</SHORT-NAME>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_616479_1E01AC_E3C4A5_680746</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_ASWC_SATELLITE_CORE0_SWPQM</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_ASWC_SATELLITE_CORE0_SWPQM/ASWC_SATELLITE_CORE0_SWPQM/PP_CS_NVDM_WR_APP</TARGET-P-PORT-REF>
@@ -19,7 +19,7 @@
                             </REQUESTER-IREF>
                         </ASSEMBLY-SW-CONNECTOR>
                         <ASSEMBLY-SW-CONNECTOR>
-                            <SHORT-NAME>ASSEMBLY_CONNECTOR_D037B2_ADCA35_A6ABAB_684384</SHORT-NAME>
+                            <SHORT-NAME>ASSEMBLY_CONNECTOR_D7D7F0_4CB108_DF023C_680746</SHORT-NAME>
                             <PROVIDER-IREF>
                                 <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/RootP_Composition/Compo_VSM/Instance_BSWC_NvDM_Satellite_CORE0_SWPQM</CONTEXT-COMPONENT-REF>
                                 <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/RootP_BSWC_NvDM_Satellite_CORE0_SWPQM/BSWC_NvDM_Satellite_CORE0_SWPQM/PP_CS_NVDM_WR_APP</TARGET-P-PORT-REF>

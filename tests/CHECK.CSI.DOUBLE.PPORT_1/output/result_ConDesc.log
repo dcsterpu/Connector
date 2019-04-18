@@ -1,22 +1,22 @@
-2019-01-21 11:39:47,696 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\ASWC_SATELLITE_CORE0_SWPQM.arxml is well-formed
-2019-01-21 11:39:47,696 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\AUTOSAR_Datatypes.arxml is well-formed
-2019-01-21 11:39:47,706 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\BSWC_NvDM.aswc.arxml is well-formed
-2019-01-21 11:39:47,706 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\BSWC_NvDM_Satellite_CORE0_SWPQM.aswc.arxml is well-formed
-2019-01-21 11:39:47,706 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\BswMMode.arxml is well-formed
-2019-01-21 11:39:47,716 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\Dcm.arxml is well-formed
-2019-01-21 11:39:47,716 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\output.alloc.config.xml is well-formed
-2019-01-21 11:39:48,972 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SoftwareDescriptionGenerated.arxml is well-formed
-2019-01-21 11:39:49,254 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\Swc.alloc.config.xml is well-formed
-2019-01-21 11:39:49,294 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SwcAllocation.alloc1.config.xml is well-formed
-2019-01-21 11:39:49,294 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SwcAllocation.alloc2.config.xml is well-formed
-2019-01-21 11:39:49,294 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SwcAllocation.alloc3.config.xml is well-formed
-2019-01-21 11:39:49,304 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SwcAllocation.alloc4.config.xml is well-formed
-2019-01-21 11:39:49,304 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SWPAllocation.alloc.config.xml is well-formed
-2019-01-21 11:39:49,594 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SystemGenerated_Step2.arxml is well-formed
-2019-01-21 11:39:49,674 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\VSM_Types.arxml is well-formed
-2019-01-21 11:39:49,684 WARNING PP_CS_AlerteIHM is without connector
-2019-01-21 11:39:49,684 WARNING PP_CS_Resources is without connector
-2019-01-21 11:39:49,684 WARNING PP_CS_VoyantService is without connector
-2019-01-21 11:39:49,684 WARNING PP_CS_NVDM_WR_CFGVH is without connector
-2019-01-21 11:39:49,684 WARNING BSWC_NvDM_MSI is without connector
-2019-01-21 11:39:49,684 WARNING BSWC_NvDM_Satellite_CORE0_SWPQM_MSI is without connector
+2019-04-18 16:28:36,374 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\ASWC_SATELLITE_CORE0_SWPQM.arxml is well-formed
+2019-04-18 16:28:36,410 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\AUTOSAR_Datatypes.arxml is well-formed
+2019-04-18 16:28:36,425 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\BSWC_NvDM.aswc.arxml is well-formed
+2019-04-18 16:28:36,440 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\BSWC_NvDM_Satellite_CORE0_SWPQM.aswc.arxml is well-formed
+2019-04-18 16:28:36,453 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\BswMMode.arxml is well-formed
+2019-04-18 16:28:36,462 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\Dcm.arxml is well-formed
+2019-04-18 16:28:36,471 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\output.alloc.config.xml is well-formed
+2019-04-18 16:28:43,111 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SoftwareDescriptionGenerated.arxml is well-formed
+2019-04-18 16:28:44,063 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\Swc.alloc.config.xml is well-formed
+2019-04-18 16:28:44,198 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SwcAllocation.alloc1.config.xml is well-formed
+2019-04-18 16:28:44,209 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SwcAllocation.alloc2.config.xml is well-formed
+2019-04-18 16:28:44,209 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SwcAllocation.alloc3.config.xml is well-formed
+2019-04-18 16:28:44,219 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SwcAllocation.alloc4.config.xml is well-formed
+2019-04-18 16:28:44,219 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SWPAllocation.alloc.config.xml is well-formed
+2019-04-18 16:28:45,379 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\SystemGenerated_Step2.arxml is well-formed
+2019-04-18 16:28:45,659 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\CHECK.CSI.DOUBLE.PPORT_1\input\VSM_Types.arxml is well-formed
+2019-04-18 16:28:45,669 WARNING PP_CS_AlerteIHM is without connector
+2019-04-18 16:28:45,669 WARNING PP_CS_Resources is without connector
+2019-04-18 16:28:45,679 WARNING PP_CS_VoyantService is without connector
+2019-04-18 16:28:45,680 WARNING PP_CS_NVDM_WR_CFGVH is without connector
+2019-04-18 16:28:45,680 WARNING BSWC_NvDM_MSI is without connector
+2019-04-18 16:28:45,680 WARNING BSWC_NvDM_Satellite_CORE0_SWPQM_MSI is without connector

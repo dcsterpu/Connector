@@ -1,4 +1,4 @@
-2019-01-21 11:39:55,937 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.003\input\ASWC_M740.aswc.arxml is well-formed
-2019-01-21 11:39:55,947 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.003\input\ASWC_M743.aswc.arxml is well-formed
-2019-01-21 11:39:55,957 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.003\input\SwcAllocation.xml is well-formed
-2019-01-21 11:39:55,957 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.003\input\TopLevel_Impl.arxml is well-formed
+2019-04-18 16:29:20,012 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.003\input\ASWC_M740.aswc.arxml is well-formed
+2019-04-18 16:29:20,032 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.003\input\ASWC_M743.aswc.arxml is well-formed
+2019-04-18 16:29:20,032 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.003\input\SwcAllocation.xml is well-formed
+2019-04-18 16:29:20,052 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.003\input\TopLevel_Impl.arxml is well-formed

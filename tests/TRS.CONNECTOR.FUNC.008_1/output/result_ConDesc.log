@@ -1,9 +1,9 @@
-2019-01-21 11:40:02,112 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.008_1\input\ASWC_M740.aswc.arxml is well-formed
-2019-01-21 11:40:02,119 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.008_1\input\BswM.arxml is well-formed
-2019-01-21 11:40:02,121 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.008_1\input\SwcAllocation.xml is well-formed
-2019-01-21 11:40:02,124 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.008_1\input\TopLevel_Impl.arxml is well-formed
-2019-01-21 11:40:02,129 WARNING Not the same CORE or PARTITION for BswM_ModeSwitchPort_OsApp_AppSwitchLocalPort_Switch_Rte_CORE1_PARTITION0 and ASWC_M740_MSI referencing the interface /RootP_Mode/AppModeInterface
-2019-01-21 11:40:02,129 WARNING ModeRequestPort_SwcMode_ReqPort is without connector
-2019-01-21 11:40:02,129 WARNING BswM_ModeSwitchPort_OsApp_BswMSwitchLocalPort_Switch_Rte_CORE0_PARTITION0 is without connector
-2019-01-21 11:40:02,129 WARNING BswM_ModeSwitchPort_OsApp_BswMSwitchLocalPort_SlaveCore_Switch_Rte_CORE1_PARTITION0 is without connector
-2019-01-21 11:40:02,130 WARNING BswM_ModeSwitchPort_OsApp_AppSwitchLocalPort_Switch_Rte_CORE1_PARTITION0 is without connector
+2019-04-18 16:29:37,478 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.008_1\input\ASWC_M740.aswc.arxml is well-formed
+2019-04-18 16:29:37,498 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.008_1\input\BswM.arxml is well-formed
+2019-04-18 16:29:37,498 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.008_1\input\SwcAllocation.xml is well-formed
+2019-04-18 16:29:37,508 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.FUNC.008_1\input\TopLevel_Impl.arxml is well-formed
+2019-04-18 16:29:37,518 WARNING Not the same CORE or PARTITION for BswM_ModeSwitchPort_OsApp_AppSwitchLocalPort_Switch_Rte_CORE1_PARTITION0 and ASWC_M740_MSI referencing the interface /RootP_Mode/AppModeInterface
+2019-04-18 16:29:37,518 WARNING ModeRequestPort_SwcMode_ReqPort is without connector
+2019-04-18 16:29:37,518 WARNING BswM_ModeSwitchPort_OsApp_BswMSwitchLocalPort_Switch_Rte_CORE0_PARTITION0 is without connector
+2019-04-18 16:29:37,518 WARNING BswM_ModeSwitchPort_OsApp_BswMSwitchLocalPort_SlaveCore_Switch_Rte_CORE1_PARTITION0 is without connector
+2019-04-18 16:29:37,518 WARNING BswM_ModeSwitchPort_OsApp_AppSwitchLocalPort_Switch_Rte_CORE1_PARTITION0 is without connector

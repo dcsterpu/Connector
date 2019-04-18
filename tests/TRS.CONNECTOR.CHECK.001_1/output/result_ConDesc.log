@@ -1,8 +1,8 @@
-2019-01-21 11:39:52,822 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_1\input\ASWC_M740.aswc.arxml is well-formed
-2019-01-21 11:39:52,822 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_1\input\ASWC_M741.aswc.arxml is well-formed
-2019-01-21 11:39:52,822 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_1\input\ASWC_M742.aswc.arxml is well-formed
-2019-01-21 11:39:52,832 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_1\input\SwcAllocation.xml is well-formed
-2019-01-21 11:39:52,832 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_1\input\TopLevel_Impl.arxml is well-formed
-2019-01-21 11:39:52,832 WARNING PP_SR_VehicleSPeed is without connector
-2019-01-21 11:39:52,832 WARNING PRP_NV_VehicleData is without connector
-2019-01-21 11:39:52,832 WARNING RP_CS_VehicleMovement is without connector
+2019-04-18 16:29:09,801 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_1\input\ASWC_M740.aswc.arxml is well-formed
+2019-04-18 16:29:09,811 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_1\input\ASWC_M741.aswc.arxml is well-formed
+2019-04-18 16:29:09,821 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_1\input\ASWC_M742.aswc.arxml is well-formed
+2019-04-18 16:29:09,821 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_1\input\SwcAllocation.xml is well-formed
+2019-04-18 16:29:09,831 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.001_1\input\TopLevel_Impl.arxml is well-formed
+2019-04-18 16:29:09,841 WARNING PP_SR_VehicleSPeed is without connector
+2019-04-18 16:29:09,841 WARNING PRP_NV_VehicleData is without connector
+2019-04-18 16:29:09,841 WARNING RP_CS_VehicleMovement is without connector

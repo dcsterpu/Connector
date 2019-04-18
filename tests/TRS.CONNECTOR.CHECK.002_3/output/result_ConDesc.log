@@ -1,6 +1,6 @@
-2019-01-21 11:39:55,490 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_3\input\ASWC_M740.aswc.arxml is well-formed
-2019-01-21 11:39:55,494 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_3\input\ASWC_M741.aswc.arxml is well-formed
-2019-01-21 11:39:55,496 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_3\input\SwcAllocation.xml is well-formed
-2019-01-21 11:39:55,498 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_3\input\TopLevel_Impl.arxml is well-formed
-2019-01-21 11:39:55,499 ERROR Multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed: PP_CS_VehicleSPeed(ASWC ASWC_M6, CORE APP_1, PARTITION A)
-2019-01-21 11:39:55,500 ERROR Multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed: PRP_CS_VehicleSPeed(ASWC ASWC_M6, CORE APP_1, PARTITION A)
+2019-04-18 16:29:18,217 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_3\input\ASWC_M740.aswc.arxml is well-formed
+2019-04-18 16:29:18,237 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_3\input\ASWC_M741.aswc.arxml is well-formed
+2019-04-18 16:29:18,237 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_3\input\SwcAllocation.xml is well-formed
+2019-04-18 16:29:18,247 INFO The file: C:\Users\Cristi\PyCharmProjects\AssemblyConnector\tests\TRS.CONNECTOR.CHECK.002_3\input\TopLevel_Impl.arxml is well-formed
+2019-04-18 16:29:18,257 ERROR Multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed: PP_CS_VehicleSPeed(ASWC ASWC_M6, CORE APP_1, PARTITION A)
+2019-04-18 16:29:18,257 ERROR Multiple PPorts for interface /RootP_CS_Data/CS_VehicleSPeed: PRP_CS_VehicleSPeed(ASWC ASWC_M6, CORE APP_1, PARTITION A)
